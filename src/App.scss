@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@import "./assets/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-break: break-all;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+:root {
+  --primary-color: #f17855;
+}
+
+body {
+  font-family: "Cairo", sans-serif !important;
+  overflow-x: hidden;
+  min-height: 100vh;
+
+  &.ar {
+    direction: rtl;
+  }
+
+  &.en {
+    direction: ltr;
+  }
+}
+
+// style Jemy
+.heading {
+  & > h1 {
+    color: $main-Color;
+    font-size: 40px;
+    text-transform: capitalize;
+    &.Smaller {
+      font-size: 20px !important;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    &.mt{
+      margin-top: 20px;
+    }
+  }
+  & > h4 {
+    text-transform: capitalize;
+    color: $main-Color2;
+    font-size: 18px;
+    margin-bottom: 20px;
+    &.Smaller {
+      font-size: 14px !important;
+      font-weight: bold;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+
+
+// style Jemy
+
+.container {
+  width: 80% !important;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  &:hover {
+    opacity: 0.8;
+  }
+}

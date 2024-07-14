@@ -1,0 +1,27 @@
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 30px;
+  background-color: white;
+  box-shadow: 1px -2px 20px rgb(216, 216, 216);
+  z-index: 999;
+
+  .link {
+    text-align: center;
+
+    &.active {
+      color: var(--color-primary) !important;
+    }
+
+    svg {
+      margin: auto;
+    }
+
+    span {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+}

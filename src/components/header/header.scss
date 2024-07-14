@@ -1,0 +1,30 @@
+@import "../../assets/variables.scss";
+
+.mini_header {
+  background-color: #fbeade;
+  color: rgb(134, 134, 134);
+  padding: 8px;
+}
+
+header {
+  padding: 10px;
+  position: relative;
+  z-index: 100;
+  border-bottom: 1px solid rgb(223, 223, 223);
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .link {
+      font-weight: 700;
+      font-size: 16px;
+      transition: all 0.4s ease;
+
+      &:hover {
+        color: black !important;
+      }
+    }
+  }
+}
