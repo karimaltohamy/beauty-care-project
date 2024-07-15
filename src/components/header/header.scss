@@ -1,9 +1,9 @@
 @import "../../assets/variables.scss";
 
 .mini_header {
-  // background-color: #fbeade;
-  background-color: $main-Color-back;
-  color: white ;
+  background-color: #fbeade;
+  // background-color: $main-Color-back;
+  color: gray;
   padding: 8px;
 }
 
@@ -23,8 +23,9 @@ header {
       font-size: 16px;
       transition: all 0.4s ease;
 
-      &:hover {
-        color: black !important;
+      &:hover,
+      &.active {
+        color: $main-Color-back !important;
       }
     }
   }

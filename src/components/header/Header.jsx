@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./header.scss";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { GiAnimalSkull } from "react-icons/gi";
 import profileImg from "../../assets/images/images.png";
 import arImg from "../../assets/images/ar.png";
@@ -76,21 +76,46 @@ const Header = () => {
             </Link>
 
             <div className="links">
-              <Link to={"/"} className="link">
+              <NavLink
+                to={"/"}
+                className={({ isActive }) =>
+                  isActive ? "link active" : "link"
+                }
+              >
                 {t("home")}
-              </Link>
-              <Link to={"/beauty"} className="link">
+              </NavLink>
+              <NavLink
+                to={"/beauty"}
+                className={({ isActive }) =>
+                  isActive ? "link active" : "link"
+                }
+              >
                 {t("beauty")}
-              </Link>
-              <Link to={"/packages"} className="link">
+              </NavLink>
+              <NavLink
+                to={"/packages"}
+                className={({ isActive }) =>
+                  isActive ? "link active" : "link"
+                }
+              >
                 {t("packages")}
-              </Link>
-              <Link to={"/atelier"} className="link">
+              </NavLink>
+              <NavLink
+                to={"/atelier"}
+                className={({ isActive }) =>
+                  isActive ? "link active" : "link"
+                }
+              >
                 {t("atelier")}
-              </Link>
-              <Link to={"/shein"} className="link">
+              </NavLink>
+              <NavLink
+                to={"/shein"}
+                className={({ isActive }) =>
+                  isActive ? "link active" : "link"
+                }
+              >
                 {t("shein")}
-              </Link>
+              </NavLink>
             </div>
 
             <div className="flex items-center gap-3">

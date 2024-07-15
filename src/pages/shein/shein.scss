@@ -1,28 +1,29 @@
 @import "../../assets/variables.scss";
 
-
-body.ar{
-   .Shein{
-    .box{
-        border-top-left-radius: 55px ;
-        border-bottom-right-radius: 55px;
-        border-top-right-radius: 0px !important;
-        border-bottom-left-radius: 0px !important;
-        .img{
-            img{
-                border-top-left-radius: 55px;
-                border-top-right-radius: 0px;
-            }
+body.ar {
+  .Shein {
+    .box {
+      border-top-left-radius: 55px;
+      border-bottom-right-radius: 55px;
+      border-top-right-radius: 0px !important;
+      border-bottom-left-radius: 0px !important;
+      .img {
+        img {
+          border-top-left-radius: 55px;
+          border-top-right-radius: 0px;
         }
+      }
     }
-   }
+  }
 }
 
 .Shein {
   .box {
     border-top-right-radius: 55px;
     border-bottom-left-radius: 55px;
-    border: 1px solid $font-ddd;
+    border: 1px solid rgb(199, 199, 199);
+    cursor: pointer;
+
     .img {
       position: relative;
       img {
@@ -31,10 +32,10 @@ body.ar{
         width: 100%;
         object-fit: cover;
       }
-      .icon:hover{
-        svg{
-            transition: $transtions;
-            color:  red !important;
+      .icon:hover {
+        svg {
+          transition: $transtions;
+          color: red !important;
         }
       }
       .price {
@@ -47,7 +48,7 @@ body.ar{
         flex-direction: column;
         color: white;
         font-weight: bold;
-        p{
+        p {
           font-size: 22px;
           text-decoration: line-through;
           height: 12px;
@@ -64,7 +65,7 @@ body.ar{
         justify-content: end;
         span {
           position: absolute;
-          background-color: $main-Color-back-small;
+          background-color: $main-Color-back;
           width: 40px;
           height: 40px;
           display: flex;
@@ -83,7 +84,7 @@ body.ar{
       h1 {
         color: $font-ddd;
       }
-      .inside{
+      .inside {
         display: flex;
         justify-content: space-between;
         align-items: end;
@@ -94,7 +95,7 @@ body.ar{
         gap: 5px;
         span:first-child {
           font-size: 18px;
-          color: $main-Color-back-small;
+          color: $main-Color-back;
         }
         span:last-child {
           font-size: 12px;
@@ -104,15 +105,15 @@ body.ar{
         margin-top: 10px;
         width: 50px;
         cursor: pointer;
-        background-color: $main-Color-back-small;
+        background-color: $main-Color-back;
         display: flex;
         justify-content: center;
         align-items: center;
         color: white;
-        padding: 4px 8px ;
+        padding: 4px 8px;
         border-radius: 10px;
         button {
-            width: fit-content;
+          width: fit-content;
         }
       }
     }

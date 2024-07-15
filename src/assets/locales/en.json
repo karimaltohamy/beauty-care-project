@@ -109,8 +109,11 @@
   "results": "Results",
   "used": "Used",
   "Shein": "Shein",
-  "Sale": "Sale" ,
-  "Personal_Details" : "Personal Details" ,
-  "Prand_Details" : "Prand Details" ,
-  "Prand_Name" : "Prand Name"
+  "Sale": "Sale",
+  "Personal_Details": "Personal Details",
+  "Prand_Details": "Prand Details",
+  "Prand_Name": "Prand Name",
+  "excellent": "Excellent",
+  "reviews": "Reviews",
+  "reservations": "Reservations"
 }
