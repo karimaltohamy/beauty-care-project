@@ -64,7 +64,7 @@ body.ar{
         justify-content: end;
         span {
           position: absolute;
-          background-color: $main-Color-back-small;
+          background-color: $main-Color-back;
           width: 40px;
           height: 40px;
           display: flex;
@@ -94,7 +94,7 @@ body.ar{
         gap: 5px;
         span:first-child {
           font-size: 18px;
-          color: $main-Color-back-small;
+          color: $main-Color-back;
         }
         span:last-child {
           font-size: 12px;
@@ -104,7 +104,7 @@ body.ar{
         margin-top: 10px;
         width: 50px;
         cursor: pointer;
-        background-color: $main-Color-back-small;
+        background-color: $main-Color-back;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -118,3 +118,6 @@ body.ar{
     }
   }
 }
+
+
+
