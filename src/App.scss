@@ -14,14 +14,19 @@ html {
 }
 
 :root {
-  --primary-color: #f17855;
+  --primary-color-background: #ffc0cb;
+  --font-color-white : white ;
+}
+
+:root.dark{
+  --primary-color-background: black;
+  --font-color-white : white ;
 }
 
 body {
   font-family: "Cairo", sans-serif !important;
   overflow-x: hidden;
   min-height: 100vh;
-
   &.ar {
     direction: rtl;
   }
@@ -31,37 +36,7 @@ body {
   }
 }
 
-// style Jemy
-.heading {
-  & > h1 {
-    color: $main-Color;
-    font-size: 40px;
-    text-transform: capitalize;
-    &.Smaller {
-      font-size: 20px !important;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    &.mt{
-      margin-top: 20px;
-    }
-  }
-  & > h4 {
-    text-transform: capitalize;
-    color: $main-Color2;
-    font-size: 18px;
-    margin-bottom: 20px;
-    &.Smaller {
-      font-size: 14px !important;
-      font-weight: bold;
-      margin-bottom: 0px;
-    }
-  }
-}
 
-
-
-// style Jemy
 
 .container {
   width: 80% !important;

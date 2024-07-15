@@ -1,0 +1,120 @@
+@import "../../assets/variables.scss";
+
+
+body.ar{
+   .Shein{
+    .box{
+        border-top-left-radius: 55px ;
+        border-bottom-right-radius: 55px;
+        border-top-right-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+        .img{
+            img{
+                border-top-left-radius: 55px;
+                border-top-right-radius: 0px;
+            }
+        }
+    }
+   }
+}
+
+.Shein {
+  .box {
+    border-top-right-radius: 55px;
+    border-bottom-left-radius: 55px;
+    border: 1px solid $font-ddd;
+    .img {
+      position: relative;
+      img {
+        border-top-right-radius: 55px;
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+      }
+      .icon:hover{
+        svg{
+            transition: $transtions;
+            color:  red !important;
+        }
+      }
+      .price {
+        position: absolute;
+        padding: 0px 10px;
+        width: 100%;
+        display: flex;
+        gap: 4px;
+        top: 70%;
+        flex-direction: column;
+        color: white;
+        font-weight: bold;
+        p{
+          font-size: 22px;
+          text-decoration: line-through;
+          height: 12px;
+        }
+        h2 {
+          font-size: 30px;
+        }
+      }
+      .dis {
+        width: 100%;
+        padding: 0px 10px;
+        display: flex;
+        position: absolute;
+        justify-content: end;
+        span {
+          position: absolute;
+          background-color: $main-Color-back-small;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          border-radius: 50%;
+          border: 2px solid white;
+          bottom: -20px;
+        }
+      }
+    }
+    .con {
+      padding: 20px 10px;
+      padding-right: 10px;
+      h1 {
+        color: $font-ddd;
+      }
+      .inside{
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+      }
+      .rate {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        span:first-child {
+          font-size: 18px;
+          color: $main-Color-back-small;
+        }
+        span:last-child {
+          font-size: 12px;
+        }
+      }
+      .add {
+        margin-top: 10px;
+        width: 50px;
+        cursor: pointer;
+        background-color: $main-Color-back-small;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        padding: 4px 8px ;
+        border-radius: 10px;
+        button {
+            width: fit-content;
+        }
+      }
+    }
+  }
+}

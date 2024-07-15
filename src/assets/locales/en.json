@@ -107,5 +107,10 @@
   "shein": "Shein",
   "products": "Products",
   "results": "Results",
-  "used": "Used"
+  "used": "Used",
+  "Shein": "Shein",
+  "Sale": "Sale" ,
+  "Personal_Details" : "Personal Details" ,
+  "Prand_Details" : "Prand Details" ,
+  "Prand_Name" : "Prand Name"
 }

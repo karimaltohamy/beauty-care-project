@@ -73,6 +73,14 @@ export const router = createBrowserRouter([
           </Suspense>
         ),
       },
+      {
+        path: "/signUpAsHostinger",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <SignUpAsHostinger />
+          </Suspense>
+        ),
+      },
     ],
   },
   {
@@ -80,14 +88,6 @@ export const router = createBrowserRouter([
     element: (
       <Suspense fallback={<Loading />}>
         <Login />
-      </Suspense>
-    ),
-  },
-  {
-    path: "/signUpAsHostinger",
-    element: (
-      <Suspense fallback={<Loading />}>
-        <SignUpAsHostinger />
       </Suspense>
     ),
   },

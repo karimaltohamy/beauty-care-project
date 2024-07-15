@@ -1,8 +1,9 @@
 @import "../../assets/variables.scss";
 
 .mini_header {
-  background-color: #fbeade;
-  color: rgb(134, 134, 134);
+  // background-color: #fbeade;
+  background-color: $main-Color-back;
+  color: white ;
   padding: 8px;
 }
 

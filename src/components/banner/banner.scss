@@ -1,3 +1,6 @@
+@import "../../assets/variables.scss" ;
+
+
 .banner_page {
   background-image: url(../../assets/images/banner-page.jpg);
   position: relative;
@@ -10,7 +13,8 @@
     height: 100%;
     left: 0;
     top: 0;
-    background: rgba(249, 210, 179);
+    // background: rgba(249, 210, 179);
+    background:$main-Color-back;
     opacity: 0.8;
   }
 
@@ -25,6 +29,7 @@
     h1 {
       font-size: 45px;
       font-weight: 600;
+      color: white;
     }
   }
 }
