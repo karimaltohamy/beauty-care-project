@@ -4,6 +4,8 @@ import {
   Application,
   Atelier,
   Beauty,
+  BeautyProfile,
+  Clinics,
   Home,
   Login,
   Packages,
@@ -50,6 +52,14 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: "/beauty/:id",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <BeautyProfile />
+          </Suspense>
+        ),
+      },
+      {
         path: "/packages",
         element: (
           <Suspense fallback={<Loading />}>
@@ -78,6 +88,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <SignUpAsHostinger />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/clinics",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Clinics />
           </Suspense>
         ),
       },

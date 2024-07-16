@@ -1,22 +1,20 @@
 import React from "react";
-import imgProduct from "../../assets/images/product-1.jpg";
-import { IoStar } from "react-icons/io5";
 import { TbShoppingCartHeart } from "react-icons/tb";
 import { CiBookmarkCheck } from "react-icons/ci";
 import { IoLocationOutline } from "react-icons/io5";
-
+import imgProduct from "../../assets/images/clinice-img.avif";
+import { IoStar } from "react-icons/io5";
 import { t } from "i18next";
+import "./cliniceCard.scss";
 
-import "./atelierCard.scss";
-
-const AtelierCard = ({ content, price, starsCount, normalContent = true }) => {
+const CliniceCard = () => {
   const { lang } = localStorage;
   return (
-    <div className="atelierCard flex items-center flex-col-reverse  md:flex-row">
-      <div className={`text bg-white p-3 ${lang == "ar" ? "ar" : "en"} `}>
-        <h3 className="font-bold text-[22px]">
-          {content || "Deep Cleansing Oil"}
-        </h3>
+    <div className="cliniceCard flex items-center flex-col-reverse">
+      <div
+        className={`text bg-white p-3 w-full ${lang == "ar" ? "ar" : "en"} `}
+      >
+        <h3 className="font-bold text-[22px]">{"Deep Cleansing Oil"}</h3>
         <div class="service_review">
           <span class="rate !text-yellow-500">
             4.5/5{" "}
@@ -40,25 +38,11 @@ const AtelierCard = ({ content, price, starsCount, normalContent = true }) => {
             <span className="text-[17px] font-semibold">cairo</span>
           </div>
         </div>
-        <span className="font-medium flex gap-10 m-1 text-[20px]">
-          {!normalContent && (
-            <span className="add">
-              <TbShoppingCartHeart size={20} cursor={"pointer"} />
-            </span>
-          )}
-        </span>
+        <span className="font-medium flex gap-10 m-1 text-[20px]"></span>
         <button className="btn_book_now">{t("book_now")}</button>
       </div>
-      <div className="image relative overflow-hidden">
+      <div className="image relative w-full overflow-hidden">
         <img src={imgProduct} alt="img_product" className="" />
-        <span className="bg-green-500 text-white rounded-md py-[2px] px-2 absolute top-2 right-4 text-[12px]">
-          {t("Sale")}
-        </span>
-        {normalContent && (
-          <span className="absolute top-2 -left-8 w-[120px] text-center h-[30px] bg-red-500 rotate-[320deg] text-white text-[13px] leading-[30px]">
-            {t("used")}
-          </span>
-        )}
 
         <div className="flex items-center justify-center gap-1 text-yellow-400 absolute bottom-5 right-5">
           <IoStar />
@@ -72,4 +56,4 @@ const AtelierCard = ({ content, price, starsCount, normalContent = true }) => {
   );
 };
 
-export default AtelierCard;
+export default CliniceCard;

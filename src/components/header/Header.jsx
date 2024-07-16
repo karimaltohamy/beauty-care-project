@@ -116,8 +116,15 @@ const Header = () => {
               >
                 {t("shein")}
               </NavLink>
+              <NavLink
+                to={"/clinics"}
+                className={({ isActive }) =>
+                  isActive ? "link active" : "link"
+                }
+              >
+                {t("clinics")}
+              </NavLink>
             </div>
-
             <div className="flex items-center gap-3">
               <div
                 className="rounded-full"

@@ -201,7 +201,7 @@ const Atelier = () => {
                 </div>
               </div>
             </div>
-            <div className="filter w-full md:w-[80%]">
+            <div className="w-full md:w-[80%]">
               <div className="flex items-center justify-center md:justify-between flex-col md:flex-row mb-7 p-2 bg-[#FFF5EE] rounded-lg">
                 <h3 className="text-[19px] text-gray-500 font-semibold">
                   11 {t("results")}

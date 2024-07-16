@@ -2,13 +2,14 @@ import React, { Fragment, useState } from "react";
 import Banner from "../../components/banner/Banner.component";
 import { t } from "i18next";
 import BeautyCard from "../../components/beautyCard/BeautyCard.component";
+import CliniceCard from "../../components/cliniceCard/CliniceCard.component";
 
-const Beauty = () => {
+const Clinics = () => {
   const [data, setData] = useState([1, 2, 3, 4, 5, 6]);
 
   return (
     <Fragment>
-      <Banner title={t("beauty")} />
+      <Banner title={t("clinics")} />
       <div className="py-12">
         <div className="container">
           <div className="w-full]">
@@ -30,7 +31,7 @@ const Beauty = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {data.length > 0 &&
                 data.map((item) => {
-                  return <BeautyCard />;
+                  return <CliniceCard />;
                 })}
             </div>
           </div>
@@ -40,4 +41,4 @@ const Beauty = () => {
   );
 };
 
-export default Beauty;
+export default Clinics;
