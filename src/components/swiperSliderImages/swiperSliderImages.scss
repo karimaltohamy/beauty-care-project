@@ -1,0 +1,28 @@
+.slider {
+  .swiper-slide {
+    img {
+      border-radius: 12px;
+      width: 100%;
+      height: 530px;
+      object-fit: cover;
+
+      @media (max-width: 768px) {
+        height: 400px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: black;
+
+  &::after {
+    font-size: 33px;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  background-color: black;
+}

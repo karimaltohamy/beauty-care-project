@@ -15,12 +15,12 @@ html {
 
 :root {
   --primary-color-background: #ffc0cb;
-  --font-color-white : white ;
+  --font-color-white: white;
 }
 
-:root.dark{
+:root.dark {
   --primary-color-background: black;
-  --font-color-white : white ;
+  --font-color-white: white;
 }
 
 body {
@@ -36,10 +36,8 @@ body {
   }
 }
 
-
-
 .container {
-  width: 80% !important;
+  width: 90% !important;
   margin: 0 auto;
 }
 

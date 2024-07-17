@@ -1,20 +1,149 @@
+@import "../../assets/variables.scss";
+
 .beauty_profile {
   .text {
+    padding: 30px 0 20px;
+    border-bottom: 1px solid rgb(208, 208, 208);
+
     h1 {
       font-size: 32px;
       font-weight: 700;
     }
 
-    .price {
-      font-size: 32px;
-      font-weight: 600;
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      color: gray !important;
+
+      span {
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+
+    .rate {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      .outOfFive {
+        padding: 5px 15px;
+        background-color: $main-Color-back;
+        color: white;
+        border-radius: 5px;
+      }
+
+      .inside {
+        h1 {
+          font-size: 25px;
+        }
+        p {
+          color: rgb(147, 147, 147);
+        }
+      }
+    }
+  }
+
+  .services {
+    padding: 30px 0 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(208, 208, 208);
+
+    .items {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        h4 {
+          font-weight: 700;
+          font-size: 18px;
+        }
+
+        span {
+          color: gray;
+        }
+      }
+    }
+  }
+
+  .overview {
+    margin-top: 20px;
+    h3 {
+      font-size: 30px;
+      font-weight: 700;
       margin-bottom: 10px;
     }
 
-    .desc {
+    .description {
+      margin-top: 20px;
+      margin-bottom: 20px;
       font-size: 17px;
-      color: gray;
-      margin-bottom: 10px;
+      color: #5e6d77;
+      font-weight: 400;
+      position: relative;
+
+      p {
+        margin-bottom: 10px;
+        font-weight: 500;
+      }
+
+      h4 {
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        li {
+          font-size: 17px;
+          color: #5e6d77;
+          margin-bottom: 20px;
+          list-style: none;
+
+          &::before {
+            content: "";
+            border: 1px solid $main-Color-back;
+            width: 8px;
+            height: 8px;
+            display: inline-block;
+            border-radius: 50%;
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  form {
+    .item_input {
+      margin-bottom: 15px;
+      label {
+        font-size: 20px;
+        font-weight: 600;
+        display: block;
+      }
+
+      select {
+        width: 100%;
+        width: 60px;
+        border: 1px solid rgb(200, 200, 200);
+        border-radius: 5px;
+      }
+
+      textarea {
+        width: 100%;
+        height: 400px;
+        resize: none;
+        border: 1px solid rgb(200, 200, 200);
+        border-radius: 5px;
+      }
     }
   }
 }

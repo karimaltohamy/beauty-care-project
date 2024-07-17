@@ -1,94 +1,106 @@
 import React from "react";
 import "./beatyProfile.scss";
-import SwiperSliderImages from "../../components/swiperSliderImages/SwiperSliderImages.component";
 import { t } from "i18next";
 import { CiBookmarkCheck } from "react-icons/ci";
 import { PiHairDryer } from "react-icons/pi";
-import { IoCut } from "react-icons/io5";
+import { IoCut, IoLocationOutline } from "react-icons/io5";
+import SwiperSliderImages from "../../components/swiperSliderImages/SwiperSliderImages.component";
+import Reviews from "../../components/Reviews/Reviews.component";
+import Banner from "../../components/banner/Banner.component";
+import { FiClock } from "react-icons/fi";
+import { GiFullMotorcycleHelmet } from "react-icons/gi";
+import { LiaPlaceOfWorshipSolid } from "react-icons/lia";
 
 const BeautyProfile = () => {
   return (
     <div className="py-5 beauty_profile">
+      <Banner title={"Pouch Pocket Hoodie Orange"} />
       <div className="container">
-        <div className="flex items-center gap-5">
-          <div className="w-full md:w-[50%]">{/* <SwiperSliderImages />*/}</div>
-          <div className="w-full md:w-[50%] text">
-            <h1>Pouch Pocket Hoodie Orange</h1>
-            <p className="desc">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem
-              ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <div class="flex items-center justify-between">
-              <span class="rate !text-yellow-500">
-                4.5/5{" "}
-                <span class="rate-text !text-yellow-500">{t("excellent")}</span>
-              </span>
-              <span class="review">2 {t("reviews")}</span>
+        <div className="max-w-[850px] mx-auto">
+          <div className="w-full text flex items-center justify-between">
+            <div>
+              <h1>Pouch Pocket Hoodie Orange</h1>
+              <a href="" className="location">
+                <IoLocationOutline size={24} />
+                <span>Cairo</span>
+              </a>
             </div>
-
-            <div className="flex items-center gap-2 my-2">
-              <div className="flex items-center">
-                <CiBookmarkCheck size={22} />
-                <h4 className="font-semibold text-[18px]">
-                  {t("reservations")}:{" "}
-                </h4>
+            <div>
+              <div className="rate">
+                <div className="inside">
+                  <h1>{t("Excellent")}</h1>
+                  <p>
+                    {t("From")} 4 {t("Reviews")}
+                  </p>
+                </div>
+                <div className="outOfFive">
+                  <h1>4.5/5</h1>
+                </div>
               </div>
-              <span>100</span>
+              <h5 className="font-semibold">100% {t("of_guets_recommend")}</h5>
             </div>
+          </div>
+          <div className="services">
+            <div className="items">
+              <div className="item">
+                <FiClock size={35} />
+                <div>
+                  <h4>Saturday - Thursday</h4>
+                  <span>9:00 AM - 5:00 PM</span>
+                </div>
+              </div>
+              <div className="item">
+                <GiFullMotorcycleHelmet size={35} />
+                <div>
+                  <h4>{t("service_type")}</h4>
+                  <span>delivery</span>
+                </div>
+              </div>
+              <div className="item">
+                <LiaPlaceOfWorshipSolid size={35} />
+                <div>
+                  <h4>{t("service_type")}</h4>
+                  <span>From the store</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="w-full">
+            <SwiperSliderImages />
+          </div>
 
-            <span className="price">$ 19.35</span>
-
-            <div className="mt-3">
-              <h4 className="font-semibold text-[24px] mb-2">
-                {t("our_services")}:
-              </h4>
-              <ul className="flex items-center gap-3 flex-wrap">
-                <li className="flex items-center text-gray-600 gap-1">
-                  <IoCut size={22} />
-
-                  <span className="text-[18px]">{t("hair")}</span>
+          <div className="overview">
+            <h3>Overview</h3>
+            <div class="description">
+              <p>
+                Start and end in San Francisco! With the in-depth cultural tour
+                Northern California Summer 2019, you have a 8 day tour package
+                taking you through San Francisco, USA and 9 other destinations
+                in USA. Northern California Summer 2019 includes accommodation
+                as well as an expert guide, meals, transport and more.
+              </p>
+              <h4>HIGHLIGHTS</h4>
+              <ul>
+                <li>Visit the Museum of Modern Art in Manhattan</li>
+                <li>
+                  See amazing works of contemporary art, including Vincent van
+                  Gogh's The Starry Night
                 </li>
-                <li className="flex items-center text-gray-600 gap-1">
-                  <PiHairDryer size={22} />
-                  <span className="text-[18px]">{t("make up")}</span>
+                <li>
+                  Check out Campbell's Soup Cans by Warhol and The Dance (I) by
+                  Matisse
+                </li>
+                <li>
+                  Behold masterpieces by Gauguin, Dali, Picasso, and Pollock
+                </li>
+                <li>
+                  Enjoy free audio guides available in English, French, German,
+                  Italian, Spanish, Portuguese
                 </li>
               </ul>
             </div>
           </div>
-        </div>
-        <div className="description p-3 border border-gray-300 rounded-lg mt-10">
-          <h4 className="font-semibold text-[27px] mb-5">
-            {t("description")}:
-          </h4>
-          <p className="mb-2 text-gray-500">
-            Everyone should have something like this in their closet. Wearing
-            these clothes will make you appreciate everyone who looks at you.
-            Many people like its modern and clean style. It's a one-of-a-kind
-            piece created in our newly remodeled facility. It is great for
-            anyone who is fashion-obsessed. Always handle it with care for a
-            longer life span and greater quality. It is intended to last longer
-            while providing optimal comfort.
-          </p>
-          <h4 className="font-semibold text-[27px] mb-5">
-            Why the Lacozt brand?
-          </h4>
-          <p className="mb-2 text-gray-500">
-            Lacozt sells T-shirts, Vests/Sleeveless, Polos, Shrugs, Jackets,
-            Shorts, Sweatshirts, Hoodies, and a range of other things. Lacozt is
-            a well-known American online clothing retailer that offers an
-            exclusive selection of current and popular men's clothes. Lacozt
-            offers the most current and fashionable designs, all expertly
-            crafted from 100% cotton fabric. Lacozt uses high-quality cotton and
-            bio-washed fabric for vibrant color and additional softness,
-            providing our clients with the utmost comfort and style. Our goal is
-            to create trendy and appealing items using the highest quality
-            materials available on the market. Ideal casual wear for every
-            single occasion like outings, daily wear, office wear, casual wear,
-            picnic, birthday parties, hang out, etc. It can be an ideal gift for
-            your friends and family people.
-          </p>
+          <Reviews />
         </div>
       </div>
     </div>

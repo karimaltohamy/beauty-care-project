@@ -117,5 +117,10 @@
   "reviews": "Reviews",
   "reservations": "Reservations",
   "description": "Description",
-  "our_services": "Our Services"
+  "our_services": "Our Services",
+  "add_a_review": "Add a review",
+  "Your email address will not be published. Required fields are marked *": "Your email address will not be published. Required fields are marked *",
+  "your_rating": "Your Rating",
+  "your_review": "Your Review",
+  "service_type": "Service Type"
 }

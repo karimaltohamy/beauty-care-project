@@ -140,5 +140,10 @@
   "reviews": "التعليقات",
   "reservations": "الحجوزات",
   "description": "وصف",
-  "our_services": "خدماتنا"
+  "our_services": "خدماتنا",
+  "add_a_review": "أضافه رائي",
+  "Your email address will not be published. Required fields are marked *": "Your email address will not be published. Required fields are marked *",
+  "your_rating": "تقييمك",
+  "your_review": "مراجعتك",
+  "service_type": "نوع الخدمه"
 }
