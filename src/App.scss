@@ -58,6 +58,7 @@ button {
   border: none;
   background-color: transparent;
   &:hover {
+    transition: $transtions;
     opacity: 0.8;
   }
 }

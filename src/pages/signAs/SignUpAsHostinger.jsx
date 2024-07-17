@@ -1,15 +1,12 @@
 import React, { Fragment, useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import { t } from "i18next";
 import img from "../../assets/images/bouquet-4736413_1920.jpg";
 import "./signAs.scss";
 import Banner from "../../components/banner/Banner.component";
 
 const SignUpAsHostinger = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+  const [next, setNext] = useState(false);
   const boxRef = useRef();
   useEffect(() => {
     boxRef.current.scrollIntoView({ behavior: "smooth" });
@@ -17,125 +14,151 @@ const SignUpAsHostinger = () => {
 
   return (
     <Fragment>
-      <Banner title={t("Start_With_Us")} />
-      <div className="sign" data-aos="zoom-in" data-aos-delay="200">
+      <Banner title={t("Start_With_Us")} needBack={true} />
+      <div className="sign" data-aos="zoom-in" data-aos-delay="400">
         <div className="all">
-          <div
-            className="img"
-            data-aos="flip-up"
-            data-aos-delay="600"
-            data-aos-easing="ease-out-cubic"
-          >
+          <div className="img">
             <img src={img} alt="" />
           </div>
-          <form action="#">
-            <div className="form" data-aos="fade-left" data-aos-delay="700">
-              <div className="details personal">
+          <form>
+            <div className="form">
+              <div className="progress">
+                <div className="line">
+                  {" "}
+                  <span></span>
+                </div>
+                <div className="line">
+                  {" "}
+                  <span className={`${next && "next"}`}></span>
+                </div>
+              </div>
+              <div className={`details personal ${next && "none"}`}>
                 <span className="title">{t("Personal_Details")}</span>
                 <div className="fields">
                   <div className="input-field">
                     <label>{t("full Name")}</label>
-                    <input type="text" placeholder="Enter your name" required />
-                  </div>
-                  <div className="input-field">
-                    <label>{t("address")}</label>
-                    <input type="text" placeholder="Enter Adress" required />
-                  </div>
-
-                  <div className="input-field">
-                    <label>{t("email")}</label>
-                    <input
-                      type="text"
-                      placeholder="Enter your email"
-                      required
-                    />
-                  </div>
-                  <div className="input-field">
-                    <label>{t("Password")}</label>
-                    <input
-                      type="text"
-                      placeholder="Enter your paassword"
-                      required
-                    />
-                  </div>
-
-                  <div className="input-field">
-                    <label>{t("phone")}</label>
-                    <input
-                      type="number"
-                      placeholder="Enter mobile number"
-                      required
-                    />
-                  </div>
-
-                  <div className="input-field">
-                    <label>{t("gender")}</label>
-                    <select required>
-                      <option disabled selected>
-                        Select gender
-                      </option>
-                      <option>Male</option>
-                      <option>Female</option>
-                      <option>Others</option>
-                    </select>
+                    <div className="flex">
+                      <input type="text" placeholder="Enter your name" />
+                      <i className="fa-solid fa-user-plus"></i>
+                    </div>
                   </div>
                   <div className="input-field">
                     <label>{t("Age")}</label>
-                    <input
-                      type="number"
-                      placeholder="Enter your age"
-                      required
-                    />
+                    <div className="flex">
+                      <input type="number" placeholder="Enter your age" />
+                      <i className="fa-solid fa-heart-pulse"></i>
+                    </div>
+                  </div>
+                  <div className="input-field">
+                    <label>{t("email")}</label>
+                    <div className="flex">
+                      <input type="text" placeholder="Enter your email" />
+                      <i className="fa-regular fa-envelope"></i>
+                    </div>
+                  </div>
+                  <div className="input-field">
+                    <label>{t("Password")}</label>
+                    <div className="flex">
+                      <input type="text" placeholder="Enter your paassword" />
+                      <i className="fa-solid fa-lock"></i>
+                    </div>
+                  </div>
+                  <div className="input-field">
+                    <label>{t("phone")}</label>
+                    <div className="flex">
+                      <input type="number" placeholder="Enter mobile number" />
+                      <i className="fa-solid fa-phone"></i>
+                    </div>
+                  </div>
+                  <div className="input-field">
+                    <label>{t("gender")}</label>
+                    <div className="flex">
+                      <select>
+                        <option disabled selected>
+                          Select gender
+                        </option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Others</option>
+                      </select>
+                      <i className="fa-solid fa-venus-mars"></i>
+                    </div>
+                  </div>
+                  <div className="input-field">
+                    <label>{t("address")}</label>
+                    <div className="flex">
+                      <input type="text" placeholder="Enter Adress" />
+                      <i className="fa-regular fa-address-card"></i>
+                    </div>
                   </div>
                 </div>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setNext(true);
+                  }}
+                >
+                  <span className="btnText">{t("Next")}</span>
+                </button>
               </div>
-
-              <div className="details prand">
+              <div className={`details prand ${next && "render"}`}>
                 <span className="title">{t("Prand_Details")}</span>
                 <div className="fields">
                   <div className="input-field">
                     <label>{t("Prand_Name")}</label>
-                    <input
-                      type="text"
-                      placeholder="Enter prand name"
-                      required
-                    />
+                    <div className="flex">
+                      <input type="text" placeholder="Enter prand name" />
+                      <i className="fa-solid fa-code-branch"></i>
+                    </div>
                   </div>
                   <div className="input-field">
-                    <label>{t("address")}</label>
-                    <input type="text" placeholder="Enter adress" required />
+                    <label>{t("Service Type")}</label>
+                    <div className="flex">
+                      <select>
+                        <option disabled selected>
+                          {t("Service Type")}
+                        </option>
+                        <option>{t("Go to customers")}</option>
+                        <option>{t("Recive customers")}</option>
+                      </select>
+                      <i class="fa-solid fa-hurricane"></i>
+                    </div>
                   </div>
                   <div className="input-field">
                     <label>{t("Location")}</label>
-                    <input type="text" placeholder="Enter locaton" required />
+                    <div className="flex">
+                      <input type="text" placeholder="Enter locaton" />
+                      <i class="fa-solid fa-location-dot"></i>
+                    </div>
                   </div>
                   <div className="input-field">
                     <label>{t("Place_Photos")}</label>
-                    <input type="file" required />
+                    <div className="flex">
+                      <input type="file" />
+                      <i class="fa-solid fa-photo-film"></i>
+                    </div>
                   </div>
-
-                  <div className="input-field">
-                    <label>{t("Service Type")}</label>
-                    <select required>
-                      <option disabled selected>
-                        {t("Service Type")}
-                      </option>
-                      <option>{t("Go to customers")}</option>
-                      <option>{t("Recive customers")}</option>
-                    </select>
-                  </div>
-                  <div className="input-field mega">
-                    <div className="con">
-                      <div className="inMega">
-                        <label htmlFor=""> {t("Working From (hours)")}</label>
-                        <input type="number" placeholder="hours" />
+                  <div className="work">
+                    <label htmlFor="">{t("Working Days")}</label>
+                    <div className="inputs">
+                      <div className="flex">
+                        <input type="number" placeholder={t("From")} />
+                        <i className="fa-regular fa-clock"></i>
                       </div>
-                      <div className="inMega">
-                        <label htmlFor=""> {t("Working to (hours)")}</label>
-                        <input type="number" placeholder="hours" />
+                      <div className="flex">
+                        <input type="number" placeholder={t("To")} />
+                        <i className="fa-regular fa-clock"></i>
                       </div>
                     </div>
                   </div>
+                  <div className="input-field">
+                    <label>{t("address")}</label>
+                    <div className="flex">
+                      <input type="text" placeholder="Enter Adress" />
+                      <i className="fa-regular fa-address-card"></i>
+                    </div>
+                  </div>
+
                   <div className="holi">
                     <label htmlFor="">{t("Holidays")}</label>
                     <div className="days">
@@ -163,11 +186,25 @@ const SignUpAsHostinger = () => {
                     </div>
                   </div>
                 </div>
+                <div className="btns">
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setNext(false);
+                    }}
+                  >
+                    <span className="btnText">{t("Back")}</span>
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setNext(true);
+                    }}
+                  >
+                    <span className="btnText">{t("Enroll")}</span>
+                  </button>
+                </div>
               </div>
-
-              <button type="submit">
-                <span className="btnText">{t("Enroll")}</span>
-              </button>
             </div>
           </form>
         </div>
