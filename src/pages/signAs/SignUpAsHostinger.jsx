@@ -1,12 +1,14 @@
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import { t } from "i18next";
-import img from "../../assets/images/bouquet-4736413_1920.jpg";
+import imgEn from "../../assets/images/1..png";
+import imgAr from "../../assets/images/2..png";
 import "./signAs.scss";
 import Banner from "../../components/banner/Banner.component";
 
 const SignUpAsHostinger = () => {
   const [loading, setLoading] = useState(false);
   const [next, setNext] = useState(false);
+  const { lang } = localStorage;
   const boxRef = useRef();
   useEffect(() => {
     boxRef.current.scrollIntoView({ behavior: "smooth" });
@@ -15,14 +17,20 @@ const SignUpAsHostinger = () => {
   return (
     <Fragment>
       <Banner title={t("Start_With_Us")} needBack={true} />
-      <div className="sign" data-aos="zoom-in" data-aos-delay="400">
+      <div
+        className="sign"
+        data-aos="flip-up"
+        data-aos-delay="400"
+        data-aos-duration="1000"
+        data-aos-easing="ease-out-cubic"
+      >
         <div className="all">
           <div className="img">
-            <img src={img} alt="" />
+            <img src={lang == "ar" ? imgAr : imgEn} alt="" />
           </div>
           <form>
             <div className="form">
-              <div className="progress">
+              {/* <div className="progress">
                 <div className="line">
                   {" "}
                   <span></span>
@@ -31,7 +39,7 @@ const SignUpAsHostinger = () => {
                   {" "}
                   <span className={`${next && "next"}`}></span>
                 </div>
-              </div>
+              </div> */}
               <div className={`details personal ${next && "none"}`}>
                 <span className="title">{t("Personal_Details")}</span>
                 <div className="fields">
@@ -92,14 +100,6 @@ const SignUpAsHostinger = () => {
                     </div>
                   </div>
                 </div>
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setNext(true);
-                  }}
-                >
-                  <span className="btnText">{t("Next")}</span>
-                </button>
               </div>
               <div className={`details prand ${next && "render"}`}>
                 <span className="title">{t("Prand_Details")}</span>
@@ -187,14 +187,6 @@ const SignUpAsHostinger = () => {
                   </div>
                 </div>
                 <div className="btns">
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setNext(false);
-                    }}
-                  >
-                    <span className="btnText">{t("Back")}</span>
-                  </button>
                   <button
                     onClick={(e) => {
                       e.preventDefault();
