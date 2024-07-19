@@ -11,7 +11,6 @@ body.ar{
 .banner_page {
   background-image: url(../../assets/images/banner-page.jpg);
   position: relative;
-
   &::before {
     position: absolute;
     content: "";
@@ -23,7 +22,6 @@ body.ar{
     background: $main-Color-back-trans;
     opacity: 0.8;
   }
-
   .container {
     height: 100%;
     display: flex;
@@ -47,5 +45,11 @@ body.ar{
       flex-direction: row-reverse;
       gap: 5px;
     }
+  }
+}
+
+@media screen and (max-width : 768px) {
+  .none{
+    display: none !important ;
   }
 }

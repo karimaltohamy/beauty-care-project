@@ -8,13 +8,13 @@ body.ar {
     border-bottom-right-radius: 5px;
   }
 }
-
 .beauty_profile {
+  position: relative;
   .mega {
     display: flex;
     gap: 20px;
     .con {
-      width: 80%;
+      width: 75%;
       .text {
         padding: 30px 0 20px;
         border-bottom: 1px solid rgb(208, 208, 208);
@@ -100,8 +100,10 @@ body.ar {
       }
     }
     form {
+      width: 25%;
       margin: 30px 0px;
-      padding: 10px;
+      padding: 20px;
+      padding-bottom: 0%;
       box-shadow: 0px 0px 10px #907c6c;
       flex-grow: 1;
       height: fit-content;
@@ -143,25 +145,25 @@ body.ar {
             height: 42px;
           }
         }
-        .select{
-          margin : 20px 0px;
-          .row{
+        .select {
+          margin: 20px 0px;
+          .row {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 10px;
             padding: 8px 0px;
             border-bottom: 1px solid #ddd;
-            i{
+            i {
               color: $main-Color-back;
               cursor: pointer;
             }
           }
         }
-        .taxes{
-          border-bottom: 1px solid #ddd ;
+        .taxes {
+          border-bottom: 1px solid #ddd;
           padding-bottom: 8px;
-          .flex{
+          .flex {
             justify-content: space-between;
             color: $main-Color-back;
             font-weight: bold;
@@ -192,6 +194,26 @@ body.ar {
       }
     }
   }
+  .btns{
+    display: flex;
+    transition: 0.4s;
+    transform: translateX(200%);
+    flex-direction: column;
+    gap: 10px;
+    position: fixed;
+    top: 80%;
+    right: 20px;
+    z-index: 1000;
+    button{
+      width: 80px ;
+      height: 60px;
+      background-color: $main-Color-back;
+      color: white;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
 }
 
 .beauty_profile form button {
@@ -208,4 +230,102 @@ body.ar {
   color: white;
   font-weight: bold;
   margin-top: 20px;
+}
+
+@media screen and (max-width: 1100px) {
+  .beauty_profile {
+    .mega {
+     & > form {
+        display: none;
+      }
+      .con {
+        width: 100%;
+      }
+    }
+    .reviewDiv {
+      .box {
+        width: 100% !important;
+      }
+      form.not {
+        display: none;
+      }
+    }
+    .btns{
+      transform: translateX(0);
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .beauty_profile {
+    .mega {
+      height: fit-content !important;
+      .con {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .text {
+          order: 2 ;
+          margin-top: 200px;
+          flex-direction: column;
+          div{
+            text-align: center;
+            a{
+              display: flex;
+              justify-content: center;
+              margin-bottom: 10px;
+            }
+          }
+        }
+        .boxSlider {
+          position: absolute;
+          top:-200px ;
+          img{
+            max-height: 400px;
+          }
+        }
+        .services {
+          order: 3 ;
+          flex-direction: column;
+          gap: 10px;
+          .items{
+            text-align: center;
+            .item{
+              flex-grow: 1;
+            }
+          }
+          button{
+            padding: 10px 0px;
+          }
+        }
+        .overview {
+          order: 4 ;
+        }
+      }
+    }
+  }
+}
+
+.beauty_profile{
+.model_poup.active{
+  .content{
+    padding-bottom: 0;
+  }
+  form{
+    width: 100% ;
+    box-shadow: 0px 0px  !important;
+    margin: 0;
+    padding-bottom: 0 !important;
+  }
+}
+}
+
+@media screen and (min-width : 1100px) {
+  .beauty_profile{
+    .mega , .reviewDiv{
+      .overflow , .model_poup{
+        display: none !important;
+      }
+    }
+  }
 }

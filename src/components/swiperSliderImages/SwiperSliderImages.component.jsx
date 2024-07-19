@@ -25,7 +25,9 @@ const SwiperSliderImages = () => {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
+        navigation={{
+          clickable : true
+        }}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,

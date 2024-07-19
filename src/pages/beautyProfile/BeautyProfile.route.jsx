@@ -1,18 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./beatyProfile.scss";
 import { t } from "i18next";
-import { IoCut, IoLocationOutline } from "react-icons/io5";
+import { IoLocationOutline } from "react-icons/io5";
 import SwiperSliderImages from "../../components/swiperSliderImages/SwiperSliderImages.component";
-import Reviews from "../../components/Reviews/Reviews.component";
 import Banner from "../../components/banner/Banner.component";
 import { FiClock } from "react-icons/fi";
 import { GiFullMotorcycleHelmet } from "react-icons/gi";
 import { LiaPlaceOfWorshipSolid } from "react-icons/lia";
+import OusrServices from "../../components/ourServices/OusrServices";
+import OurWork from "../../components/ourWork/OurWork";
+import Reviews from "../../components/reviews/Reviews";
+import Popup from "../../components/popup/Popup";
 
 const BeautyProfile = () => {
   const [choosenSer, setChoosenSer] = useState([]);
-  const [total , setTotal] = useState(0)
+  const [total, setTotal] = useState(0);
+  const [popupSer, setPopSer] = useState(false);
+  const [popupComm, setPopComm] = useState(false);
+  const [popupRepo, setpopRepo] = useState(false);
 
+  // const
   const arrServices = [
     {
       service: t("Hair dressing"),
@@ -103,19 +110,21 @@ const BeautyProfile = () => {
   const customSelect = (obj) => {
     const { service } = obj;
     const isExist = choosenSer.find((choose) => choose.service == service);
-    setTotal(total + parseInt(obj.price.split("$")[1]))
-    if (!isExist) setChoosenSer([...choosenSer, obj]);
+    if (!isExist) {
+      setChoosenSer([...choosenSer, obj]);
+      setTotal(total + parseInt(obj.price.split("$")[1]));
+    }
   };
   const deleteChoose = (obj) => {
     const { service } = obj;
     const newArr = choosenSer.filter((choose) => choose.service !== service);
-    setTotal(total - parseInt(obj.price.split("$")[1]))
+    setTotal(total - parseInt(obj.price.split("$")[1]));
     setChoosenSer(newArr);
   };
 
   return (
-    <div className="py-5 beauty_profile">
-      <Banner title={"Pouch Pocket Hoodie Orange"} />
+    <div className="beauty_profile">
+      <Banner title={"Pouch Pocket Hoodie Orange"} classHidden={true} />
       <div className="container">
         <div className="mega">
           <div className="con">
@@ -168,13 +177,13 @@ const BeautyProfile = () => {
                   </div>
                 </div>
               </div>
-              <div className="report">
+              <div className="report" onClick={() => setpopRepo(true)}>
                 <div className="item">
                   <button>{t("Report a Problem")}</button>
                 </div>
               </div>
             </div>
-            <div className="w-full">
+            <div className="w-full boxSlider">
               <SwiperSliderImages />
             </div>
             <div className="overview">
@@ -254,15 +263,19 @@ const BeautyProfile = () => {
                 <div className="taxes">
                   <label htmlFor="">{t("Taxes")}</label>
                   <div className="flex">
-                  <p>10%</p>
-                  <p><i class="fa-regular fa-calendar-plus"></i></p>
+                    <p>10%</p>
+                    <p>
+                      <i class="fa-regular fa-calendar-plus"></i>
+                    </p>
                   </div>
                 </div>
                 <div className="taxes">
                   <label htmlFor="">{t("Total")}</label>
                   <div className="flex">
-                  <p>{total}</p>
-                  <p><i className="fa-solid fa-money-bill"></i></p>
+                    <p>{total}</p>
+                    <p>
+                      <i className="fa-solid fa-money-bill"></i>
+                    </p>
                   </div>
                 </div>
                 <div className="book">
@@ -271,9 +284,131 @@ const BeautyProfile = () => {
               </div>
             </div>
           </form>
+          <Popup
+            title={t("book_now")}
+            needFrom={false}
+            openPopup={popupSer}
+            setOpenPopup={setPopSer}
+          >
+            <form>
+              <div className={`details`}>
+                <div className="fields">
+                  <div className="input-field">
+                    <label>{t("Book Time")}</label>
+                    <div className="flex">
+                      <input type="datetime-local" />
+                      <i className="fa-solid fa-clock"></i>
+                    </div>
+                  </div>
+                  <div className="input-field">
+                    <label>{t("Service")}</label>
+                    <div className="flex">
+                      <select
+                        onChange={(e) =>
+                          customSelect(JSON.parse(e.target.value))
+                        }
+                      >
+                        <option disabled selected>
+                          Select Service
+                        </option>
+                        {arrServices.map((ser, i) => {
+                          return (
+                            <option key={i} value={JSON.stringify(ser)}>
+                              {ser.service} ({ser.price})
+                            </option>
+                          );
+                        })}
+                      </select>
+                      <i className="fa-brands fa-servicestack"></i>
+                    </div>
+                  </div>
+                  {choosenSer.length > 0 && (
+                    <div className="select">
+                      {choosenSer.map((ele, i) => {
+                        return (
+                          <div className="row" key={i}>
+                            <p>{`${ele.service} ${ele.price}`}</p>
+                            <i
+                              className="fa-solid fa-trash"
+                              onClick={() => deleteChoose(ele)}
+                            ></i>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                  <div className="input-field">
+                    <label>{t("Book Type")}</label>
+                    <div className="flex">
+                      <select
+                        onChange={(e) =>
+                          customSelect(JSON.parse(e.target.value))
+                        }
+                      >
+                        <option disabled selected>
+                          Select Book Type
+                        </option>
+                        <option>{t("Go to the place")}</option>
+                        <option>{t("In home")}</option>
+                      </select>
+                      <i className="fa-solid fa-venus-mars"></i>
+                    </div>
+                  </div>
+                  <div className="taxes">
+                    <label htmlFor="">{t("Taxes")}</label>
+                    <div className="flex">
+                      <p>10%</p>
+                      <p>
+                        <i class="fa-regular fa-calendar-plus"></i>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="taxes">
+                    <label htmlFor="">{t("Total")}</label>
+                    <div className="flex">
+                      <p>{total}</p>
+                      <p>
+                        <i className="fa-solid fa-money-bill"></i>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="book">
+                    <button>{t("book_now")}</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </Popup>
         </div>
-        {/* <Reviews /> */}
+        <OusrServices arr={arrServices} />
       </div>
+      <OurWork />
+      <Reviews setPopComm={setPopComm} popupComm={popupComm} />
+      <div className="btns">
+        <button onClick={() => setPopSer(true)}>{t("book_now")}</button>
+        <button onClick={() => setPopComm(true)}>{t("Write A Comment")}</button>
+      </div>
+      <Popup
+        title={t("Report a Problem")}
+        titleBtn={t("Submit")}
+        openPopup={popupRepo}
+        setOpenPopup={setpopRepo}
+      >
+        <div className="flex">
+          <label>{t("Your Comment")}</label>
+          <i color="red" className="fa-solid fa-comments"></i>
+        </div>
+        <textarea
+          name=""
+          id=""
+          style={{
+            border: "1px solid #ddd",
+            width: "100%",
+            minHeight: "200px",
+            borderRadius: "10px",
+          }}
+        ></textarea>
+      </Popup>
     </div>
   );
 };

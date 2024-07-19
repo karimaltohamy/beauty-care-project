@@ -85,6 +85,8 @@
   "Show_More": "عرض المزيد",
   "Session": "حصة",
   "Our_Training": "التدريبات الخاصة بنا",
+  "Our Services" : "الخدمات الخاصة بنا" ,
+  "Our Work" : "اعمالنا",
   "Our_Best_Personal_Keepers": "افضل المستضيفين الشخصيين",
   "Name": "الاسم",
   "full Name": "الاسم بالكامل",
@@ -187,5 +189,9 @@
   "Temporary henna installation, temporary tattoo drawing." : "تركيب حناء مؤقتة، رسم الوشم المؤقت." ,
   "Treating dandruff, improving hair growth." : "علاج القشرة، تحسين نمو الشعر." ,
   "Taxes" : "الضرائب" ,
-  "Total" : "الاجمالي"
+  "Total" : "الاجمالي" ,
+  "Submit" : "ارسال" ,
+  "Write A Comment" : "اكتب تعليق" ,
+  "Your Comment" : "تعليقك" ,
+  "Comments" : "التعلقيات"
 }
