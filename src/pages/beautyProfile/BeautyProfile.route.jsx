@@ -18,7 +18,6 @@ const BeautyProfile = () => {
   const [popupSer, setPopSer] = useState(false);
   const [popupComm, setPopComm] = useState(false);
   const [popupRepo, setpopRepo] = useState(false);
-
   // const
   const arrServices = [
     {
@@ -177,10 +176,14 @@ const BeautyProfile = () => {
                   </div>
                 </div>
               </div>
-              <div className="report" onClick={() => setpopRepo(true)}>
-                <div className="item">
-                  <button>{t("Report a Problem")}</button>
-                </div>
+              <button className="book" onClick={()=> setPopSer(true)}>{t("book_now")}</button>
+              <div className="btns">
+                <button className="comm" onClick={() => setPopComm(true)}>
+                  {t("Write A Comment")}
+                </button>
+                <button className="repo" onClick={() => setpopRepo(true)}>
+                  {t("Report a Problem")}
+                </button>
               </div>
             </div>
             <div className="w-full boxSlider">
@@ -384,10 +387,6 @@ const BeautyProfile = () => {
       </div>
       <OurWork />
       <Reviews setPopComm={setPopComm} popupComm={popupComm} />
-      <div className="btns">
-        <button onClick={() => setPopSer(true)}>{t("book_now")}</button>
-        <button onClick={() => setPopComm(true)}>{t("Write A Comment")}</button>
-      </div>
       <Popup
         title={t("Report a Problem")}
         titleBtn={t("Submit")}

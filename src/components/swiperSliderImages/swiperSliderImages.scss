@@ -2,7 +2,6 @@
 @import "../../assets/variables.scss" ; 
 
 .slider {
-  
   .swiper-slide {
     img {
       border-radius: 12px;
@@ -17,16 +16,8 @@
 .swiper-button-next {
 
   &::after {
-    font-size: 18px;
-    color: white;
-    background-color: $main-Color-back;
-    width: 30px ;
-    height: 30px;
-    display: flex;
-    font-weight: bold;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
+    font-size: 28px;
+    color: black;
   }
 }
 

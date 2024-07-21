@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useParams } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
@@ -8,6 +8,8 @@ import "aos/dist/aos.css";
 
 const Application = () => {
   const location = useLocation()
+  const { id } = useParams();
+  console.log(location.pathname);
   useEffect(() => {
     Aos.init();
   }, []);

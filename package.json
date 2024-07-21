@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mui/material": "^5.16.4",
+    "@mui/x-data-grid": "^7.11.0",
     "aos": "^2.3.4",
     "date-fns": "^3.6.0",
     "i18next": "^23.11.5",

@@ -64,24 +64,13 @@ body.ar {
         border-bottom: 1px solid rgb(208, 208, 208);
         display: flex;
         justify-content: space-between;
+        gap: 20px;
         flex-wrap: wrap;
-        .report {
-          background-color: $main-Color-back;
-          color: white;
-          padding: 0px 10px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-weight: bolder;
-          border-radius: 8px;
-          cursor: pointer;
-        }
         .items {
           display: flex;
           align-items: center;
           gap: 25px;
           flex-wrap: wrap;
-
           .item {
             display: flex;
             align-items: center;
@@ -94,6 +83,44 @@ body.ar {
 
             span {
               color: gray;
+            }
+          }
+        }
+        .book {
+          background-color: $main-Color-back;
+          color: white;
+          border-radius: 10px;
+          & {
+            @media screen and (min-width: 768px) {
+              display: none;
+            }
+          }
+        }
+        .btns {
+          display: flex;
+          gap: 10px;
+          @media screen and (max-width: 768px) {
+            padding-bottom:20px;
+            justify-content: space-between;
+            button{
+              width: 50%;
+            }
+          }
+
+          button {
+            border-radius: 10px;
+            background-color: $main-Color-back;
+            &.comm {
+              @media screen and (min-width: 768px) {
+                display: none;
+              }
+            }
+            color: white;
+            &.repo {
+              padding: 0px 10px;
+              background-color: red;
+              @media screen and (min-width: 768px) {
+              }
             }
           }
         }
@@ -194,26 +221,6 @@ body.ar {
       }
     }
   }
-  .btns{
-    display: flex;
-    transition: 0.4s;
-    transform: translateX(200%);
-    flex-direction: column;
-    gap: 10px;
-    position: fixed;
-    top: 80%;
-    right: 20px;
-    z-index: 1000;
-    button{
-      width: 80px ;
-      height: 60px;
-      background-color: $main-Color-back;
-      color: white;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: bold;
-    }
-  }
 }
 
 .beauty_profile form button {
@@ -235,7 +242,7 @@ body.ar {
 @media screen and (max-width: 1100px) {
   .beauty_profile {
     .mega {
-     & > form {
+      & > form {
         display: none;
       }
       .con {
@@ -250,7 +257,7 @@ body.ar {
         display: none;
       }
     }
-    .btns{
+    .btns {
       transform: translateX(0);
     }
   }
@@ -265,12 +272,12 @@ body.ar {
         display: flex;
         flex-direction: column;
         .text {
-          order: 2 ;
-          margin-top: 200px;
+          order: 2;
+          margin-top: 100px;
           flex-direction: column;
-          div{
+          div {
             text-align: center;
-            a{
+            a {
               display: flex;
               justify-content: center;
               margin-bottom: 10px;
@@ -279,51 +286,61 @@ body.ar {
         }
         .boxSlider {
           position: absolute;
-          top:-200px ;
-          img{
-            max-height: 400px;
+          top: -200px;
+          .swiper{
+            width: 300px;
+            z-index: 2000;
+          }
+          .swiper-slide{
+            width: 300px !important;
+          }
+          img {
+            max-height: 300px;
           }
         }
         .services {
-          order: 3 ;
+          order: 3;
           flex-direction: column;
           gap: 10px;
-          .items{
+          padding-bottom: 0;
+          .items {
             text-align: center;
-            .item{
+            .item {
               flex-grow: 1;
             }
           }
-          button{
+          button {
             padding: 10px 0px;
           }
         }
         .overview {
-          order: 4 ;
+          order: 4;
         }
       }
     }
   }
 }
 
-.beauty_profile{
-.model_poup.active{
-  .content{
-    padding-bottom: 0;
+.beauty_profile {
+  .model_poup.active {
+    .content {
+      padding-bottom: 0;
+    }
+    form {
+      width: 100%;
+      box-shadow: 0px 0px !important;
+      margin: 0;
+      padding-bottom: 0 !important;
+    }
   }
-  form{
-    width: 100% ;
-    box-shadow: 0px 0px  !important;
-    margin: 0;
-    padding-bottom: 0 !important;
-  }
-}
 }
 
-@media screen and (min-width : 1100px) {
-  .beauty_profile{
-    .mega , .reviewDiv{
-      .overflow , .model_poup{
+@media screen and (min-width: 1100px) {
+  .beauty_profile {
+    .mega,
+    .reviewDiv {
+      .overflow,
+      .model_poup {
         display: none !important;
       }
     }

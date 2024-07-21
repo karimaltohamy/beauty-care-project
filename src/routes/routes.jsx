@@ -17,6 +17,7 @@ import Loading from "../components/loading/Loading.jsx";
 import { Suspense } from "react";
 import SignUpAsHostinger from "../pages/signAs/SignUpAsHostinger.jsx";
 import SignUser from "../pages/signUser/SignUser.jsx";
+import AccountData from "../pages/profile/accountData/AccountData.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +43,16 @@ export const router = createBrowserRouter([
             <Profile />
           </Suspense>
         ),
+        children : [
+          {
+            path: "accounts",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <AccountData />
+              </Suspense>
+            ),
+          },
+        ]
       },
       {
         path: "/beauty",

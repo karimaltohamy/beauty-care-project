@@ -1,7 +1,6 @@
 @import "../../assets/variables.scss";
 
 .mini_header {
-  // background-color: #fbeade;
   background-color: $main-Color-back;
   color: white;
   padding: 8px;
@@ -12,6 +11,12 @@ header {
   position: relative;
   z-index: 100;
   border-bottom: 1px solid rgb(223, 223, 223);
+
+  .paths{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 
   .links {
     display: flex;

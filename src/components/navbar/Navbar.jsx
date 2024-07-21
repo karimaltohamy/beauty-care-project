@@ -38,7 +38,7 @@ const Navbar = () => {
             className={({ isActive }) =>
               isActive ? "link !text-primary" : "link"
             }
-            to="/profile"
+            to="/profile/accounts"
           >
             <CgProfile size={32} />
             <span>{t("profile")}</span>
