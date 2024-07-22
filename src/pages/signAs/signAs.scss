@@ -13,7 +13,6 @@ body.ar {
       }
       form {
         .form {
-          transform: translateX(20px);
           input,
           select {
             border-top-left-radius: 5px;
@@ -39,51 +38,48 @@ body.ar {
 
 .sign {
   width: 100%;
-  padding: 60px;
+  padding: 30px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
   .all {
     position: relative;
     width: 90%;
-    box-shadow: 20px 20px 10px #907c6c;
+    box-shadow: 0px 0px 10px #907c6c;
     display: flex;
     border-radius: 20px;
     .img {
       max-width: 100%;
-      flex-basis: 35%;
+      flex-basis: 40%;
       img {
         height: 100%;
-        object-fit: cover;
         width: 100%;
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
       }
     }
     i {
-      background-color: white;
       width: 30px;
       height: 42px;
       font-size: 12px;
       display: flex;
       justify-content: center;
-      color: $main-Color-back;
       align-items: center;
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
+      background-color: $main-Color-back;
+      color: white;
+      font-weight: bold;
     }
     form {
       position: relative;
-      background-color: $main-Color-back-box;
-      border-radius: 20px;
-      flex-basis: 65%;
+      flex-basis: 60%;
+      height: fit-content;
       .form {
-        transform: translateX(-20px);
-        border-radius: 20px;
-        background-color: $main-Color-back-box;
-        padding: 20px 10px;
+        padding: 15px;
+        padding-bottom: 0%;
+        height: 100%;
         .details {
-          transition: 1s ease-in-out;
           .title {
             display: block;
             font-size: 16px;
@@ -175,26 +171,38 @@ body.ar {
                 font-size: 16px;
               }
             }
-          }
-          &.personal {
-            transform: translateX(0%) !important;
-            margin-top: 20px;
-          }
-          &.none {
-            opacity: 0;
-            position: absolute;
-            transform: translateX(300%);
-            pointer-events: none;
-          }
-          &.prand {
-            transform: translatex(300%);
-            position: absolute;
-            top: 0;
-            &.render {
-              position: relative;
-              transform: translatex(0%);
+            .input-field,
+            .work {
+              border-bottom: 1px solid #ddd;
+              input,
+              select {
+                color: black;
+              }
+              input {
+                &::placeholder {
+                  color: black;
+                }
+              }
             }
           }
+          &.personal {
+            margin-bottom: 20px;
+          }
+          // &.none {
+          //   opacity: 0;
+          //   position: absolute;
+          //   transform: translateX(300%);
+          //   pointer-events: none;
+          // }
+          // &.prand {
+          //   transform: translatex(300%);
+          //   position: absolute;
+          //   top: 0;
+          //   &.render {
+          //     position: relative;
+          //     transform: translatex(0%);
+          //   }
+          // }
         }
       }
     }
@@ -239,22 +247,13 @@ body.ar {
   }
 }
 
-.sign {
-  .btns {
-    display: flex;
-    gap: 10px;
-    color: white;
-    font-weight: bold;
-    width: 100%;
-  }
-}
-
 .sign form button {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 30px;
   margin: 0% auto;
+  margin-bottom: 15px;
   width: 100%;
   padding: 20px;
   border-radius: 5px;
@@ -266,59 +265,47 @@ body.ar {
 
 @media screen and (max-width: 800px) {
   .sign {
-    padding: 30px;
     .all {
       box-shadow: 0px 0px 0px;
       display: block;
       .img {
         display: none;
       }
+      form {
+        background-color: white !important;
+      }
       .form {
         background-color: white !important;
         transform: translateX(0) !important;
         padding: 0 !important;
-        .progress{
-          span{
-            background-color: #4C06A7;
-          }
-        }
         .details {
-          .title{
-            border-bottom: 1px solid #4C06A7 !important;
-          }
-          .fields{
+          .fields {
             gap: 20px !important;
           }
           .input-field,
           .work {
-            border-bottom: 1px solid #ddd;
-            input,
-            select{
-              color: black;
-            }
-            i{
-              background-color: #8B2FFF;
-              color: white;
-              font-weight: bold;
-            }
-            input {
-              &::placeholder {
-                color: black;
-              }
-            }
             width: calc((100% - 20px) / 1) !important;
           }
         }
-        .btns {
-          width: 100%;
-          button:first-child{
-            background-color: #8B2FFF;
-          }
-        }
-        button {
-          width: 100%;
-          background-color: #4C06A7;
-        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1120px) and (max-width :1353px) {
+  .sign {
+    .all {
+      .img {
+        max-height: 730px ;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1353px) {
+  .sign {
+    .all {
+      .img {
+        max-height: 705px ;
       }
     }
   }

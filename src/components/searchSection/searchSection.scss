@@ -1,0 +1,72 @@
+@import "../../assets/variables.scss";
+
+.search_section {
+  padding: 15px;
+  border: 2px solid $main-Color-back;
+  margin-top: -100px;
+  position: relative;
+  z-index: 100;
+
+  .categories {
+    margin-bottom: 15px;
+
+    .item {
+      padding: 5px 12px;
+      border-radius: 5px;
+      background-color: #1a2b47;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      &.active {
+        background-color: $main-Color-back;
+      }
+
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .input_item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgb(218, 218, 218);
+    }
+
+    svg {
+      color: var(--primary-color);
+    }
+
+    input {
+      width: 100%;
+      padding: 2px;
+      flex: 1;
+      outline: none;
+    }
+  }
+
+  .btn_submit {
+    flex: 1;
+    padding: 10px;
+    width: 100%;
+    max-width: 200px;
+    background-color: $main-Color-back;
+    color: white;
+    font-weight: 700;
+    border-radius: 8px;
+    font-size: 18px;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
+  }
+}

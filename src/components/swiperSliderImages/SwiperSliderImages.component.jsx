@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -9,26 +9,30 @@ import "swiper/css/navigation";
 import "./swiperSliderImages.scss";
 
 // import required modules
-import { Keyboard, Pagination, Navigation } from "swiper/modules";
+import { Keyboard, Pagination, Navigation  ,Autoplay} from "swiper/modules";
 import productImg from "../../assets/images/product-1.jpg";
 
 const SwiperSliderImages = () => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
   return (
     <div className="slider">
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
+        loop={true}
         keyboard={{
           enabled: true,
         }}
         pagination={{
           clickable: true,
         }}
-        navigation={true}
-        modules={[Keyboard, Pagination, Navigation]}
-        className="mySwiper"
+        navigation={{
+          clickable : true
+        }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        modules={[Keyboard, Pagination, Navigation  , Autoplay]}
       >
         <SwiperSlide>
           <img src={productImg} alt="product_img" />

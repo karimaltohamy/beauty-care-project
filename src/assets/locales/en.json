@@ -122,5 +122,8 @@
   "Your email address will not be published. Required fields are marked *": "Your email address will not be published. Required fields are marked *",
   "your_rating": "Your Rating",
   "your_review": "Your Review",
-  "service_type": "Service Type"
+  "service_type": "Service Type",
+  "write_name_the_place": "Write Name The Place",
+  "write_the_location": "Write The Location",
+  "trending_now": "Trending Now"
 }

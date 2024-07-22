@@ -71,10 +71,11 @@ const Header = () => {
       <header className="">
         <div className="container">
           <div className="md:flex items-center justify-between hidden">
-            <Link to={"/"}>
-              <GiAnimalSkull size={45} />
-            </Link>
-
+            <div className="paths">
+              <Link to={"/"}>
+                <GiAnimalSkull size={45} />
+              </Link>
+            </div>
             <div className="links">
               <NavLink
                 to={"/"}
@@ -138,7 +139,7 @@ const Header = () => {
                   className="w-[30px] h-[30px] object-cover rounded-full"
                 />
               </div>
-              <Link to={"/profile"}>
+              <Link to={"/profile/accounts"}>
                 <img
                   src={profileImg}
                   alt="profileImg"
@@ -164,13 +165,13 @@ const Header = () => {
             <Link to={"/"}>
               <GiAnimalSkull size={55} />
             </Link>
-            <button>
+            {/* <button>
               <img
                 src={profileImg}
                 alt="profileImg"
                 className="w-[30px] h-[30px] object-cover rounded-full"
               />
-            </button>
+            </button> */}
           </div>
         </div>
       </header>
