@@ -4,11 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-<<<<<<< HEAD
 import "swiper/css/pagination";
-=======
-import "swiper/css/free-mode";
->>>>>>> b731f265bd7e3f00052f9aa7ab8df563daa40794
 import "swiper/css/navigation";
 import "./swiperSliderImages.scss";
 

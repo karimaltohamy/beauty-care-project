@@ -100,6 +100,7 @@ const BeautyProfile = () => {
               </ul>
             </div>
           </div>
+
           <Reviews />
         </div>
       </div>
