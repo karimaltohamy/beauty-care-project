@@ -11,6 +11,7 @@ import OusrServices from "../../components/ourServices/OusrServices";
 import OurWork from "../../components/ourWork/OurWork";
 import Reviews from "../../components/reviews/Reviews";
 import Popup from "../../components/popup/Popup";
+import { useNavigate } from "react-router-dom";
 
 const BeautyProfile = () => {
   const [choosenSer, setChoosenSer] = useState([]);
@@ -18,6 +19,7 @@ const BeautyProfile = () => {
   const [popupSer, setPopSer] = useState(false);
   const [popupComm, setPopComm] = useState(false);
   const [popupRepo, setpopRepo] = useState(false);
+  const navigate = useNavigate();
   // const
   const arrServices = [
     {
@@ -123,6 +125,15 @@ const BeautyProfile = () => {
 
   return (
     <div className="beauty_profile">
+      <div className="container info">
+        <a href="" className="location">
+          <IoLocationOutline size={24} />
+          <span>Cairo</span>
+        </a>
+        <button onClick={() => navigate(-1)}>
+          <p>{t("Back")}</p> <i className="fa-solid fa-backward"></i>
+        </button>
+      </div>
       <Banner title={"Pouch Pocket Hoodie Orange"} classHidden={true} />
       <div className="container">
         <div className="mega">

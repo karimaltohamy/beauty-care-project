@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import img from "../../assets/images/ai-generated-8556454_1920.jpg";
 import { NavLink } from "react-router-dom";
@@ -8,9 +8,10 @@ import { useTranslation } from "react-i18next";
 
 function SideBar() {
   const { t } = useTranslation();
+  const sideRef = useRef()
   const {lang} = localStorage
   return (
-    <div className="side">
+    <div className="side" ref={sideRef}>
       <div className="img">
         <img src={img} alt="" />
         <h1>Mohamed Gamal</h1>

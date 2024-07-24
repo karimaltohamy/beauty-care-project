@@ -1,12 +1,11 @@
 @import "../../assets/variables.scss";
 
-
-body.ar{
-  .side{
-    .orders{
-      &:hover{
-        .topic{
-          i:last-child{
+body.ar {
+  .side {
+    .orders {
+      &:hover {
+        .topic {
+          i:last-child {
             transform: rotate(-90deg);
           }
         }
@@ -15,13 +14,12 @@ body.ar{
   }
 }
 
-
 .side {
-  max-width: 300px;
   background-color: $main-Color-back;
   height: 100%;
   padding: 20px;
   color: white;
+  transition: $transtions;
   .img {
     display: flex;
     justify-content: center;
@@ -39,7 +37,7 @@ body.ar{
   .data {
     display: flex;
     flex-direction: column;
-    *{
+    * {
       text-transform: capitalize;
     }
     gap: 5px;
@@ -53,7 +51,7 @@ body.ar{
       &:last-child {
         border: none;
       }
-      &:hover{
+      &:hover {
         background-color: white;
         padding: 0px 10px;
         transition: $transtions;
@@ -64,21 +62,11 @@ body.ar{
       display: flex;
       flex-direction: column;
       justify-content: center;
-      &:hover {
-        .small {
-          height: 136px;
-        }
-        .topic{
-          i:last-child{
-            transform: rotate(90deg);
-          }
-        }
-      }
       .topic {
         display: flex;
         gap: 15px;
         align-items: center;
-        i:last-child{
+        i:last-child {
           font-size: 12px;
         }
       }
@@ -87,10 +75,10 @@ body.ar{
         transition: $transtions;
       }
       .small {
-        margin: 5px 10px;
+        margin: 5px 20px;
         display: flex;
         transition: $transtions;
-        height: 0;
+        height: fit-content;
         overflow: hidden;
         flex-direction: column;
       }

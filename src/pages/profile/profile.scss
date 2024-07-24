@@ -1,4 +1,28 @@
 .profile{
-  display: grid;
-  grid-template-columns: 300px 1fr;
+  position: relative;
+  .grid{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: calc(100vh - 106px);
+    @media screen and (max-width : 768px) {
+      display: block;
+      .side{
+        width: 100%;
+        .img{
+          border:  none;
+        }
+      }
+      .account{
+        padding: 0px ;
+      }
+    }
+    .view{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .center{
+        height: fit-content;
+      }
+    }
+  }
 }

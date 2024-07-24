@@ -7,7 +7,6 @@ import salon from "../../assets/images/salon-2561845_1280.jpg";
 import { Autoplay } from "swiper/modules";
 
 function OusrServices({ arr }) {
-  const { lang } = localStorage;
   return (
     <div className="services">
       <h1 style={{ fontWeight: "700", fontSize: "30px" }}>
