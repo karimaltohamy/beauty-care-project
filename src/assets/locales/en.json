@@ -125,5 +125,9 @@
   "service_type": "Service Type",
   "write_name_the_place": "Write Name The Place",
   "write_the_location": "Write The Location",
-  "trending_now": "Trending Now"
+  "trending_now": "Trending Now",
+  "beauty_section": "Beauty Section",
+  "atelier_section": "Atelier Section",
+  "shein_section": "Shein Section",
+  "booking_now": "Booking Now"
 }

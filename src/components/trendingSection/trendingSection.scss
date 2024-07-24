@@ -1,14 +1,64 @@
+@import "../../assets/variables.scss";
+
 .trending_section {
   padding: 50px 0;
+  @media (max-width: 768px) {
+    padding: 25px 0;
+  }
+
   .title_section {
     font-size: 30px;
-    font-weight: 600;
-    margin-bottom: 20px;
+    font-weight: 700;
   }
 
   .boxs {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
+    .swiper {
+      padding: 20px 0;
+    }
+    .box {
+      padding: 15px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: -2px 4px 15px rgb(211 211 211 / 49%);
+
+      .image {
+        height: 250px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 10px;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .title {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .desc {
+        color: gray;
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+
+      .price {
+        font-weight: 700;
+        font-size: 20px;
+      }
+
+      .btn_booking {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        color: white;
+        background-color: $main-Color-back;
+      }
+    }
   }
 }

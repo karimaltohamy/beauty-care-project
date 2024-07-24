@@ -1,0 +1,175 @@
+@import "../../assets/variables.scss";
+
+.beauty_section {
+  .swiper {
+    padding: 20px 0;
+  }
+
+  .box {
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: -2px 4px 15px rgb(211 211 211 / 49%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .image {
+      height: 150px;
+      width: 100px;
+      min-width: 200px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 10px;
+
+      @media (max-width: 768px) {
+        height: 130px;
+        min-width: 110px;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 700;
+
+      @media (max-width: 768px) {
+        font-size: 17px;
+      }
+    }
+
+    .desc {
+      color: gray;
+      font-size: 15px;
+      margin-bottom: 5px;
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .btn_booking {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      color: white;
+      background-color: $main-Color-back;
+    }
+  }
+}
+
+.shein_section {
+  .box {
+    border-top-right-radius: 55px;
+    border-bottom-left-radius: 55px;
+    border: 1px solid rgb(199, 199, 199);
+    cursor: pointer;
+
+    .img {
+      position: relative;
+      img {
+        border-top-right-radius: 55px;
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+      }
+      .icon:hover {
+        svg {
+          transition: $transtions;
+          color: red !important;
+        }
+      }
+      .price {
+        position: absolute;
+        padding: 0px 10px;
+        width: 100%;
+        display: flex;
+        gap: 4px;
+        top: 70%;
+        flex-direction: column;
+        color: white;
+        font-weight: bold;
+        p {
+          font-size: 22px;
+          text-decoration: line-through;
+          height: 12px;
+        }
+        h2 {
+          font-size: 30px;
+        }
+      }
+      .dis {
+        width: 100%;
+        padding: 0px 10px;
+        display: flex;
+        position: absolute;
+        justify-content: end;
+        span {
+          position: absolute;
+          background-color: $main-Color-back;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          border-radius: 50%;
+          border: 2px solid white;
+          bottom: -20px;
+        }
+      }
+    }
+    .con {
+      padding: 20px 10px;
+      padding-right: 10px;
+      h1 {
+        color: $font-ddd;
+      }
+      .inside {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+      }
+      .rate {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        span:first-child {
+          font-size: 18px;
+          color: $main-Color-back;
+        }
+        span:last-child {
+          font-size: 12px;
+        }
+      }
+      .add {
+        margin-top: 10px;
+        width: 50px;
+        cursor: pointer;
+        background-color: $main-Color-back;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 10px;
+        button {
+          width: fit-content;
+        }
+      }
+    }
+  }
+}

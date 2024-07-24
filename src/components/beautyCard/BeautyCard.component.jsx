@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 
 const BeautyCard = () => {
   const { lang } = localStorage;
+
   return (
     <Link
       to={"/beauty/1"}

@@ -11,8 +11,8 @@ const Beauty = () => {
       <Banner title={t("beauty")} />
       <div className="py-12">
         <div className="container">
-          <div className="w-full]">
-            <div className="flex items-center justify-center md:justify-between flex-col md:flex-row mb-7 p-2 bg-[#FFF5EE] rounded-lg">
+          <div className="w-full">
+            <div className="flex items-center justify-center md:justify-between flex-col md:flex-row mb-7 p-2 bg-gray-100 rounded-lg">
               <h3 className="text-[19px] text-gray-500 font-semibold">
                 11 {t("results")}
               </h3>

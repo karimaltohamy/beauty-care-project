@@ -3,6 +3,9 @@ import { RouterProvider } from "react-router-dom";
 import { router } from "./routes/routes";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 function App() {
   const [mobile, setMobile] = useState(false);
