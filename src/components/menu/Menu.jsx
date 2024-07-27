@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { IoClose } from "react-icons/io5";
 import "./menu.scss";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { t } from "i18next";
 
 const Menu = ({ open, setOpen }) => {
   return (
@@ -13,21 +14,42 @@ const Menu = ({ open, setOpen }) => {
         </button>
       </div>
       <div className="links">
-        <Link to={"/"} className="link">
-          Home
-        </Link>
-        <Link to={"/"} className="link">
-          Hotel
-        </Link>
-        <Link to={"/"} className="link">
-          Persons
-        </Link>
-        <Link to={"/"} className="link">
-          Exercises
-        </Link>
-        <Link to={"/"} className="link">
-          Treatment
-        </Link>
+        <NavLink
+          to={"/"}
+          className={({ isActive }) => (isActive ? "link active" : "link")}
+        >
+          {t("home")}
+        </NavLink>
+        <NavLink
+          to={"/beauty"}
+          className={({ isActive }) => (isActive ? "link active" : "link")}
+        >
+          {t("beauty")}
+        </NavLink>
+        <NavLink
+          to={"/packages"}
+          className={({ isActive }) => (isActive ? "link active" : "link")}
+        >
+          {t("packages")}
+        </NavLink>
+        <NavLink
+          to={"/atelier"}
+          className={({ isActive }) => (isActive ? "link active" : "link")}
+        >
+          {t("atelier")}
+        </NavLink>
+        <NavLink
+          to={"/shein"}
+          className={({ isActive }) => (isActive ? "link active" : "link")}
+        >
+          {t("shein")}
+        </NavLink>
+        <NavLink
+          to={"/clinics"}
+          className={({ isActive }) => (isActive ? "link active" : "link")}
+        >
+          {t("clinics")}
+        </NavLink>
       </div>
     </div>
   );

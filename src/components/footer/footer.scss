@@ -6,6 +6,11 @@ $dark-color: #0e0d16;
 footer {
   background-color: #060b14;
   color: white;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
   .footer_top {
     padding: 30px 0;
     border-bottom: 1px solid white;

@@ -6,13 +6,13 @@ import { MdOutlineHotel } from "react-icons/md";
 import { FaPerson, FaStar } from "react-icons/fa6";
 import { CgGym } from "react-icons/cg";
 import { RiPsychotherapyLine } from "react-icons/ri";
-import { MdOutlinePets } from "react-icons/md";
+import { RiSearch2Line } from "react-icons/ri";
 import { t } from "i18next";
 
 const SearchSection = () => {
   return (
     <div className="container">
-      <div className="mt-4  rounded-lg search_section bg-white">
+      <div className="mt-4 rounded-lg search_section bg-white">
         <div className="categories flex items-center justify-center flex-wrap gap-1">
           <div className="item active">
             <MdOutlineHotel size={18} />
@@ -53,6 +53,11 @@ const SearchSection = () => {
           </div>
           <button className="btn_submit">Search</button>
         </div>
+      </div>
+
+      <div className="search_mobile">
+        <RiSearch2Line size={25} />
+        <input type="text" placeholder="Search for places, shops" />
       </div>
     </div>
   );

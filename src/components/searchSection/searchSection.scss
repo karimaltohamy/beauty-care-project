@@ -8,6 +8,10 @@
   max-width: 85%;
   margin: -100px auto 0;
 
+  @media (max-width: 768px) {
+    display: none;
+  }
+
   .categories {
     margin-bottom: 15px;
 
@@ -69,5 +73,28 @@
     @media (max-width: 768px) {
       max-width: 100%;
     }
+  }
+}
+
+.search_mobile {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 11px;
+  border-radius: 6px;
+  box-shadow: 0 0 11px #c7c7c754;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    font-size: 17px;
   }
 }

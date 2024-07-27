@@ -114,7 +114,7 @@ const Home = () => {
           {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => {
             return (
               <SwiperSlide>
-                <div className="box">
+                <div className="box flex md:block">
                   <div className="img">
                     <img src={imgai} alt="" />
                     <div className="price">
@@ -127,6 +127,10 @@ const Home = () => {
                   </div>
                   <div className="con">
                     <h1>Deep Cleansing Oil</h1>
+                    <p class="desc md:hidden">
+                      Lorem ipsum dolor sit, amet adipite magni consequuntur
+                      eaque impedit facilis, atque maiores placeat!
+                    </p>
                     <div className="inside">
                       <div className="rate">
                         <span>4.6/5 {t("Excellent")}</span>

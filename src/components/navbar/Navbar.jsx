@@ -2,54 +2,49 @@ import React, { Fragment, useState } from "react";
 import "./navbar.scss";
 import { NavLink } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
-import { MdFavoriteBorder } from "react-icons/md";
-import { CgProfile } from "react-icons/cg";
-import { RiMenu2Line } from "react-icons/ri";
+import { TbPackages } from "react-icons/tb";
 import { useTranslation } from "react-i18next";
 import Menu from "../menu/Menu";
+import { PiOfficeChair } from "react-icons/pi";
+import { GiLargeDress } from "react-icons/gi";
 
 const Navbar = () => {
   const { t } = useTranslation();
-  const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <Fragment>
-      <nav>
+      <nav className="">
         <div className="flex items-center justify-between">
           <NavLink
-            className={({ isActive }) =>
-              isActive ? "link !text-primary" : "link"
-            }
+            className={({ isActive }) => (isActive ? "link active" : "link")}
             to="/"
           >
-            <AiOutlineHome size={32} />
+            <AiOutlineHome size={25} />
             <span>{t("home")}</span>
           </NavLink>
           <NavLink
-            className={({ isActive }) =>
-              isActive ? "link !text-primary" : "link"
-            }
-            to="/favorite"
+            className={({ isActive }) => (isActive ? "link active" : "link")}
+            to="/beauty"
           >
-            <MdFavoriteBorder size={32} />
-            <span>{t("favorite")}</span>
+            <PiOfficeChair size={25} />
+            <span>{t("beauty")}</span>
           </NavLink>
           <NavLink
-            className={({ isActive }) =>
-              isActive ? "link !text-primary" : "link"
-            }
-            to="/profile/accounts"
+            className={({ isActive }) => (isActive ? "link active" : "link")}
+            to="/packages"
           >
-            <CgProfile size={32} />
-            <span>{t("profile")}</span>
+            <TbPackages size={25} />
+            <span>{t("packages")}</span>
           </NavLink>
-          <button onClick={() => setOpenMenu(true)} className={"link"}>
-            <RiMenu2Line size={32} />
-            <span>{t("menu")}</span>
-          </button>
+          <NavLink
+            className={({ isActive }) => (isActive ? "link active" : "link")}
+            to="/atelier"
+          >
+            <GiLargeDress size={25} />
+            <span>{t("atelier")}</span>
+          </NavLink>
         </div>
       </nav>
-      <Menu open={openMenu} setOpen={setOpenMenu} />
     </Fragment>
   );
 };

@@ -80,6 +80,8 @@
 
     .img {
       position: relative;
+      min-width: 180px;
+
       img {
         border-top-right-radius: 55px;
         height: 200px;
@@ -135,18 +137,39 @@
     .con {
       padding: 20px 10px;
       padding-right: 10px;
-      h1 {
-        color: $font-ddd;
+
+      @media (max-width: 768px) {
+        padding: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
+
+      h1 {
+        font-size: 22px;
+        font-weight: 600;
+      }
+
+      .desc {
+        font-size: 14px;
+        color: gray;
+      }
+
       .inside {
         display: flex;
         justify-content: space-between;
         align-items: end;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+        }
       }
       .rate {
         display: flex;
         align-items: center;
         gap: 5px;
+
         span:first-child {
           font-size: 18px;
           color: $main-Color-back;

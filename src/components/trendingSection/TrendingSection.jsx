@@ -14,9 +14,9 @@ const TrendingSection = () => {
           <Swiper
             spaceBetween={25}
             breakpoints={{
-              450: {
-                slidesPerView: 1,
-                spaceBetween: 20,
+              250: {
+                slidesPerView: 2,
+                spaceBetween: 15,
               },
               640: {
                 slidesPerView: 2,

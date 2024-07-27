@@ -35,10 +35,14 @@ body {
   &.en {
     direction: ltr;
   }
+
+  @media (max-width: 768px) {
+    padding-bottom: 50px;
+  }
 }
 
 .container {
-  width: 90% !important;
+  width: 95% !important;
   margin: 0 auto;
 }
 

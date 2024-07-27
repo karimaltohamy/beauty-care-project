@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import heroImg from "../../assets/images/hero-img.jpg";
 import heroImg2 from "../../assets/images/hero-img2.jpg";
 import "./heroSection.scss";
-import SearchSection from "../searchSection/SearchSection";
 
 const HeroSection = () => {
   return (

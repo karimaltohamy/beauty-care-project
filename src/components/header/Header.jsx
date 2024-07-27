@@ -9,12 +9,16 @@ import { useTranslation } from "react-i18next";
 import { PiPhoneCall } from "react-icons/pi";
 import { FaXTwitter } from "react-icons/fa6";
 import { SlSocialFacebook } from "react-icons/sl";
-import { IoLogoInstagram } from "react-icons/io5";
+import { IoLocationSharp, IoLogoInstagram } from "react-icons/io5";
+import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import { IoLocationOutline } from "react-icons/io5";
+import Menu from "../menu/Menu";
 
 const Header = () => {
   const { i18n, t } = useTranslation();
   const lang = localStorage.getItem("lang");
   const [mobile, setMobile] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
   const changeLanguage = async (lang) => {
     i18n.changeLanguage(lang);
@@ -150,31 +154,24 @@ const Header = () => {
           </div>
 
           <div className="flex items-center justify-between md:hidden">
-            <div
-              className="rounded-full"
-              onClick={() =>
-                changeLanguage(i18n.language == "ar" ? "en" : "ar")
-              }
-            >
-              <img
-                src={i18n.language == "ar" ? enImg : arImg}
-                alt="profileImg"
-                className="w-[35px] h-[35px] object-cover rounded-full"
-              />
+            <button className="rounded-full" onClick={() => setOpenMenu(true)}>
+              <HiOutlineMenuAlt2 size={30} />
+            </button>
+            <div className="flex items-center gap-1 location">
+              <IoLocationSharp size={22} />
+              <span>100ft Road, Kanner</span>
             </div>
-            <Link to={"/"}>
-              <GiAnimalSkull size={55} />
-            </Link>
-            {/* <button>
+            <button>
               <img
                 src={profileImg}
                 alt="profileImg"
-                className="w-[30px] h-[30px] object-cover rounded-full"
+                className="w-[45px] h-[45px] object-cover rounded-full"
               />
-            </button> */}
+            </button>
           </div>
         </div>
       </header>
+      <Menu open={openMenu} setOpen={setOpenMenu} />
     </Fragment>
   );
 };

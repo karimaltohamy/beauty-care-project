@@ -3,16 +3,24 @@
 .mini_header {
   background-color: $main-Color-back;
   color: white;
-  padding: 8px;
+  padding: 8px 0;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 header {
-  padding: 10px;
+  padding: 10px 0;
   position: relative;
   z-index: 100;
   border-bottom: 1px solid rgb(223, 223, 223);
 
-  .paths{
+  @media (max-width: 768px) {
+    border-bottom: unset;
+  }
+
+  .paths {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -32,6 +40,17 @@ header {
       &.active {
         color: $main-Color-back !important;
       }
+    }
+  }
+
+  .location {
+    svg {
+      color: $main-Color-back;
+    }
+
+    span {
+      font-weight: 700;
+      font-size: 18px;
     }
   }
 }
