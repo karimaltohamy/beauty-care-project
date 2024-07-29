@@ -2,7 +2,7 @@ import React from "react";
 import { t } from "i18next";
 import "./review.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import salon from "../../assets/images/images.png";
 import Popup from "../popup/Popup";
 
@@ -54,7 +54,7 @@ function Reviews({ popupComm, setPopComm }) {
               </div>
             </div>
           </div>
-          <form className="not">  
+          <form className="not">
             <div className={`details`}>
               <div className="fields">
                 <div className="input-field">
@@ -76,7 +76,7 @@ function Reviews({ popupComm, setPopComm }) {
             needFrom={false}
             title={t("Write A Comment")}
           >
-            <form >
+            <form>
               <div className={`details`}>
                 <div className="fields">
                   <div className="input-field">
@@ -109,6 +109,10 @@ function Reviews({ popupComm, setPopComm }) {
           <Swiper
             watchSlidesProgress={true}
             slidesPerView={3}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
             grabCursor={true}
             autoplay={{
               delay: 2000,
@@ -125,14 +129,10 @@ function Reviews({ popupComm, setPopComm }) {
                 slidesPerView: 3,
                 spaceBetween: 20,
               },
-              1400: {
-                slidesPerView: 4,
-                spaceBetween: 20,
-              },
             }}
             loop={true}
-            spaceBetween={20}
-            modules={[Autoplay]}
+            spaceBetween={40}
+            modules={[Autoplay, Pagination , Navigation]}
           >
             {[...Array(6)].map(() => {
               return (

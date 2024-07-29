@@ -7,28 +7,17 @@
     width: 90%;
     margin: 0% auto;
   }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 20px;
-    .box {
+  .swiper {
+    .swiper-slide{
 
-      border-top-right-radius: 60px ;
+    }
+    .box {
+      border-top-right-radius: 60px  ;
       border-bottom-left-radius: 60px;
       cursor: grabbing;
       img {
         border-top-right-radius: 60px ;
         border-bottom-left-radius: 60px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .work{
-    .all{
-      .grid{
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       }
     }
   }

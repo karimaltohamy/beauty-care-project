@@ -7,9 +7,39 @@ body.ar {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
   }
+
+  .beauty_profile {
+    .info {
+      button {
+        flex-direction: row;
+      }
+    }
+  }
 }
+
 .beauty_profile {
   position: relative;
+  .info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+    display: none;
+    @media screen and (max-width : 768px) {
+      display: flex;
+    }
+    button , a {
+      background-color: $main-Color-back;
+      color: white !important ;
+      font-weight: bold;
+      max-width: fit-content;
+      padding: 6px 10px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      gap: 5px;
+    }
+  }
   .mega {
     display: flex;
     gap: 20px;
@@ -90,20 +120,22 @@ body.ar {
           background-color: $main-Color-back;
           color: white;
           border-radius: 10px;
-          & {
-            @media screen and (min-width: 768px) {
-              display: none;
-            }
+          min-width: 200px;
+          @media screen and (min-width: 1100px) {
+            display: none;
           }
         }
         .btns {
           display: flex;
           gap: 10px;
-          @media screen and (max-width: 768px) {
-            padding-bottom:20px;
+          color: white;
+          @media screen and (max-width: 1100px) {
             justify-content: space-between;
-            button{
+            flex-grow: 1;
+            button {
+              min-width: 150px;
               width: 50%;
+              padding: 8px 0px;
             }
           }
 
@@ -111,16 +143,13 @@ body.ar {
             border-radius: 10px;
             background-color: $main-Color-back;
             &.comm {
-              @media screen and (min-width: 768px) {
+              @media screen and (min-width: 1100px) {
                 display: none;
               }
             }
-            color: white;
             &.repo {
               padding: 0px 10px;
               background-color: red;
-              @media screen and (min-width: 768px) {
-              }
             }
           }
         }
@@ -129,8 +158,7 @@ body.ar {
     form {
       width: 25%;
       margin: 30px 0px;
-      padding: 20px;
-      padding-bottom: 0%;
+      padding: 10px 20px;
       box-shadow: 0px 0px 10px #907c6c;
       flex-grow: 1;
       height: fit-content;
@@ -257,9 +285,6 @@ body.ar {
         display: none;
       }
     }
-    .btns {
-      transform: translateX(0);
-    }
   }
 }
 @media screen and (max-width: 768px) {
@@ -287,11 +312,11 @@ body.ar {
         .boxSlider {
           position: absolute;
           top: -200px;
-          .swiper{
+          .swiper {
             width: 300px;
             z-index: 2000;
           }
-          .swiper-slide{
+          .swiper-slide {
             width: 300px !important;
           }
           img {
@@ -330,7 +355,7 @@ body.ar {
       width: 100%;
       box-shadow: 0px 0px !important;
       margin: 0;
-      padding-bottom: 0 !important;
+      padding: 10px 20px !important;
     }
   }
 }

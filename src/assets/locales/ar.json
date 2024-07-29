@@ -208,9 +208,14 @@
   "Zip": "الرمز البريدي",
   "write_name_the_place": "اكتب اسم المكان",
   "write_the_location": "اكتب الموقع",
+<<<<<<< HEAD
   "trending_now": "المشهور الآن",
   "beauty_section": "قسم التجميل",
   "atelier_section": "قسم الأتيليه",
   "shein_section": "قسم شين",
   "booking_now": "الحجز الآن"
+=======
+  "trending_now": "المشهور الآن" ,
+  "Profile" : "الملف الشخصي"
+>>>>>>> dbd9ba6f2b8864fe449dced99b781fe53369b18b
 }
