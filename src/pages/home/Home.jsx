@@ -25,8 +25,8 @@ const Home = () => {
           title={"beauty_section"}
           link={"/beauty"}
           breakpoints={{
-            450: {
-              slidesPerView: 1,
+            250: {
+              slidesPerView: 1.2,
               spaceBetween: 20,
             },
             640: {
@@ -70,8 +70,8 @@ const Home = () => {
           title={"atelier_section"}
           link={"/atelier"}
           breakpoints={{
-            450: {
-              slidesPerView: 1,
+            250: {
+              slidesPerView: 1.2,
               spaceBetween: 20,
             },
             640: {
@@ -98,8 +98,8 @@ const Home = () => {
           title={"shein_section"}
           link={"/shein"}
           breakpoints={{
-            450: {
-              slidesPerView: 1,
+            250: {
+              slidesPerView: 1.2,
               spaceBetween: 20,
             },
             640: {
@@ -151,13 +151,46 @@ const Home = () => {
           })}
         </MainSection>
       </div>
+
       <div className="clinics_section">
         <MainSection
           title={"shein_section"}
           link={"/clinics"}
           breakpoints={{
-            450: {
-              slidesPerView: 1,
+            250: {
+              slidesPerView: 1.2,
+              spaceBetween: 20,
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 25,
+            },
+            900: {
+              slidesPerView: 3,
+              spaceBetween: 25,
+            },
+            1200: {
+              slidesPerView: 4,
+              spaceBetween: 25,
+            },
+          }}
+        >
+          {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => {
+            return (
+              <SwiperSlide>
+                <CliniceCard />
+              </SwiperSlide>
+            );
+          })}
+        </MainSection>
+      </div>
+      <div className="packages_section">
+        <MainSection
+          title={"packages_section"}
+          link={"/packages"}
+          breakpoints={{
+            250: {
+              slidesPerView: 1.2,
               spaceBetween: 20,
             },
             640: {

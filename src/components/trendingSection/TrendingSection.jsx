@@ -15,11 +15,11 @@ const TrendingSection = () => {
             spaceBetween={25}
             breakpoints={{
               250: {
-                slidesPerView: 2,
+                slidesPerView: 1.6,
                 spaceBetween: 15,
               },
               640: {
-                slidesPerView: 2,
+                slidesPerView: 1.5,
                 spaceBetween: 25,
               },
               768: {

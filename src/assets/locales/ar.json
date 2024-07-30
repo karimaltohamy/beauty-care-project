@@ -213,5 +213,10 @@
   "atelier_section": "قسم الأتيليه",
   "shein_section": "قسم شين",
   "booking_now": "الحجز الآن",
-  "Profile": "الملف الشخصي"
+  "Profile": "الملف الشخصي",
+  "packages_section": "قسم الحزم",
+  "package_standard": "الحزمة القياسية",
+  "package_premuim": "الباقات المميزة",
+  "package_gold": "الباقات الذهبية",
+  "package_vip": "باقات كبار الشخصيات"
 }

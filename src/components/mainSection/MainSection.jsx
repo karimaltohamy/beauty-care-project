@@ -10,9 +10,11 @@ const MainSection = ({ children, title, link, breakpoints }) => {
       <div className="container">
         <div className="head flex items-center justify-between">
           <h3 className="title_section">{t(title)}</h3>
-          <Link className="btn_link" to={link}>
-            See All
-          </Link>
+          {link && (
+            <Link className="btn_link" to={link}>
+              See All
+            </Link>
+          )}
         </div>
         <Swiper spaceBetween={25} breakpoints={breakpoints}>
           {children}

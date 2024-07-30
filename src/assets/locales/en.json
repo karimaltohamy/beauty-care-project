@@ -129,5 +129,10 @@
   "beauty_section": "Beauty Section",
   "atelier_section": "Atelier Section",
   "shein_section": "Shein Section",
-  "booking_now": "Booking Now"
+  "booking_now": "Booking Now",
+  "packages_section": "Packages Section",
+  "package_standard": "Standard Package",
+  "package_premuim": "Premuim Packages",
+  "package_gold": "Gold Packages",
+  "package_vip": "Vip Packages"
 }
