@@ -21,8 +21,8 @@ const Application = () => {
         pathname !== "/profile/accounts" && <Header />}
       {window.innerWidth >= 768 && <Header />}
       <Outlet />
-      {window.innerWidth <= 768 && <Navbar />}
-      {window.innerWidth >= 768 && <Footer />}
+      <Navbar />
+      <Footer />
     </Fragment>
   );
 };

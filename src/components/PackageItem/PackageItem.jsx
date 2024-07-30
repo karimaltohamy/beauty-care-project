@@ -13,7 +13,7 @@ const PackageItem = () => {
         </div>
         <div className="flex-1">
           <h3 className="title">Deep Cleansing Oil</h3>
-          <div class="service_review flex items-center justify-between w-full">
+          <div class="service_review flex items-center justify-between w-full text-[14px]">
             <span class="rate !text-yellow-500">
               4.5/5{" "}
               <span class="rate-text !text-yellow-500">{t("excellent")}</span>

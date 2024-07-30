@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 import { TbPackages } from "react-icons/tb";
 import { useTranslation } from "react-i18next";
-import Menu from "../menu/Menu";
 import { PiOfficeChair } from "react-icons/pi";
 import { GiLargeDress } from "react-icons/gi";
 

@@ -12,6 +12,7 @@ import imgai from "../../assets/images/ai-generated-8556454_1920.jpg";
 import { t } from "i18next";
 import { FaCartPlus } from "react-icons/fa6";
 import CliniceCard from "../../components/cliniceCard/CliniceCard.component";
+import PackageItem from "../../components/PackageItem/PackageItem";
 
 const Home = () => {
   return (
@@ -176,7 +177,7 @@ const Home = () => {
           {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => {
             return (
               <SwiperSlide>
-                <CliniceCard />
+                <PackageItem />
               </SwiperSlide>
             );
           })}
