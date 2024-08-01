@@ -5,7 +5,7 @@ import { t } from "i18next";
 function AccountData() {
   return (
     <div className="account center">
-      <form data-aos-easing="ease-out-cubic" data-aos="flip-down" data-aos-duration="1000">
+      <form>
         <div className="form">
           <div className={`details`}>
             <span className="title">{t("Personal_Details")}</span>

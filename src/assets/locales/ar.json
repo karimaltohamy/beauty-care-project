@@ -200,7 +200,7 @@
   "completed": "مكتمل",
   "pending": "قيد الانتظار",
   "support": "الدعم",
-  "my Branding": "البراند الخاص بي",
+  "my_Branding": "البراند الخاص بي",
   "settings": "الاعدادات",
   "Profile Settings": "إعدادات الملف الشخصي",
   "Update": "تعديل",
@@ -218,5 +218,8 @@
   "package_standard": "الحزمة القياسية",
   "package_premuim": "الباقات المميزة",
   "package_gold": "الباقات الذهبية",
-  "package_vip": "باقات كبار الشخصيات"
+  "package_vip": "باقات كبار الشخصيات",
+  "Informations": "معلومات",
+  "Menu": "القائمة",
+  "LogOut": "تسجيل خروج"
 }

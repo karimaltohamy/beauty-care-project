@@ -10,6 +10,9 @@ body.ar{
 
 .banner_page {
   background-image: url(../../assets/images/banner-page.jpg);
+  margin-bottom: 30px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
   position: relative;
   &::before {
     position: absolute;
@@ -20,6 +23,8 @@ body.ar{
     left: 0;
     top: 0;
     background: $main-Color-back-trans;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
     opacity: 0.8;
   }
   .container {
@@ -49,7 +54,7 @@ body.ar{
 }
 
 @media screen and (max-width : 768px) {
-  .none{
-    display: none !important ;
+  .banner_page{
+    display: none;
   }
 }

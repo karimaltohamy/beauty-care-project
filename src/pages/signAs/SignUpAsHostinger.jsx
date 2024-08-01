@@ -4,6 +4,7 @@ import imgEn from "../../assets/images/1..png";
 import imgAr from "../../assets/images/2..png";
 import "./signAs.scss";
 import Banner from "../../components/banner/Banner.component";
+import SmallHeader from "../../components/smallHeader/SmallHeader";
 
 const SignUpAsHostinger = () => {
   const [loading, setLoading] = useState(false);
@@ -16,6 +17,9 @@ const SignUpAsHostinger = () => {
 
   return (
     <Fragment>
+      {window.innerWidth <= 768 && (
+        <SmallHeader title={t("Start_With_Us")} padding={"20px"} />
+      )}
       <Banner title={t("Start_With_Us")} needBack={true} />
       <div
         className="sign"
@@ -40,7 +44,7 @@ const SignUpAsHostinger = () => {
                   <span className={`${next && "next"}`}></span>
                 </div>
               </div> */}
-              <div className={`details personal ${next && "none"}`}>
+              <div className={`details personal`}>
                 <span className="title">{t("Personal_Details")}</span>
                 <div className="fields">
                   <div className="input-field">
@@ -101,7 +105,7 @@ const SignUpAsHostinger = () => {
                   </div>
                 </div>
               </div>
-              <div className={`details prand ${next && "render"}`}>
+              <div className={`details prand `}>
                 <span className="title">{t("Prand_Details")}</span>
                 <div className="fields">
                   <div className="input-field">

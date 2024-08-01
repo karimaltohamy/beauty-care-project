@@ -161,13 +161,13 @@ const Header = () => {
               <IoLocationSharp size={22} />
               <span>100ft Road, Kanner</span>
             </div>
-            <button>
+            <Link to={"/profile/accounts"} >
               <img
                 src={profileImg}
                 alt="profileImg"
                 className="w-[45px] h-[45px] object-cover rounded-full"
               />
-            </button>
+            </Link>
           </div>
         </div>
       </header>

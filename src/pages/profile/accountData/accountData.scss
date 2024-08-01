@@ -16,14 +16,11 @@ body.ar {
 .account {
   padding: 30px;
   width: 100%;
-  height: 100%;
   form {
     box-shadow: 0px 0px 10px #907c6c;
-    height: 100%;
     border-radius: 20px;
     padding: 20px;
     .form {
-      height: 100%;
       i {
         width: 30px;
         height: 42px;
@@ -117,15 +114,12 @@ body.ar {
   .account {
     form {
       box-shadow: 0px 0px 0px;
-      background-color: white !important;
     }
     .form {
-      background-color: white !important;
-      transform: translateX(0) !important;
       padding: 0 !important;
       .details {
         .fields {
-          gap: 20px !important;
+          gap: 10px !important;
         }
         .input-field {
           width: calc((100% - 20px) / 1) !important;

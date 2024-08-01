@@ -1,0 +1,111 @@
+@import "../../../assets/variables.scss";
+body.ar {
+  .profile {
+    .orders {
+      .search {
+        i {
+          border-top-left-radius: 0px;
+          border-bottom-left-radius: 0px;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        input {
+          border-top-right-radius: 0px;
+          border-bottom-right-radius: 0px;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+      }
+      table{
+        thead {
+            th:not(:last-child) {
+              border-left: 1px solid black;
+            }
+          }
+      }
+    }
+  }
+}
+.profile {
+  .view {
+    @media screen and (max-width: 768px) {
+      height: 100vh;
+      .orders {
+        margin-top: 20px;
+      }
+    }
+    padding: 0px 20px;
+    .orders {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow-x: scroll;
+      &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar {
+        width: 7px;
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: $main-Color-back;
+      }
+      .footerTable{
+        background-color: $main-Color-back;
+        padding: 20px;
+      }
+    }
+    .search {
+      width: 300px;
+      display: flex;
+      margin-bottom: 15px;
+      i {
+        background-color: $main-Color-back;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      input {
+        width: 100%;
+        padding: 3px 10px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        outline: none;
+        box-shadow: 0px 0px 1px;
+      }
+    }
+    table {
+      width: 100%;
+      flex-grow: 1;
+      border: 1px solid black;
+      min-width: 700px;
+      th,
+      td {
+        padding: 10px;
+      }
+      thead {
+        background-color: $main-Color-back;
+        color: white;
+        th:not(:first-child) {
+          border-left: 1px solid black;
+        }
+      }
+      tbody {
+        td {
+          border: 1px solid;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

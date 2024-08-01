@@ -1,0 +1,199 @@
+@import "../../../assets/variables.scss";
+
+body.ar {
+  .mybrand {
+    form {
+      .form {
+        input,
+        select {
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          border-top-right-radius: 0px  ;
+          border-bottom-right-radius: 0px ;
+        }
+      }
+    }
+    i {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-top-right-radius: 5px !important ;
+      border-bottom-right-radius: 5px !important;
+    }
+  }
+}
+
+.mybrand {
+  box-shadow: 0px 0px 10px #907c6c;
+  padding: 30px;
+  width: 100%;
+  border-radius: 20px;
+  i {
+    width: 30px;
+    height: 42px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: $main-Color-back;
+    color: white;
+    font-weight: bold;
+  }
+
+  form {
+    position: relative;
+    flex-basis: 60%;
+    height: fit-content;
+    .form {
+      padding: 15px;
+      padding-bottom: 0%;
+      height: 100%;
+      .details {
+        .title {
+          display: block;
+          font-size: 16px;
+          font-weight: bold;
+          border-bottom: 1px solid $main-Color-back;
+          padding-bottom: 15px;
+          width: 100%;
+        }
+        .fields {
+          display: flex;
+          gap: 25px;
+          flex-wrap: wrap;
+          align-items: start;
+          margin-top: 10px;
+          .input-field {
+            display: flex;
+            flex-direction: column;
+            .flex {
+              flex-grow: 1;
+              flex-direction: row-reverse;
+            }
+            width: calc((100% - 20px) / 4);
+            flex-grow: 1;
+            input,
+            select {
+              width: calc(100% - 20px);
+            }
+            label {
+              font-size: 13px;
+              font-weight: bold;
+              margin-bottom: 5px;
+            }
+            input,
+            select {
+              outline: none;
+              font-size: 14px;
+              font-weight: 400;
+              border-top-right-radius: 5px;
+              border-bottom-right-radius: 5px;
+              padding: 0 15px;
+              height: 42px;
+              &[type="file"] {
+                padding-top: 8px;
+                background-color: white;
+              }
+            }
+          }
+          .work {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            .inputs {
+              display: flex;
+              gap: 10px;
+              input,
+              select {
+                width: calc(100% - 20px);
+              }
+              .flex {
+                flex-grow: 1;
+                flex-direction: row-reverse;
+              }
+            }
+            label {
+              font-size: 13px;
+              font-weight: bold;
+              margin-bottom: 5px;
+            }
+            input {
+              outline: none;
+              font-size: 14px;
+              font-weight: 400;
+              border-top-right-radius: 5px;
+              border-bottom-right-radius: 5px;
+              padding: 0 15px;
+              height: 42px;
+            }
+          }
+          .holi {
+            label {
+              font-weight: bold;
+              margin-bottom: 5px;
+            }
+            span {
+              display: inline-flex;
+              align-items: center;
+              min-width: 100px;
+              gap: 3px;
+              font-size: 16px;
+            }
+          }
+          .input-field,
+          .work {
+            border-bottom: 1px solid #ddd;
+            input,
+            select {
+              color: black;
+            }
+            input {
+              &::placeholder {
+                color: black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mybrand form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  margin: 0% auto;
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: $main-Color-back;
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
+@media screen and (max-width: 800px) {
+    .mybrand {
+        box-shadow: 0px 0px 0px;
+        display: block;
+        .form {
+          transform: translateX(0) !important;
+          padding: 0 !important;
+          .details {
+            .fields {
+              gap: 20px !important;
+            }
+            .input-field,
+            .work {
+              width: calc((100% - 20px) / 1) !important;
+            }
+          }
+        }
+      }
+    }
+  

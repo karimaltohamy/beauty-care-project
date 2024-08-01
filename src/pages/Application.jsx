@@ -9,19 +9,14 @@ import "aos/dist/aos.css";
 const Application = () => {
   const location = useLocation();
   const { pathname } = location;
-  const { id } = useParams();
   useEffect(() => {
     Aos.init();
   }, []);
   return (
     <Fragment>
-      {window.innerWidth <= 768 &&
-        pathname !== `/beauty/${id}` &&
-        pathname !== "/signUpAsHostinger" &&
-        pathname !== "/profile/accounts" && <Header />}
-      {window.innerWidth >= 768 && <Header />}
+      {(window.innerWidth >= 768 || pathname === "/" ) && <Header />}
       <Outlet />
-      <Navbar />
+      {window.innerWidth >= 768 && <Navbar />}
       <Footer />
     </Fragment>
   );

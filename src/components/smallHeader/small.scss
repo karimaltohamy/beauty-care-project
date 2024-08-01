@@ -1,0 +1,26 @@
+@import "../../assets/variables.scss";
+
+body.ar {
+  .smallHeader {
+    flex-direction: row;
+  }
+}
+.smallHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+  background-color: $main-Color-back;
+  color: white;
+  p,
+  .back {
+    font-size: 18px;
+  }
+  .back {
+    background-color: white;
+    color: $main-Color-back;
+    padding: 2px 6px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}

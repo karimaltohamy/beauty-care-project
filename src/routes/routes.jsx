@@ -18,6 +18,8 @@ import { Suspense } from "react";
 import SignUpAsHostinger from "../pages/signAs/SignUpAsHostinger.jsx";
 import SignUser from "../pages/signUser/SignUser.jsx";
 import AccountData from "../pages/profile/accountData/AccountData.jsx";
+import Orders from "../pages/profile/orders/Orders.jsx";
+import My_Branding from "../pages/profile/myBrand/My_Branding.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +51,46 @@ export const router = createBrowserRouter([
             element: (
               <Suspense fallback={<Loading />}>
                 <AccountData />
+              </Suspense>
+            ),
+          },
+          {
+            path: "ordersFull",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <Orders />
+              </Suspense>
+            ),
+          },
+          {
+            path: "ordersCompleted",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <Orders />
+              </Suspense>
+            ),
+          },
+          {
+            path: "ordersPending",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <Orders />
+              </Suspense>
+            ),
+          },
+          {
+            path: "ordersCanceld",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <Orders />
+              </Suspense>
+            ),
+          },
+          {
+            path: "my_Branding",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <My_Branding />
               </Suspense>
             ),
           },
