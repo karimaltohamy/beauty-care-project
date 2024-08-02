@@ -9,12 +9,15 @@
       display: block;
       .side{
         display: none;
-        .img{
-          border:  none;
-        }
       }
       .account{
         padding: 0px ;
+      }
+      .view{
+        display: block !important;
+        form{
+          padding: 0;
+        }
       }
     }
     .view{

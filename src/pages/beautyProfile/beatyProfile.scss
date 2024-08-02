@@ -298,7 +298,6 @@ body.ar {
         flex-direction: column;
         .text {
           order: 2;
-          margin-top: 100px;
           flex-direction: column;
           div {
             text-align: center;
@@ -310,8 +309,6 @@ body.ar {
           }
         }
         .boxSlider {
-          position: absolute;
-          top: -200px;
           .swiper {
             width: 300px;
             z-index: 2000;

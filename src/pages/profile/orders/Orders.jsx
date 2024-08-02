@@ -135,9 +135,7 @@ function Orders() {
           })}
         </tbody>
       </table>
-      <div className="footerTable">
-        
-      </div>
+      <div className="footer"></div>
     </div>
   );
 }
