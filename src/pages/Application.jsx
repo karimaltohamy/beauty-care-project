@@ -15,9 +15,10 @@ const Application = () => {
   }, []);
   return (
     <Fragment>
-      {(pathname !== `/beauty/${id}` || window.innerWidth >= 768) && <Header />}
+      {((pathname !== `/beauty/${id}` && pathname !== `/shein/1`) ||
+        window.innerWidth >= 768) && <Header />}
       <Outlet />
-      {(window.innerWidth <= 768 && pathname !== `/beauty/${id}`) && <Navbar />}
+      {window.innerWidth <= 768 && pathname !== `/beauty/${id}` && <Navbar />}
       <Footer />
     </Fragment>
   );

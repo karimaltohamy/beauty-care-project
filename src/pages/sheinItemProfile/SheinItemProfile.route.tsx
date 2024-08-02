@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import SwiperSliderImages from "../../components/swiperSliderImages/SwiperSliderImages.component";
+import React, { useEffect, useState } from "react";
+
 import "./sheinItemProfile.scss";
 import { t } from "i18next";
 import { FaHeart, FaStar } from "react-icons/fa6";
@@ -7,18 +7,45 @@ import iconDelivary1 from "../../assets/images/delivery_by_noon.png";
 import iconDelivary2 from "../../assets/images/cash_on_delivery.png";
 import iconDelivary3 from "../../assets/images/high_rated_seller.png";
 import iconDelivary4 from "../../assets/images/low_return_product.png";
+import seller from "../../assets/images/seller.svg";
+import cat from "../../assets/images/ai-generated-8556454_1920.jpg";
+import bannerMenu from "../../assets/images/banner_Menu.png"
 import bannerImg from "../../assets/images/img-banner.png";
+import salon from "../../assets/images/salon-2561845_1280.jpg"
 import { GoDotFill } from "react-icons/go";
 import Reviews from "../../components/reviews/Reviews";
+import SmallHeader from "../../components/smallHeader/SmallHeader";
+
+
+const imgs = [cat , bannerMenu , cat , salon , bannerImg ]
 
 const SheinItemProfile = () => {
   const [popupComm, setPopComm] = useState(false);
+  const [src , setSrc] = useState()
+  useEffect(()=> {
+    setSrc(imgs[0])
+  }, [])
+  const { lang } = localStorage;
   return (
     <div className="shein_item_profile">
+      <SmallHeader title={t("shein")} padding={"20px"} />
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2   gap-7">
           <div className="images_product">
-            <SwiperSliderImages />
+            <div className="customslider">
+              <div className="imgsForShow">
+                {imgs.map((src , i) => {
+                  return (
+                    <div className="option" onClick={()=> setSrc(src)} key={i}>
+                      <img src={src} alt="" />
+                    </div>
+                  )
+                })}
+              </div>
+              <div className="bigPhoto">
+                <img src={src} alt="" />
+              </div>
+            </div>
             <div className="flex items-center gap-3 mt-5">
               <select>
                 <option value="1">1</option>
@@ -81,9 +108,29 @@ const SheinItemProfile = () => {
                 </div>
                 <span>Low Returns</span>
               </div>
+              <div className="last_part">
+                <div className="flex">
+                  <div className="img">
+                    <img src={seller} alt="" />
+                  </div>
+                  <div className="con">
+                    <h3>{t("Sold By Noon")}</h3>
+                    <p>
+                      <span>
+                        4.1 <i className="fa-solid fa-star"></i>{" "}
+                      </span>
+                      80% {t("Positive Ratings")}
+                    </p>
+                  </div>
+                </div>
+                <i
+                  className={`fa-solid fa-chevron-${
+                    lang == "ar" ? "left" : "right"
+                  }`}
+                ></i>
+              </div>
             </div>
           </div>
-          <div className="delivery_product ">delivery_product</div>
         </div>
         <div className="overview">
           <h1 className="title">{t("overview")}</h1>
@@ -176,6 +223,37 @@ const SheinItemProfile = () => {
           </div>
         </div>
         <Reviews setPopComm={setPopComm} popupComm={popupComm} />
+        <div className="also_view">
+          <h1>{t("Related Products")}</h1>
+          <div className="viewProducts">
+            {[...Array(6)].map((ele) => {
+              return (
+                <div className="product" key={ele}>
+                  <div className="front">
+                    <img src={cat} alt="" />
+                  </div>
+                  <div className="back">
+                    <div className="back-content ">
+                      <div className="icon">
+                        <i className="fa-solid fa-heart"></i>
+                        <i  className="fa-solid fa-cart-plus"></i>
+                      </div>
+                      <p>
+                        {t("Description")} : Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Eligendi, tenetur. Velit
+                        labore soluta impedit nihil sequi rem officiis magnam?
+                        Magnam reprehenderit vero vel mollitia, officia quos non
+                        fugit similique quod.
+                      </p>
+                      <p>{t("price")} : 200 EGP</p>
+                      <div className="label">Express</div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );

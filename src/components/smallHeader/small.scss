@@ -12,6 +12,11 @@ body.ar {
   flex-direction: row-reverse;
   background-color: $main-Color-back;
   color: white;
+  @media screen and (min-width : 768px) {
+    &{
+      display: none;
+    }
+  }
   p,
   .back {
     font-size: 18px;

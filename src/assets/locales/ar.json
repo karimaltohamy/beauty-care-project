@@ -222,5 +222,6 @@
   "Informations": "معلومات",
   "Menu": "القائمة",
   "LogOut": "تسجيل خروج",
-  "add_order": "إضافة الطلب"
+  "add_order": "إضافة الطلب" ,
+  "Related Products" : "منتجات اخري"
 }
