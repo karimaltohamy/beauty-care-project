@@ -1,0 +1,134 @@
+@import "../../assets/variables.scss";
+
+.shein_item_profile {
+  padding: 50px 0;
+
+  .images_product {
+    select {
+      border: 2px solid rgb(204, 204, 204);
+      border-radius: 6px;
+      padding: 4px 15px;
+    }
+
+    .btn_order {
+      flex: 1;
+      text-align: center;
+      background-color: $main-Color-back;
+      color: white;
+      border-radius: 6px;
+      padding: 10px 15px;
+    }
+
+    .favorite {
+      border: 2px solid rgb(207, 207, 207);
+      padding: 10px 12px;
+      border-radius: 6px;
+      box-shadow: inset 0 0 6px rgb(210, 210, 210);
+
+      svg {
+        color: gray;
+      }
+    }
+  }
+
+  .info_product {
+    .title {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .discount_payment {
+      border: 1px solid $main-Color-back;
+      padding: 10px 20px;
+      width: 100%;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .price {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      margin-bottom: 30px;
+      h1 {
+        font-size: 32px;
+        font-weight: 600;
+        color: black;
+      }
+    }
+
+    .items {
+      display: flex;
+      align-items: center;
+
+      margin-top: 20px;
+
+      .item {
+        padding: 0 10px;
+        img {
+          width: 40px;
+          margin: 0 auto;
+        }
+
+        span {
+          font-size: 12px;
+          color: gray;
+        }
+      }
+    }
+  }
+
+  .overview {
+    margin-top: 50px;
+
+    .title {
+      font-size: 30px;
+      font-weight: 600;
+      padding-bottom: 15px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgb(224, 224, 224);
+    }
+
+    h4 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-top: 8px;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      li {
+        display: flex;
+        gap: 5px;
+        color: gray;
+
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .desc {
+      color: gray;
+    }
+
+    table {
+      width: 100%;
+
+      tr {
+        td {
+          color: gray;
+          font-size: 17px;
+          padding: 4px;
+        }
+
+        &:nth-child(2n + 1) {
+          td {
+            background-color: rgb(240, 244, 253);
+          }
+        }
+      }
+    }
+  }
+}

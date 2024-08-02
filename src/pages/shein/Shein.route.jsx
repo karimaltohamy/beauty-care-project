@@ -4,6 +4,7 @@ import { t } from "i18next";
 import imgai from "../../assets/images/ai-generated-8556454_1920.jpg";
 import { FaCartPlus } from "react-icons/fa";
 import "./shein.scss";
+import { Link } from "react-router-dom";
 
 const Shein = () => {
   const [data, setData] = useState([1, 2, 3, 4, 5, 6]);
@@ -18,7 +19,11 @@ const Shein = () => {
                 <h3 className="text-[19px] text-gray-500 font-semibold">
                   11 {t("results")}
                 </h3>
-                <div className="flex items-center gap-3" data-aos="zoom-in" data-aos-delay="200">
+                <div
+                  className="flex items-center gap-3"
+                  data-aos="zoom-in"
+                  data-aos-delay="200"
+                >
                   <span className="font-bold">{t("sort_by")}: </span>
                   <select className="border border-gray-300 p-1 rounded-md outline-none focus:border-primary">
                     <option value="">Recommended</option>
@@ -31,9 +36,14 @@ const Shein = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {data.length > 0 &&
-                  data.map((item , i) => {
+                  data.map((item, i) => {
                     return (
-                      <div className="box" data-aos={(i+1) % 2 == 0 ? "fade-left" : "fade-right"} data-aos-delay="300" >
+                      <Link
+                        to="1"
+                        className="box"
+                        data-aos={(i + 1) % 2 == 0 ? "fade-left" : "fade-right"}
+                        data-aos-delay="300"
+                      >
                         <div className="img">
                           <img src={imgai} alt="" />
                           <div className="price">
@@ -59,7 +69,7 @@ const Shein = () => {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </Link>
                     );
                   })}
               </div>

@@ -11,6 +11,7 @@ import {
   Packages,
   Profile,
   Shein,
+  SheinItemProfile,
 } from "../pages";
 
 import Loading from "../components/loading/Loading.jsx";
@@ -45,7 +46,7 @@ export const router = createBrowserRouter([
             <Profile />
           </Suspense>
         ),
-        children : [
+        children: [
           {
             path: "accounts",
             element: (
@@ -94,7 +95,7 @@ export const router = createBrowserRouter([
               </Suspense>
             ),
           },
-        ]
+        ],
       },
       {
         path: "/beauty",
@@ -125,6 +126,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <Shein />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/shein/:id",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <SheinItemProfile />
           </Suspense>
         ),
       },

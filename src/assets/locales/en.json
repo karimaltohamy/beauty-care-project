@@ -134,5 +134,6 @@
   "package_standard": "Standard Package",
   "package_premuim": "Premuim Packages",
   "package_gold": "Gold Packages",
-  "package_vip": "Vip Packages"
+  "package_vip": "Vip Packages",
+  "add_order": "Add Order"
 }

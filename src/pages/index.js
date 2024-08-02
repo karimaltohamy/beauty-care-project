@@ -12,3 +12,6 @@ export const Atelier = lazy(() => import("./atelier/Atelier.route"));
 export const Packages = lazy(() => import("./packages/Packages.route"));
 export const Shein = lazy(() => import("./shein/Shein.route"));
 export const Clinics = lazy(() => import("./clinics/Clinics.route"));
+export const SheinItemProfile = lazy(() =>
+  import("./sheinItemProfile/SheinItemProfile.route")
+);

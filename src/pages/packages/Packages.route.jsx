@@ -4,6 +4,7 @@ import { t } from "i18next";
 import PackageItem from "../../components/PackageItem/PackageItem";
 import MainSection from "../../components/mainSection/MainSection";
 import { SwiperSlide } from "swiper/react";
+import "./packages.scss";
 
 const Packages = () => {
   const [data, setData] = useState([1, 2, 3, 4, 5, 6]);
@@ -28,122 +29,130 @@ const Packages = () => {
                 </select>
               </div>
             </div>
-            <MainSection
-              title={"package_standard"}
-              breakpoints={{
-                250: {
-                  slidesPerView: 1.2,
-                  spaceBetween: 20,
-                },
-                640: {
-                  slidesPerView: 2,
-                  spaceBetween: 25,
-                },
-                900: {
-                  slidesPerView: 3,
-                  spaceBetween: 25,
-                },
-                1200: {
-                  slidesPerView: 4,
-                  spaceBetween: 25,
-                },
-              }}
-            >
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => {
-                return (
-                  <SwiperSlide>
-                    <PackageItem />
-                  </SwiperSlide>
-                );
-              })}
-            </MainSection>
-            <MainSection
-              title={"package_premuim"}
-              breakpoints={{
-                250: {
-                  slidesPerView: 1.2,
-                  spaceBetween: 20,
-                },
-                640: {
-                  slidesPerView: 2,
-                  spaceBetween: 25,
-                },
-                900: {
-                  slidesPerView: 3,
-                  spaceBetween: 25,
-                },
-                1200: {
-                  slidesPerView: 4,
-                  spaceBetween: 25,
-                },
-              }}
-            >
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => {
-                return (
-                  <SwiperSlide>
-                    <PackageItem />
-                  </SwiperSlide>
-                );
-              })}
-            </MainSection>
-            <MainSection
-              title={"package_gold"}
-              breakpoints={{
-                250: {
-                  slidesPerView: 1.2,
-                  spaceBetween: 20,
-                },
-                640: {
-                  slidesPerView: 2,
-                  spaceBetween: 25,
-                },
-                900: {
-                  slidesPerView: 3,
-                  spaceBetween: 25,
-                },
-                1200: {
-                  slidesPerView: 4,
-                  spaceBetween: 25,
-                },
-              }}
-            >
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => {
-                return (
-                  <SwiperSlide>
-                    <PackageItem />
-                  </SwiperSlide>
-                );
-              })}
-            </MainSection>
-            <MainSection
-              title={"package_vip"}
-              breakpoints={{
-                250: {
-                  slidesPerView: 1.2,
-                  spaceBetween: 20,
-                },
-                640: {
-                  slidesPerView: 2,
-                  spaceBetween: 25,
-                },
-                900: {
-                  slidesPerView: 3,
-                  spaceBetween: 25,
-                },
-                1200: {
-                  slidesPerView: 4,
-                  spaceBetween: 25,
-                },
-              }}
-            >
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => {
-                return (
-                  <SwiperSlide>
-                    <PackageItem />
-                  </SwiperSlide>
-                );
-              })}
-            </MainSection>
+            <div className="package_standard">
+              <MainSection
+                title={"package_standard"}
+                breakpoints={{
+                  250: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 20,
+                  },
+                  640: {
+                    slidesPerView: 2,
+                    spaceBetween: 25,
+                  },
+                  900: {
+                    slidesPerView: 3,
+                    spaceBetween: 25,
+                  },
+                  1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 25,
+                  },
+                }}
+              >
+                {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => {
+                  return (
+                    <SwiperSlide>
+                      <PackageItem />
+                    </SwiperSlide>
+                  );
+                })}
+              </MainSection>
+            </div>
+            <div className="package_premuim">
+              <MainSection
+                title={"package_premuim"}
+                breakpoints={{
+                  250: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 20,
+                  },
+                  640: {
+                    slidesPerView: 2,
+                    spaceBetween: 25,
+                  },
+                  900: {
+                    slidesPerView: 3,
+                    spaceBetween: 25,
+                  },
+                  1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 25,
+                  },
+                }}
+              >
+                {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => {
+                  return (
+                    <SwiperSlide>
+                      <PackageItem />
+                    </SwiperSlide>
+                  );
+                })}
+              </MainSection>
+            </div>
+            <div className="package_gold">
+              <MainSection
+                title={"package_gold"}
+                breakpoints={{
+                  250: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 20,
+                  },
+                  640: {
+                    slidesPerView: 2,
+                    spaceBetween: 25,
+                  },
+                  900: {
+                    slidesPerView: 3,
+                    spaceBetween: 25,
+                  },
+                  1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 25,
+                  },
+                }}
+              >
+                {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => {
+                  return (
+                    <SwiperSlide>
+                      <PackageItem />
+                    </SwiperSlide>
+                  );
+                })}
+              </MainSection>
+            </div>
+            <div className="package_vip">
+              <MainSection
+                title={"package_vip"}
+                breakpoints={{
+                  250: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 20,
+                  },
+                  640: {
+                    slidesPerView: 2,
+                    spaceBetween: 25,
+                  },
+                  900: {
+                    slidesPerView: 3,
+                    spaceBetween: 25,
+                  },
+                  1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 25,
+                  },
+                }}
+              >
+                {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => {
+                  return (
+                    <SwiperSlide>
+                      <PackageItem />
+                    </SwiperSlide>
+                  );
+                })}
+              </MainSection>
+            </div>
           </div>
         </div>
       </div>

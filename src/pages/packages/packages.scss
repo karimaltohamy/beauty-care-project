@@ -1,0 +1,61 @@
+.package_standard {
+  .package_item {
+  }
+}
+.package_premuim {
+  .package_item {
+    background-color: #a9e2d6;
+
+    .content {
+      ul {
+        li {
+          svg {
+            color: black;
+          }
+        }
+      }
+    }
+
+    .btn_booking {
+      background-color: black;
+    }
+  }
+}
+.package_gold {
+  .package_item {
+    background-color: #d5c0ee;
+
+    .content {
+      ul {
+        li {
+          svg {
+            color: black;
+          }
+        }
+      }
+    }
+
+    .btn_booking {
+      background-color: black;
+    }
+  }
+}
+.package_vip {
+  .package_item {
+    background-color: #f6d6b3;
+
+    .content {
+      ul {
+        li {
+          svg {
+            color: black;
+          }
+        }
+      }
+    }
+
+    .btn_booking {
+      background-color: black;
+    }
+  }
+}
