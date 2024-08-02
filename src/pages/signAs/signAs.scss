@@ -38,10 +38,10 @@ body.ar {
 
 .sign {
   width: 100%;
-  padding: 30px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 30px;
   .all {
     position: relative;
     width: 90%;
@@ -271,11 +271,7 @@ body.ar {
       .img {
         display: none;
       }
-      form {
-        background-color: white !important;
-      }
       .form {
-        background-color: white !important;
         transform: translateX(0) !important;
         padding: 0 !important;
         .details {
@@ -291,11 +287,11 @@ body.ar {
     }
   }
 }
-@media screen and (min-width: 1120px) and (max-width :1353px) {
+@media screen and (min-width: 1120px) and (max-width: 1353px) {
   .sign {
     .all {
       .img {
-        max-height: 730px ;
+        max-height: 730px;
       }
     }
   }
@@ -305,7 +301,7 @@ body.ar {
   .sign {
     .all {
       .img {
-        max-height: 705px ;
+        max-height: 705px;
       }
     }
   }

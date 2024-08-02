@@ -17,9 +17,6 @@ const SignUpAsHostinger = () => {
 
   return (
     <Fragment>
-      {window.innerWidth <= 768 && (
-        <SmallHeader title={t("Start_With_Us")} padding={"20px"} />
-      )}
       <Banner title={t("Start_With_Us")} needBack={true} />
       <div
         className="sign"
