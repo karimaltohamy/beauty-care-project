@@ -1,60 +1,75 @@
 @import "../../assets/variables.scss";
 
-body.ar {
-  .Shein {
-    .box {
-      border-top-left-radius: 55px;
-      border-bottom-right-radius: 55px;
-      border-top-right-radius: 0px !important;
-      border-bottom-left-radius: 0px !important;
-      .img {
-        img {
-          border-top-left-radius: 55px;
-          border-top-right-radius: 0px;
+.Shein {
+  @media screen and (max-width : 768px) {
+    .control{
+      gap: 10px;
+    }
+    .box{
+      padding: 8px !important;
+    }
+    .filter{
+      & > div {
+        justify-content: space-between;
+        div{
+          gap: 3px;
         }
       }
     }
   }
-}
-
-.Shein {
   .box {
-    border-top-right-radius: 55px;
-    border-bottom-left-radius: 55px;
-    border: 1px solid rgb(199, 199, 199);
+    box-shadow: 0px 0px 20px #ddd;
     cursor: pointer;
-
+    padding: 15px;
+    border-radius: 10px;
     .img {
       position: relative;
       img {
-        border-top-right-radius: 55px;
         height: 200px;
         width: 100%;
         object-fit: cover;
+      }
+      .absloute {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .heart,
+        .cart {
+          background-color: white;
+          padding: 4px 8px;
+          color: $main-Color-back;
+          border-radius: 5px;
+          font-size: 14px;
+          cursor: pointer;
+          max-width: fit-content;
+        }
+        .items-center {
+          p {
+            background-color: white;
+            padding: 2px 8px;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            color: $main-Color-back;
+            border-radius: 5px;
+            cursor: pointer;
+            max-width: fit-content;
+            font-size: 14px;
+            i {
+              font-size: 10px;
+            }
+          }
+        }
       }
       .icon:hover {
         svg {
           transition: $transtions;
           color: red !important;
-        }
-      }
-      .price {
-        position: absolute;
-        padding: 0px 10px;
-        width: 100%;
-        display: flex;
-        gap: 4px;
-        top: 70%;
-        flex-direction: column;
-        color: white;
-        font-weight: bold;
-        p {
-          font-size: 22px;
-          text-decoration: line-through;
-          height: 12px;
-        }
-        h2 {
-          font-size: 30px;
         }
       }
       .dis {
@@ -79,15 +94,38 @@ body.ar {
       }
     }
     .con {
-      padding: 20px 10px;
+      padding: 10px 0px;
       padding-right: 10px;
       h1 {
         color: $font-ddd;
+        padding-bottom: 10px;
+        @media screen and (max-width : 768px) {
+          margin-top: 15px;
+        }
+        border-bottom: 1px solid $main-Color-back;
       }
       .inside {
         display: flex;
         justify-content: space-between;
-        align-items: end;
+        align-items: center;
+        .price {
+          padding: 0px 10px;
+          margin-top: 10px;
+          border-radius: 10px;
+          display: flex;
+          gap: 4px;
+          flex-direction: column;
+          color: $main-Color-back;
+          font-weight: bold;
+          p {
+            font-size: 14px;
+            text-decoration: line-through;
+            height: 7px;
+          }
+          h2 {
+            font-size: 20px;
+          }
+        }
       }
       .rate {
         display: flex;
@@ -119,6 +157,3 @@ body.ar {
     }
   }
 }
-
-
-

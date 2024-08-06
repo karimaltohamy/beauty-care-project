@@ -15,7 +15,7 @@ const Shein = () => {
         <div className="container">
           <div className="flex gap-5 flex-col md:flex-row">
             <div className="filter w-full">
-              <div className="flex items-center justify-center md:justify-between flex-col md:flex-row mb-7">
+              <div className="flex items-center justify-center md:justify-between  md:flex-row mb-7">
                 <h3 className="text-[19px] text-gray-500 font-semibold">
                   11 {t("results")}
                 </h3>
@@ -34,7 +34,7 @@ const Shein = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 control">
                 {data.length > 0 &&
                   data.map((item, i) => {
                     return (
@@ -46,22 +46,25 @@ const Shein = () => {
                       >
                         <div className="img">
                           <img src={imgai} alt="" />
-                          <div className="price">
-                            <p>$300</p>
-                            <h2>$150</h2>
-                          </div>
                           <div className="dis">
                             <span>50%</span>
+                          </div>
+                          <div className="absloute">
+                            <i class="fa-solid fa-heart heart"></i>
+                            <div className="flex items-center justify-between">
+                              <p>
+                                4.3 <i class="fa-solid fa-star"></i> {" "}
+                              </p>
+                            </div>
                           </div>
                         </div>
                         <div className="con">
                           <h1>Deep Cleansing Oil</h1>
                           <div className="inside">
-                            <div className="rate">
-                              <span>4.6/5 {t("Excellent")}</span>
-                              <span>*</span>
-                              <span>2 {t("Reviews")}</span>
-                            </div>
+                          <div className="price">
+                            {/* <p>$300</p> */}
+                            <h2>$150</h2>
+                          </div>
                             <div className="add">
                               <button>
                                 <FaCartPlus size={20} />

@@ -1,0 +1,10 @@
+.beauty{
+    .filter{
+        & > div {
+          justify-content: space-between;
+          div{
+            gap: 3px;
+          }
+        }
+      }
+}

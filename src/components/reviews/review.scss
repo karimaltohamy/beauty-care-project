@@ -5,7 +5,13 @@
   .heading {
     display: flex;
     gap: 20px;
-
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      .box,
+      .not {
+        width: 100% !important;
+      }
+    }
     .box {
       display: flex;
       border-radius: 20px;
@@ -34,6 +40,7 @@
         align-items: center;
         flex-direction: column;
         gap: 10px;
+        width: fit-content;
         color: $font-ddd;
         span {
           &.size {
@@ -156,6 +163,10 @@
     padding: 30px 0px;
     padding-bottom: 0;
 
+    .swiper {
+      position: relative;
+    }
+
     .swiper-slide {
       background-color: white;
       border-radius: 20px;
@@ -204,7 +215,7 @@
 
     .swiper-pagination-bullets {
       position: relative;
-      margin: 10px auto;
+      margin: 20px auto;
       width: fit-content !important;
       padding: 6px;
       background-color: $main-Color-back;
@@ -221,8 +232,15 @@
   }
   .swiper-button-prev,
   .swiper-button-next {
+    height: 90%;
+    position: absolute;
+    bottom: 0%;
     &::after {
-      font-size: 35px;
+      font-size: 18px;
+      background-color: $main-Color-back;
+      padding: 10px;
+      border-radius: 5px;
+      color: white;
     }
   }
 }

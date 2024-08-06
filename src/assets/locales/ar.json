@@ -200,7 +200,7 @@
   "completed": "مكتمل",
   "pending": "قيد الانتظار",
   "support": "الدعم",
-  "my_Branding": "البراند الخاص بي",
+  "My Branding": "البراند الخاص بي",
   "settings": "الاعدادات",
   "Profile Settings": "إعدادات الملف الشخصي",
   "Update": "تعديل",
@@ -219,9 +219,13 @@
   "package_premuim": "الباقات المميزة",
   "package_gold": "الباقات الذهبية",
   "package_vip": "باقات كبار الشخصيات",
-  "Informations": "معلومات",
+  "Info & Setting": "معلومات و اعدادات",
   "Menu": "القائمة",
   "LogOut": "تسجيل خروج",
   "add_order": "إضافة الطلب" ,
-  "Related Products" : "منتجات اخري"
+  "Related Products" : "منتجات اخري" ,
+  "New Ticket" : "مذكرة جديدة",
+  "My Tickets" : "مذكراتي" , 
+  "Add Service" : "اضافة خدمة" ,
+  "Add Package" : "اضافة باقة"
 }

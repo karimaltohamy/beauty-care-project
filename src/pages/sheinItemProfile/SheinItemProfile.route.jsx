@@ -7,24 +7,28 @@ import iconDelivary1 from "../../assets/images/delivery_by_noon.png";
 import iconDelivary2 from "../../assets/images/cash_on_delivery.png";
 import iconDelivary3 from "../../assets/images/high_rated_seller.png";
 import iconDelivary4 from "../../assets/images/low_return_product.png";
+import boxImg from "../../assets/images/ai-generated-8556454_1920.jpg";
 import seller from "../../assets/images/seller.svg";
 import cat from "../../assets/images/ai-generated-8556454_1920.jpg";
-import bannerMenu from "../../assets/images/banner_Menu.png"
+import bannerMenu from "../../assets/images/banner_Menu.png";
 import bannerImg from "../../assets/images/img-banner.png";
-import salon from "../../assets/images/salon-2561845_1280.jpg"
+import salon from "../../assets/images/salon-2561845_1280.jpg";
 import { GoDotFill } from "react-icons/go";
 import Reviews from "../../components/reviews/Reviews";
 import SmallHeader from "../../components/smallHeader/SmallHeader";
+import MainSection from "../../components/mainSection/MainSection";
+import { SwiperSlide } from "swiper/react";
+import { LuBookUp } from "react-icons/lu";
 
-
-const imgs = [cat , bannerMenu , cat , salon , bannerImg ]
+const imgs = [cat, bannerMenu, cat, salon, bannerImg];
 
 const SheinItemProfile = () => {
   const [popupComm, setPopComm] = useState(false);
-  const [src , setSrc] = useState()
-  useEffect(()=> {
-    setSrc(imgs[0])
-  }, [])
+  const [src, setSrc] = useState();
+  const [showMore, setShowMore] = useState(false);
+  useEffect(() => {
+    setSrc(imgs[0]);
+  }, []);
   const { lang } = localStorage;
   return (
     <div className="shein_item_profile">
@@ -34,12 +38,12 @@ const SheinItemProfile = () => {
           <div className="images_product">
             <div className="customslider">
               <div className="imgsForShow">
-                {imgs.map((src , i) => {
+                {imgs.map((src, i) => {
                   return (
-                    <div className="option" onClick={()=> setSrc(src)} key={i}>
+                    <div className="option" onClick={() => setSrc(src)} key={i}>
                       <img src={src} alt="" />
                     </div>
-                  )
+                  );
                 })}
               </div>
               <div className="bigPhoto">
@@ -66,7 +70,13 @@ const SheinItemProfile = () => {
             </div>
           </div>
           <div className="info_product">
-            <h3 className="title">Fit Me Concealer Light 10</h3>
+            <h3 className="title">
+              Fit Me Concealer Light 10{" "}
+              <div className="outOfFive flex items-center gap-1">
+                <h5 className="font-semibold">4.5/5</h5>
+                <FaStar className="text-yellow-500" />
+              </div>
+            </h3>
             <div className="rate flex items-center gap-3 mb-3">
               <span className="text-gray-500">Model Number : 30096585</span>
               <div className="outOfFive flex items-center gap-1">
@@ -132,9 +142,11 @@ const SheinItemProfile = () => {
             </div>
           </div>
         </div>
-        <div className="overview">
+      </div>
+      <div className="overview">
+        <div className="container">
           <h1 className="title">{t("overview")}</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 testMargin">
             <div>
               <h4>{t("highlights")}</h4>
               <ul>
@@ -167,11 +179,21 @@ const SheinItemProfile = () => {
                 coverage liquid concealer. These oil-free concealers conceal
                 redness, flaws, and blemishes. Shades of concealers for various
                 skin tones. Dermatologist tested. Ophthalmologist tested.
-                Non-comedogenic concealer. Fragrance-free. Packaging may vary,
-                what you receive may not be what is reflected on site. How to
-                use: Step 1. Dot concealer onto imperfections or under the eyes.
-                Step 2. Pat with a finger to blend.
+                {showMore &&
+                  "may varywhat you receive may not be what is reflected on site. How touse: Step 1. Dot concealer onto imperfections or under the eyes.Step 2. Pat with a finger to blend. Non-comedogenic concealer. Fragrance-free Packaging"}
               </p>
+              <span
+                style={{
+                  cursor: "pointer",
+                  color: "#8b2fff",
+                  fontWeight: "bold",
+                }}
+                onClick={() => setShowMore(!showMore)}
+              >
+                {" "}
+                {t(showMore ? "Show_Less" : "Show_More")}{" "}
+                <i class={`fa-solid fa-caret-${showMore ? "up" : "down"}`}></i>
+              </span>
             </div>
             <div>
               <h4>{t("specifications")}</h4>
@@ -222,39 +244,56 @@ const SheinItemProfile = () => {
             </div>
           </div>
         </div>
-        <Reviews setPopComm={setPopComm} popupComm={popupComm} />
-        <div className="also_view">
-          <h1>{t("Related Products")}</h1>
-          <div className="viewProducts">
-            {[...Array(6)].map((ele) => {
-              return (
-                <div className="product" key={ele}>
-                  <div className="front">
-                    <img src={cat} alt="" />
-                  </div>
-                  <div className="back">
-                    <div className="back-content ">
-                      <div className="icon">
-                        <i className="fa-solid fa-heart"></i>
-                        <i  className="fa-solid fa-cart-plus"></i>
-                      </div>
+      </div>
+      <Reviews setPopComm={setPopComm} popupComm={popupComm} />
+      <MainSection
+        title={"Related Products"}
+        breakpoints={{
+          250: {
+            slidesPerView: 1.2,
+            spaceBetween: 20,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 25,
+          },
+          1000: {
+            slidesPerView: 4,
+            spaceBetween: 25,
+          },
+        }}
+      >
+        {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => {
+          return (
+            <SwiperSlide>
+              <div className="box">
+                <div className="image">
+                  <img src={boxImg} alt="box_img" loading="lazy" />
+                  <div className="absloute">
+                    <i class="fa-solid fa-heart heart"></i>
+                    <div className="flex items-center justify-between">
                       <p>
-                        {t("Description")} : Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit. Eligendi, tenetur. Velit
-                        labore soluta impedit nihil sequi rem officiis magnam?
-                        Magnam reprehenderit vero vel mollitia, officia quos non
-                        fugit similique quod.
+                        4.3 <i class="fa-solid fa-star"></i> (300){" "}
                       </p>
-                      <p>{t("price")} : 200 EGP</p>
-                      <div className="label">Express</div>
+                      <i class="fa-solid fa-cart-plus cart"></i>
                     </div>
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
+                <div className="text">
+                  <p className="desc">
+                    Lorem ipsum dolor sit, amet adipite magni consequuntur eaque
+                    impedit facilis, atque maiores placeat!
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <h5 className="price">$10.00</h5>
+                    <h3>Express</h3>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          );
+        })}
+      </MainSection>
     </div>
   );
 };

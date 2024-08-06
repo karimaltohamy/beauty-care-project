@@ -1,6 +1,7 @@
 import React from "react";
 import "./accountData.scss";
 import { t } from "i18next";
+import SwitchSectionForm from "../../../components/sectionform/SwitchSectionForm";
 
 function AccountData() {
   return (
@@ -79,6 +80,10 @@ function AccountData() {
                   <input type="number" placeholder="Enter Country" />
                   <i className="fa-regular fa-address-card"></i>
                 </div>
+              </div>
+              <div className="setting">
+              <SwitchSectionForm id={"mode"}  label={t("Mode")} />
+              
               </div>
             </div>
           </div>
