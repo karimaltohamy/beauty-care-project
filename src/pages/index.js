@@ -15,3 +15,6 @@ export const Clinics = lazy(() => import("./clinics/Clinics.route"));
 export const SheinItemProfile = lazy(() =>
   import("./sheinItemProfile/SheinItemProfile.route")
 );
+
+export const NewTicket = lazy(()=> import("./profile/support/Newticket"))
+export const MyTickets = lazy(()=> import("./profile/support/MyTickets"))

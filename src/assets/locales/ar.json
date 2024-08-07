@@ -227,5 +227,13 @@
   "New Ticket" : "مذكرة جديدة",
   "My Tickets" : "مذكراتي" , 
   "Add Service" : "اضافة خدمة" ,
-  "Add Package" : "اضافة باقة"
+  "Add Package" : "اضافة باقة"  , 
+  "MyTickets" : "مذكراتي" ,
+  "NewTicket" : "مذكرة جديدة" ,
+  "Priority" : "الاولوية" ,
+  "Attachments" : "ملحقات" , 
+  "Theme" : "الثيم" , 
+  "Languages" : "اللغات" ,
+  "Light" : "ابيض" ,
+  "]ark" : "اسود"
 }

@@ -1,4 +1,4 @@
-@import "../../sass/variables.scss";
+@import "../../assets/variables.scss";
 
 .section_form {
   background-color: var(--bg-section);
@@ -118,7 +118,7 @@
         background-color: transparent;
 
         &:focus {
-          border: 1px solid $primary-color;
+          border: 1px solid $main-Color-back;
         }
       }
 
@@ -183,7 +183,7 @@
       }
 
       input:checked + label {
-        background: $primary-color;
+        background: $main-Color-back;
       }
 
       input:checked + label:after {
@@ -232,7 +232,7 @@
         }
 
         i {
-          color: $primary-color;
+          color: $main-Color-back;
         }
       }
     }

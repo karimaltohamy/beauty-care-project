@@ -60,11 +60,11 @@ function SideBar() {
             ></i>
           </div>
           <div className="small">
-            <NavLink className="inside" to={"/profile/ordersPending"}>
+            <NavLink className="inside" to={"/profile/newTicket"}>
               <i className="fa-solid fa-ticket"></i>
               <p>{t("New Ticket")}</p>
             </NavLink>
-            <NavLink className="inside" to={"/profile/ordersCanceld"}>
+            <NavLink className="inside" to={"/profile/MyTickets"}>
               <i className="fa-regular fa-calendar-check"></i>
               <p>{t("My Tickets")}</p>
             </NavLink>
@@ -80,18 +80,18 @@ function SideBar() {
         </NavLink>
         <div className="orders shdaow">
           <div className="topic">
-            <i className="fa-solid fa-cart-plus"></i>
+          <i className="fa-solid fa-truck-fast"></i>
             <h3>{t("packages")}</h3>
             <i
               class={`fa-solid fa-arrow-${lang == "ar" ? "left" : "right"}`}
             ></i>
           </div>
           <div className="small">
-            <NavLink className="inside" to={"/profile/ordersFull"}>
+            <NavLink className="inside" to={"/profile/ordersFulldddd"}>
               <i className="fa-brands fa-servicestack"></i>
               <p>{t("Add Service")}</p>
             </NavLink>
-            <NavLink className="inside" to={"/profile/ordersCompleted"}>
+            <NavLink className="inside" to={"/profile/ordersCompletedddd"}>
               <i className="fa-solid fa-cube"></i>
               <p>{t("Add Package")}</p>
             </NavLink>

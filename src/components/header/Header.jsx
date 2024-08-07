@@ -11,7 +11,6 @@ import { FaXTwitter } from "react-icons/fa6";
 import { SlSocialFacebook } from "react-icons/sl";
 import { IoLocationSharp, IoLogoInstagram } from "react-icons/io5";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import { IoLocationOutline } from "react-icons/io5";
 import Menu from "../menu/Menu";
 
 const Header = () => {

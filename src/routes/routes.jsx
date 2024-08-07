@@ -8,19 +8,22 @@ import {
   Clinics,
   Home,
   Login,
+  MyTickets,
+  NewTicket,
   Packages,
   Profile,
   Shein,
   SheinItemProfile,
 } from "../pages";
+import { Suspense } from "react";
 
 import Loading from "../components/loading/Loading.jsx";
-import { Suspense } from "react";
 import SignUpAsHostinger from "../pages/signAs/SignUpAsHostinger.jsx";
 import SignUser from "../pages/signUser/SignUser.jsx";
 import AccountData from "../pages/profile/accountData/AccountData.jsx";
 import Orders from "../pages/profile/orders/Orders.jsx";
 import My_Branding from "../pages/profile/myBrand/My_Branding.jsx";
+
 
 export const router = createBrowserRouter([
   {
@@ -92,6 +95,22 @@ export const router = createBrowserRouter([
             element: (
               <Suspense fallback={<Loading />}>
                 <My_Branding />
+              </Suspense>
+            ),
+          },
+          {
+            path: "newTicket",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <NewTicket/>
+              </Suspense>
+            ),
+          },
+          {
+            path: "MyTickets",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <MyTickets/>
               </Suspense>
             ),
           },

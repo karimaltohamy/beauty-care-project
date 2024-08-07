@@ -1,15 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import "./accountData.scss";
 import { t } from "i18next";
-import SwitchSectionForm from "../../../components/sectionform/SwitchSectionForm";
+import SelectSectionForm from "../../../components/sectionform/SelectSectionForm";
+import { useTranslation } from "react-i18next";
 
 function AccountData() {
+  const [mode, setMode] = useState("Light");
+  const { i18n } = useTranslation();
+  const [changeMode, setChangeMode] = useState(false);
+  const [lang, setLang] = useState(localStorage.lang || "en");
+  const onChange = (e) => {
+    setMode(mode == "Dark" ? "Light" : "Dark");
+    setChangeMode(!changeMode);
+  };
+
+  const chageLang = (e) => {
+    const { value } = e.target;
+    setLang(value);
+    i18n.changeLanguage(value);
+    localStorage.setItem("lang", value);
+    if (value == "ar") {
+      document.body.classList.add("ar");
+      document.body.classList.remove("en");
+    } else if (value == "en") {
+      document.body.classList.add("en");
+      document.body.classList.remove("ar");
+    }
+  };
+
   return (
     <div className="account center">
       <form>
         <div className="form">
           <div className={`details`}>
-            <span className="title">{t("Personal_Details")}</span>
+            <span className="title">{t("NewTicket")}</span>
             <div className="fields">
               <div className="input-field">
                 <label>{t("full Name")}</label>
@@ -77,13 +101,43 @@ function AccountData() {
               <div className="input-field">
                 <label>{t("Country")}</label>
                 <div className="flex">
-                  <input type="number" placeholder="Enter Country" />
+                  <input type="text" placeholder="Enter Country" />
                   <i className="fa-regular fa-address-card"></i>
                 </div>
               </div>
-              <div className="setting">
-              <SwitchSectionForm id={"mode"}  label={t("Mode")} />
-              
+            </div>
+            <div className="settings">
+              <div className={`input_switch`}>
+                <h2>{t("Theme")}</h2>
+                <div className="inside">
+                  <i
+                    className={`fa-regular fa-${changeMode ? "moon" : "sun"}`}
+                  ></i>
+                  <div className="flex">
+                    <input
+                      type={"checkbox"}
+                      checked={changeMode}
+                      onChange={(e) => onChange(e)}
+                      id={"mode"}
+                    />
+                    <label htmlFor={"mode"}>Toggle</label>
+                  </div>
+                </div>
+              </div>
+              <div className="lang">
+                <label htmlFor="">{t("Languages")}</label>
+                <div className="inside">
+                  <i className="fa-solid fa-earth-africa"></i>
+                  <SelectSectionForm
+                    value={lang}
+                    needLabelOption={false}
+                    options={[
+                      { name: "Arabic", id: "ar" },
+                      { name: "Engilsh", id: "en" },
+                    ]}
+                    onChange={chageLang}
+                  />
+                </div>
               </div>
             </div>
           </div>
