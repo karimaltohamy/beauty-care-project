@@ -231,7 +231,7 @@
 
         &:nth-child(2n + 1) {
           td {
-            background-color: var(--mainBG);
+            background-color: var(--mainBG) ;
           }
         }
       }
@@ -240,7 +240,11 @@
 
   .main_section{
     .box{
+
       box-shadow: var(--box-shadow);
+
+
+
       border-radius: 5px;
       padding: 10px;
       .image{
@@ -260,7 +264,9 @@
           flex-direction: column;
           justify-content: space-between;
           .heart , .cart{
+
             background-color: $main-Color-back;
+
             padding: 4px 8px;
             color: $main-Color-back;
             border-radius: 5px;

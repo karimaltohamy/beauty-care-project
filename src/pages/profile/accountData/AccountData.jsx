@@ -20,6 +20,16 @@ function AccountData() {
   //   setChangeMode(!changeMode);
   // };
 
+  const [mode, setMode] = useState("Light");
+  const { i18n } = useTranslation();
+  const [changeMode, setChangeMode] = useState(false);
+  const [lang, setLang] = useState(localStorage.lang || "en");
+  const onChange = (e) => {
+    setMode(mode == "Dark" ? "Light" : "Dark");
+    setChangeMode(!changeMode);
+  };
+
+
   const chageLang = (e) => {
     const { value } = e.target;
     setLang(value);
@@ -113,7 +123,10 @@ function AccountData() {
               </div>
             </div>
             <div className="settings">
+
               {/* <div className={`input_switch`}>
+              <div className={`input_switch`}>
+
                 <h2>{t("Theme")}</h2>
                 <div className="inside">
                   <i
@@ -129,7 +142,10 @@ function AccountData() {
                     <label htmlFor={"mode"}>Toggle</label>
                   </div>
                 </div>
+
               </div> */}
+              </div>
+
               <div className="lang">
                 <label htmlFor="">{t("Languages")}</label>
                 <div className="inside">

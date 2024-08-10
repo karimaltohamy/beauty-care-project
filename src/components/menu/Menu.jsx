@@ -22,7 +22,11 @@ const Menu = ({ open, setOpen }) => {
         <img src={img} alt="" />
         <i class="fa-regular fa-pen-to-square icon"></i>
       </div>
+
         <h1 style={{textAlign : "center", marginTop : "5px" }}>Mohamed Gamal</h1>
+=======
+        <h1 style={{textAlign : "center", marginTop : "10px" }}>Mohamed Gamal</h1>
+
         <div className="data">
         <NavLink className="inside shdaow" to={"/profile/accounts"}>
           <i className="fa-solid fa-sitemap"></i>

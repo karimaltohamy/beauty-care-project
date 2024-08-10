@@ -16,20 +16,10 @@ body.ar{
 .menu {
   position: fixed;
   width: 100%;
-  min-height: 100vh;
-  .background{
-    position: absolute;
-    top: 10px;
-    width: 100%;
-    height: 50vh;
-    background-image: url("../../assets/images/MenuImg.PNG");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-    z-index: -100;
-    background-color: transparent;
-  }
+  height: 100vh;
   background-color: white;
+  // background: url("../../assets/images/test.png") no-repeat;
+  background-size: cover;
   z-index: 9999;
   top: 0;
   left: -100%;
@@ -38,24 +28,9 @@ body.ar{
   .head {
     padding: 10px 20px;
   }
-  * {
-    text-transform: capitalize;
-    color: $main-Color-back;
-  }
-
-  .head{
-    background-color: $main-Color-back;
-    h3 , svg , button , path{
-      color: white !important;
-    }
-  }
 
   &.open {
     left: 0;
-  }
-
-  h1{
-    font-size: 20px;
   }
 
   .img {
@@ -83,40 +58,17 @@ body.ar{
     display: flex;
     flex-direction: column;
     gap: 5px;
-    font-size: 18px;
-    margin-top: 80px;
+    margin-top: 10px;
     .inside {
       display: flex;
       align-items: center;
       gap: 15px;
       padding: 5px 0px;
-      &.active {
-        border-radius: 10px;
-        margin: 4px ;
-        padding: 8px;
-        transition: $transtions;
-        p,
-        i {
-          font-size: 20px;
-        }
-        font-weight: bold;
-      }
     }
     .orders {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      &:hover {
-        .small {
-          margin: 10px 0px;
-          height: fit-content;
-        }
-        .topic {
-          i:last-child {
-            transform: rotate(90deg);
-          }
-        }
-      }
       .topic {
         display: flex;
         gap: 15px;
@@ -132,10 +84,9 @@ body.ar{
       .small {
         margin: 5px 20px;
         display: flex;
-        flex-direction: column;
         transition: $transtions;
-        overflow: hidden;
-        height: 0px;
+        height: fit-content;
+        flex-direction: column;
       }
     }
   }

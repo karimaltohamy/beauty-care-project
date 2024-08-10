@@ -104,7 +104,10 @@ export const router = createBrowserRouter([
             path: "newTicket",
             element: (
               <Suspense fallback={<Loading />}>
-                <NewTicket />
+
+
+                <NewTicket/>
+
               </Suspense>
             ),
           },
