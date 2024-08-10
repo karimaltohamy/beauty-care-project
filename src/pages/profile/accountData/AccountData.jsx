@@ -20,14 +20,7 @@ function AccountData() {
   //   setChangeMode(!changeMode);
   // };
 
-  const [mode, setMode] = useState("Light");
-  const { i18n } = useTranslation();
-  const [changeMode, setChangeMode] = useState(false);
-  const [lang, setLang] = useState(localStorage.lang || "en");
-  const onChange = (e) => {
-    setMode(mode == "Dark" ? "Light" : "Dark");
-    setChangeMode(!changeMode);
-  };
+
 
 
   const chageLang = (e) => {
@@ -168,7 +161,6 @@ function AccountData() {
               <span className="btnText">{t("Update")}</span>
             </button>
           </div>
-        </div>
       </form>
     </div>
   );
