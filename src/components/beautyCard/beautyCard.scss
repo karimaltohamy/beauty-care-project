@@ -1,7 +1,7 @@
 @import "../../assets/variables.scss";
 
 .beautyCard {
-  box-shadow: 0 0 18px #c7c7c7;
+  box-shadow:var(--box-shadow);
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
@@ -17,17 +17,6 @@
     flex-direction: column;
     justify-content: center;
 
-    &.en {
-      border-top-right-radius: 18px;
-      border-bottom-right-radius: 18px;
-      margin-right: -12px;
-    }
-
-    &.ar {
-      border-top-left-radius: 18px;
-      border-bottom-left-radius: 18px;
-      margin-left: -12px;
-    }
 
     .service_review {
       display: flex;

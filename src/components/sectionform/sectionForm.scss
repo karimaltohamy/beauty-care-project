@@ -1,0 +1,254 @@
+@import "../../assets/variables.scss";
+
+.section_form {
+  background-color: var(--bg-section);
+  border-radius: 5px;
+
+  box-shadow: 0 0 10px var(--box-shasow);
+  margin-bottom: 20px;
+
+  .head {
+    padding: 8px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    h4 {
+      font-size: 20px;
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+
+    i {
+      font-size: 19px;
+    }
+  }
+
+  .boxs_information {
+    .boxs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+
+      .box {
+        padding: 15px;
+        border: 1px solid var(--border-color);
+
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .icon {
+          background-color: #fbe8e4;
+          width: 30px;
+          min-width: 30px;
+          height: 30px;
+          border-radius: 7px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          i {
+            color: #fa4a27;
+          }
+        }
+
+        .text {
+          h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 0;
+          }
+
+          span {
+            color: gray;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  form {
+    padding: 10px;
+
+    .input_item,
+    .input_switch {
+      margin-bottom: 20px;
+    }
+
+    .input_item {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      position: relative;
+
+      &.remove {
+        display: none;
+      }
+
+      &.disabled {
+        input {
+          border: none;
+          outline: none;
+          background-color: var(--bg-main);
+        }
+      }
+
+      label {
+        font-weight: 600;
+        display: block;
+        font-size: 17px;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+      }
+
+      input,
+      select {
+        flex: 2;
+        width: 100%;
+        padding: 5px;
+        border: 1px solid var(--border-color);
+        border-radius: 3px;
+        outline: none;
+        background-color: transparent;
+
+        &:focus {
+          border: 1px solid $main-Color-back;
+        }
+      }
+
+      select {
+        padding: 2px;
+
+        option {
+          color: black !important;
+        }
+      }
+
+      .error {
+        position: absolute;
+        bottom: -20px;
+        font-size: 13px;
+      }
+    }
+
+    .input_switch {
+      position: relative;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+
+      span {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 4px;
+        flex: 1;
+      }
+
+      input[type="checkbox"] {
+        height: 0;
+        width: 0;
+        visibility: hidden;
+        display: none;
+      }
+
+      label {
+        cursor: pointer;
+        text-indent: -9999px;
+        width: 40px;
+        height: 20px;
+        background: grey;
+        display: block;
+        border-radius: 100px;
+        position: relative;
+      }
+
+      label:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 3px;
+        transform: translateY(-50%);
+        width: 15px;
+        height: 15px;
+        background: #fff;
+        border-radius: 90px;
+        transition: 0.3s;
+      }
+
+      input:checked + label {
+        background: $main-Color-back;
+      }
+
+      input:checked + label:after {
+        left: calc(100% - 3px);
+        transform: translateX(-100%) translateY(-50%);
+      }
+
+      label:active:after {
+        width: 130px;
+      }
+
+      .error {
+        position: absolute;
+        bottom: -20px;
+        font-size: 13px;
+      }
+    }
+
+    .input_file {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+
+      span,
+      h6 {
+        font-weight: 600;
+        display: block;
+        font-size: 17px;
+        flex: 1;
+      }
+
+      label {
+        width: 30px;
+        height: 30px;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8bfa8;
+        cursor: pointer;
+
+        input {
+          display: none;
+        }
+
+        i {
+          color: $main-Color-back;
+        }
+      }
+    }
+
+    .css-b62m3t-container {
+      height: 35px !important;
+      flex: 2 !important;
+    }
+  }
+
+  .css-13cymwt-control {
+    background-color: transparent !important;
+    border-color: var(--border-color) !important;
+  }
+
+  .css-1nmdiq5-menu {
+    color: black;
+  }
+}

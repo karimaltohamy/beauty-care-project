@@ -1,7 +1,15 @@
-.package_standard {
-  .package_item {
+
+.packages{
+  .filter{
+    & > div {
+      justify-content: space-between;
+      div{
+        gap: 3px;
+      }
+    }
   }
 }
+
 .package_premuim {
   .package_item {
     background-color: #a9e2d6;

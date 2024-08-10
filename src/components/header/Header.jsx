@@ -11,14 +11,25 @@ import { FaXTwitter } from "react-icons/fa6";
 import { SlSocialFacebook } from "react-icons/sl";
 import { IoLocationSharp, IoLogoInstagram } from "react-icons/io5";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import { IoLocationOutline } from "react-icons/io5";
 import Menu from "../menu/Menu";
 
 const Header = () => {
   const { i18n, t } = useTranslation();
   const lang = localStorage.getItem("lang");
+  const [trigger, setTrigger] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+  const { theme } = localStorage;
+
+  const changeMode = () => {
+    if (theme !== "dark") {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+    localStorage.theme = theme !== "dark" ? "dark" : "t";
+    setTrigger(!trigger);
+  };
 
   const changeLanguage = async (lang) => {
     i18n.changeLanguage(lang);
@@ -150,6 +161,15 @@ const Header = () => {
                   className="w-[30px] h-[30px] object-cover rounded-full"
                 />
               </Link>
+              <div
+                className="icon"
+                onClick={changeMode}
+                style={{ cursor: "pointer" }}
+              >
+                <i
+                  class={`fa-regular fa-${theme == "dark" ? "sun" : "moon"}`}
+                ></i>
+              </div>
             </div>
           </div>
 
@@ -161,13 +181,24 @@ const Header = () => {
               <IoLocationSharp size={22} />
               <span>100ft Road, Kanner</span>
             </div>
-            <Link to={"/profile/accounts"} >
-              <img
-                src={profileImg}
-                alt="profileImg"
-                className="w-[45px] h-[45px] object-cover rounded-full"
-              />
-            </Link>
+            <div className="flex items-center gap-3">
+              <Link to={"/profile/accounts"}>
+                <img
+                  src={profileImg}
+                  alt="profileImg"
+                  className="w-[45px] h-[45px] object-cover rounded-full"
+                />
+              </Link>
+              <div
+                className="icon"
+                onClick={changeMode}
+                style={{ cursor: "pointer" }}
+              >
+                <i
+                  class={`fa-regular fa-${theme == "dark" ? "sun" : "moon"}`}
+                ></i>
+              </div>
+            </div>
           </div>
         </div>
       </header>

@@ -8,9 +8,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 function App() {
-  const [mobile, setMobile] = useState(false);
   const { t, i18n } = useTranslation();
-
   useEffect(() => {
     if (localStorage.getItem("lang") == "ar") {
       i18n.changeLanguage("ar");

@@ -1,10 +1,16 @@
 @import "../../assets/variables.scss";
 
+
+
+.title_section{
+  color: var(--font-color);
+}
+
+
 .beauty_section {
   .swiper {
     padding: 20px 0;
   }
-
   .box {
     padding: 15px;
     background-color: white;
@@ -37,7 +43,6 @@
     .title {
       font-size: 20px;
       font-weight: 700;
-
       @media (max-width: 768px) {
         font-size: 17px;
       }
@@ -73,15 +78,14 @@
 
 .shein_section {
   .box {
-    border-top-right-radius: 55px;
-    border-bottom-left-radius: 55px;
-    border: 1px solid rgb(199, 199, 199);
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border: 1px solid var(--border);
     cursor: pointer;
 
     .img {
       position: relative;
       min-width: 180px;
-
       img {
         border-top-right-radius: 55px;
         height: 200px;
@@ -137,7 +141,7 @@
     .con {
       padding: 20px 10px;
       padding-right: 10px;
-
+      color: var(--font-color);
       @media (max-width: 768px) {
         padding: 10px;
         width: 100%;

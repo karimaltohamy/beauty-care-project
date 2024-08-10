@@ -6,8 +6,9 @@ nav {
   left: 0;
   width: 100%;
   padding: 10px 30px;
-  background-color: white;
-  box-shadow: 1px -2px 20px rgb(216, 216, 216);
+  background-color: var(--mainBG);
+  color: var(--font-color);
+  box-shadow: 1px -2px 20px #907c6c ;
   z-index: 999;
   border-radius: 11px;
 

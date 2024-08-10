@@ -2,7 +2,7 @@
 
 .mini_header {
   background-color: $main-Color-back;
-  color: white;
+  color: var(--font-color);
   padding: 8px 0;
 
   @media (max-width: 768px) {
@@ -15,7 +15,9 @@ header {
   position: relative;
   z-index: 100;
   border-bottom: 1px solid rgb(223, 223, 223);
-
+  *{
+    color: var(--font-color);
+  }
   @media (max-width: 768px) {
     border-bottom: unset;
   }

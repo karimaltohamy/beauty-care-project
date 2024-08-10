@@ -1,0 +1,388 @@
+@import "../../assets/variables.scss";
+
+body.ar {
+  .auth {
+    .content {
+      right: auto;
+      left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+    .inputs {
+      width: 100%;
+      gap: 10px;
+      .input-group {
+        i {
+          border-top-left-radius: 0px;
+          border-bottom-left-radius: 0px;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        input {
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        .inside {
+          display: flex;
+          align-items: center;
+          i,
+          input {
+            height: 42px;
+          }
+          i {
+            background-color: $main-Color-back;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          input {
+            padding: 0px 10px;
+            flex-grow: 1;
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  .ball {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: purple;
+    top: -50px;
+    left: -50px;
+    z-index: -100;
+    &.two {
+      top: auto;
+      bottom: -50px;
+      right: -50px;
+      left: auto;
+      background-color: palevioletred;
+    }
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  .box {
+    display: flex;
+    width: 60%;
+    position: relative;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0px 0px 20px #ddd;
+    .wave {
+      display: none;
+    }
+    .header {
+      flex-basis: 70%;
+      .logo {
+        display: none;
+      }
+      .img {
+        height: 500px;
+        img {
+          width: 100%;
+          height: 100%;
+          border-top-left-radius: 50px;
+          border-bottom-left-radius: 10px;
+          border-top-right-radius: 20px;
+          border-bottom-right-radius: 30px;
+        }
+      }
+    }
+    .content {
+      width: 40%;
+      height: 70%;
+      position: absolute;
+      right: 0%;
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: url("../../assets/images/low-poly-grid-haikei.png");
+      background-color: $main-Color-back-trans;
+      padding: 20px;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      h1 {
+        font-size: 25px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        span {
+          font-weight: 400;
+        }
+      }
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+        background-color: transparent;
+        border: 1px solid;
+        width: 100%;
+        &.signUp {
+          border: none;
+          background-color: white;
+        }
+        font-weight: bold;
+        padding: 10px 0px;
+        border-radius: 10px;
+        &:hover {
+          transition: $transtions;
+        }
+      }
+      .another {
+        width: 100%;
+        margin: 15px 0px;
+        p {
+          display: flex;
+          align-items: center;
+          font-weight: bold;
+          span {
+            display: block;
+            margin: 0px 3px;
+            width: 20%;
+            flex-grow: 1;
+            height: 1px;
+            background-color: $main-Color-back;
+          }
+          text-align: center;
+        }
+        .flexgo {
+          display: flex;
+          justify-content: space-between;
+          gap: 10px;
+          button {
+            width: fit-content;
+            padding: 6px 10px;
+            flex-grow: 1;
+          }
+        }
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .auth {
+    display: block;
+    background-image: url("../../assets/images/AuthPhone.PNG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    .box {
+      display: block;
+      padding: 0%;
+      height: 100vh;
+      width: 100%;
+      box-shadow: 0px 0px 0px;
+      background-color: transparent;
+      .content {
+        position: static;
+        width: 70% !important;
+        margin: 165px auto 0 auto;
+        padding: 0%;
+        height: fit-content !important;
+        display: block;
+        text-align: center;
+        border-radius: 0 !important;
+        background-image: none;
+        transform: translateY(0);
+        background-color: transparent;
+        color: black;
+        .inputs {
+          gap: 20px;
+          .inside {
+            background-color: #ddd;
+            border-radius: 20px;
+          }
+        }
+        input {
+          &::placeholder {
+            font-weight: 400;
+            text-transform: capitalize;
+          }
+        }
+        button {
+          background-color: $main-Color-back;
+          &.signUp {
+            border: 1px solid $main-Color-back;
+          }
+        }
+        .actions {
+          p {
+            color: $main-Color-back;
+          }
+          button {
+            background-color: transparent;
+            background-image: url("../../assets/images/low-poly-grid-haikei.png");
+            background-size: cover;
+          }
+        }
+      }
+    }
+    .header {
+      position: relative;
+      height: 200px;
+      .wave {
+        display: block;
+        width: 100%;
+        height: 300px;
+        z-index: 1000;
+        position: absolute;
+        top: 20px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .logo {
+        display: block !important;
+        img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+        }
+      }
+      .img {
+        display: none;
+      }
+    }
+  }
+}
+
+.login {
+  .content {
+    height: 80% !important;
+    width: 45% !important;
+  }
+  .actions {
+    width: 100%;
+    .flex {
+      justify-content: space-between;
+      align-items: center;
+      .small-flex{
+        display: flex;
+        align-items: center;
+      }
+      p {
+        font-weight: bold;
+      }
+    }
+    span {
+      margin: 0px 5px;
+    }
+    button {
+      width: 200px !important;
+      margin: 0 auto;
+      background-color: transparent;
+    }
+    p {
+      margin-top: 5px;
+      text-align: center;
+      a {
+        font-weight: bold;
+        color: black !important;
+      }
+    }
+  }
+  .inputs {
+    width: 100%;
+    .input-group {
+      margin-bottom: 10px;
+      i {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      input {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        &::placeholder {
+          color: black;
+        }
+      }
+
+      .inside {
+        display: flex;
+        align-items: center;
+        position: relative;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        i,
+        input {
+          height: 40px;
+          background-color: transparent !important;
+        }
+        i {
+          width: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        input {
+          padding: 0px 10px;
+          flex-grow: 1;
+          outline: none;
+        }
+      }
+    }
+    i {
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (min-width : 768px) and (max-width : 1120px) {
+  .auth{
+    &.login{
+      .content{
+        width:55% !important ;
+      }
+    }
+    .flexgo{
+      p{
+        display: none !important;
+      }
+    }
+    .actions{
+      .flex{
+        
+        p{
+          font-size: 12px;
+        }
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+    .another{
+      & > p {
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -2,7 +2,8 @@ import { t } from "i18next";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./mainSection.scss";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 
 const MainSection = ({ children, title, link, breakpoints }) => {
   return (
@@ -16,7 +17,12 @@ const MainSection = ({ children, title, link, breakpoints }) => {
             </Link>
           )}
         </div>
-        <Swiper spaceBetween={25} breakpoints={breakpoints}>
+        <Swiper
+          spaceBetween={25}
+          breakpoints={breakpoints}
+          modules={[Autoplay]}
+          grabCursor={true}
+        >
           {children}
         </Swiper>
       </div>

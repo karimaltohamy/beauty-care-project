@@ -154,7 +154,7 @@ const Home = () => {
 
       <div className="clinics_section">
         <MainSection
-          title={"shein_section"}
+          title={"Clinics Section"}
           link={"/clinics"}
           breakpoints={{
             250: {

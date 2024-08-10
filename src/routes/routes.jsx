@@ -3,24 +3,29 @@ import { createBrowserRouter } from "react-router-dom";
 import {
   Application,
   Atelier,
+  Auth,
   Beauty,
   BeautyProfile,
   Clinics,
   Home,
   Login,
+  MyTickets,
+  NewTicket,
   Packages,
   Profile,
   Shein,
   SheinItemProfile,
+  SignUser,
 } from "../pages";
+import { Suspense } from "react";
 
 import Loading from "../components/loading/Loading.jsx";
-import { Suspense } from "react";
 import SignUpAsHostinger from "../pages/signAs/SignUpAsHostinger.jsx";
-import SignUser from "../pages/signUser/SignUser.jsx";
+
 import AccountData from "../pages/profile/accountData/AccountData.jsx";
 import Orders from "../pages/profile/orders/Orders.jsx";
 import My_Branding from "../pages/profile/myBrand/My_Branding.jsx";
+
 
 export const router = createBrowserRouter([
   {
@@ -95,6 +100,22 @@ export const router = createBrowserRouter([
               </Suspense>
             ),
           },
+          {
+            path: "newTicket",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <NewTicket />
+              </Suspense>
+            ),
+          },
+          {
+            path: "MyTickets",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <MyTickets />
+              </Suspense>
+            ),
+          },
         ],
       },
       {
@@ -146,14 +167,6 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/signUpAsHostinger",
-        element: (
-          <Suspense fallback={<Loading />}>
-            <SignUpAsHostinger />
-          </Suspense>
-        ),
-      },
-      {
         path: "/clinics",
         element: (
           <Suspense fallback={<Loading />}>
@@ -162,6 +175,14 @@ export const router = createBrowserRouter([
         ),
       },
     ],
+  },
+  {
+    path: "/auth",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <Auth />
+      </Suspense>
+    ),
   },
   {
     path: "/login",
@@ -176,6 +197,14 @@ export const router = createBrowserRouter([
     element: (
       <Suspense fallback={<Loading />}>
         <SignUser />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/signUpAsHostinger",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <SignUpAsHostinger />
       </Suspense>
     ),
   },

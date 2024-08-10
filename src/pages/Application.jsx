@@ -10,15 +10,21 @@ const Application = () => {
   const location = useLocation();
   const { pathname } = location;
   const { id } = useParams();
+  const { theme } = localStorage;
   useEffect(() => {
     Aos.init();
   }, []);
+  useEffect(()=>{
+    document.body.classList.add(theme);
+  },[localStorage.theme])
   return (
     <Fragment>
-      {((pathname !== `/beauty/${id}` && pathname !== `/shein/1`) ||
+      {((pathname !== `/beauty/${id}` && pathname !== `/shein/${id}`) ||
         window.innerWidth >= 768) && <Header />}
       <Outlet />
-      {window.innerWidth <= 768 && pathname !== `/beauty/${id}` && <Navbar />}
+      {window.innerWidth <= 768 &&
+        pathname !== `/beauty/${id}` &&
+        pathname !== `/shein/${id}` && <Navbar />}
       <Footer />
     </Fragment>
   );

@@ -1,5 +1,18 @@
 @import "../../assets/variables.scss";
 
+body.dark {
+  .model_poup{
+   .head{
+    * {
+      color: black !important;
+    }
+   }
+   textarea{
+    color: black !important;
+   }
+  }
+}
+
 body.ar {
   i {
     border-top-left-radius: 0px !important ;
@@ -19,6 +32,12 @@ body.ar {
 
 .beauty_profile {
   position: relative;
+  * {
+    color: var(--font-color) ;
+  }
+  .comments, .work {
+    background-color: var(--secondBG);
+  }
   .info {
     display: flex;
     justify-content: space-between;
@@ -159,7 +178,7 @@ body.ar {
       width: 25%;
       margin: 30px 0px;
       padding: 10px 20px;
-      box-shadow: 0px 0px 10px #907c6c;
+      box-shadow: var(--box-shadow);
       flex-grow: 1;
       height: fit-content;
       border-radius: 10px;
@@ -175,7 +194,6 @@ body.ar {
           .flex {
             flex-grow: 1;
             flex-direction: row-reverse;
-            border: 1px solid #ddd;
           }
           i {
             width: 30px;
@@ -187,7 +205,7 @@ body.ar {
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
             background-color: $main-Color-back;
-            color: white;
+
             font-weight: bold;
           }
           input,
@@ -197,6 +215,10 @@ body.ar {
             font-size: 14px;
             font-weight: 400;
             padding: 0 15px;
+            color: black !important;
+            option {
+              color: black !important;
+            }
             height: 42px;
           }
         }
@@ -353,6 +375,10 @@ body.ar {
       box-shadow: 0px 0px !important;
       margin: 0;
       padding: 10px 20px !important;
+      textarea{
+        outline: none;
+        padding: 10px;
+      }
     }
   }
 }

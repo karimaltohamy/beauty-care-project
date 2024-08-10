@@ -17,7 +17,7 @@ const SignUpAsHostinger = () => {
 
   return (
     <Fragment>
-      <Banner title={t("Start_With_Us")} needBack={true} />
+      <Banner title={t("Start_With_Us")}  />
       <div
         className="sign"
         data-aos="flip-up"
@@ -31,16 +31,6 @@ const SignUpAsHostinger = () => {
           </div>
           <form>
             <div className="form">
-              {/* <div className="progress">
-                <div className="line">
-                  {" "}
-                  <span></span>
-                </div>
-                <div className="line">
-                  {" "}
-                  <span className={`${next && "next"}`}></span>
-                </div>
-              </div> */}
               <div className={`details personal`}>
                 <span className="title">{t("Personal_Details")}</span>
                 <div className="fields">

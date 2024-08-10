@@ -114,9 +114,9 @@ function Reviews({ popupComm, setPopComm }) {
             }}
             navigation={true}
             grabCursor={true}
-            autoplay={{
-              delay: 2000,
-            }}
+            // autoplay={{
+            //   delay: 2000,
+            // }}
             breakpoints={{
               140: {
                 slidesPerView: 1,
@@ -132,7 +132,7 @@ function Reviews({ popupComm, setPopComm }) {
             }}
             loop={true}
             spaceBetween={40}
-            modules={[Autoplay, Pagination , Navigation]}
+            modules={[Autoplay, Pagination, Navigation]}
           >
             {[...Array(6)].map(() => {
               return (

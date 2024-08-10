@@ -10,7 +10,7 @@ body.ar {
       &:hover {
         .topic {
           i:last-child {
-            transform: rotate(-90deg);
+            transform: rotate(90deg);
           }
         }
       }
@@ -67,12 +67,9 @@ body.ar {
       padding: 0px 10px;
       border-radius: 10px;
       transition: $transtions;
-      &:last-child {
-        border: none;
-      }
       &.active {
         background-color: white;
-        margin: 0px;
+        margin: 10px 0px;
         padding: 0px 10px;
         transition: $transtions;
         color: $main-Color-back !important;
@@ -86,6 +83,13 @@ body.ar {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      &:hover{
+        .topic{
+          i:last-child{
+            transform: rotate(90deg);
+          }
+        }
+      }
       .topic {
         display: flex;
         gap: 15px;
