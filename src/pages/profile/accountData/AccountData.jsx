@@ -6,23 +6,7 @@ import { useTranslation } from "react-i18next";
 
 function AccountData() {
   const { i18n } = useTranslation();
-  const {theme} = localStorage 
-  const [changeMode, setChangeMode] = useState(theme == "dark" ? true : false);
   const [lang, setLang] = useState(localStorage.lang || "en");
-  // const onChange = (e) => {
-  //   const { checked } = e.target;
-  //   if(checked){
-  //     document.body.classList.add("dark")
-  //   }else{
-  //     document.body.classList.remove("dark")
-  //   }
-  //   localStorage.theme = checked ? "dark" : "t"
-  //   setChangeMode(!changeMode);
-  // };
-
-
-
-
   const chageLang = (e) => {
     const { value } = e.target;
     setLang(value);
@@ -141,7 +125,7 @@ function AccountData() {
 
               <div className="lang">
                 <label htmlFor="">{t("Languages")}</label>
-                <div className="inside">
+                <div className="inside ">
                   <i className="fa-solid fa-earth-africa"></i>
                   <SelectSectionForm
                     value={lang}

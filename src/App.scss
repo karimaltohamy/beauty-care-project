@@ -19,7 +19,7 @@ html {
   --colorBgAndTextMain: $main-Color-back;
   --font-color: black;
   --secondBG : #ddd ;
-  --box-shadow: 0px 0px 10px #ddd;
+  --box-shadow: 0px 0px 10px #bfbfbf;
 }
 
 body {
@@ -31,7 +31,7 @@ body {
     --mainBG: #16101e;
     --secondBG : #1f1926 ;
     --font-color: white;
-    --box-shadow: 0px 0px 5px #907c6c;
+    --box-shadow: 0px 0px 10px #907c6c;
   }
   background-color: var(--mainBG) !important;
   &.ar {

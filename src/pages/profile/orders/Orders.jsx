@@ -106,7 +106,6 @@ function Orders() {
   const searchTable = (e) => {
     const table_rows = document.querySelectorAll(".profile tbody tr");
     const search_data = e.target.value.toLowerCase();
-    console.log(search_data);
     table_rows.forEach((row, i) => {
       const table_data = row.textContent.toLowerCase();      
       row.classList.toggle("hide", table_data.indexOf(search_data) < 0);      

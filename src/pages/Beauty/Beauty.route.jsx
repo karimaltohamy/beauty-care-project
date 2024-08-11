@@ -13,7 +13,7 @@ const Beauty = () => {
       <div className="py-12 beauty">
         <div className="container">
           <div className="w-full filter">
-            <div className="flex items-center justify-center md:justify-between  md:flex-row mb-7 p-2 bg-gray-100 rounded-lg">
+            <div className="flex items-center justify-center md:justify-between  md:flex-row mb-7 p-2 bg-[#FFF5EE] rounded-lg">
               <h3 className="text-[19px] text-gray-500 font-semibold">
                 11 {t("results")}
               </h3>

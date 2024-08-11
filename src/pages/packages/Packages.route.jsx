@@ -15,7 +15,7 @@ const Packages = () => {
       <div className="py-12 packages">
         <div className="container">
           <div className="w-full filter">
-            <div className="flex items-center justify-center md:justify-between  md:flex-row mb-7 p-2 bg-gray-100 border border-gray-200 rounded-lg">
+            <div className="flex items-center justify-center md:justify-between  md:flex-row mb-7 p-2 bg-[#FFF5EE] border border-gray-200 rounded-lg">
               <h3 className="text-[19px] text-gray-500 font-semibold">
                 11 {t("results")}
               </h3>

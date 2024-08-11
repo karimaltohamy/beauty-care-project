@@ -21,13 +21,13 @@
   }
   .filter {
     .jemy{
-      background-color: white;
+      background-color: #FFF5EE;
       padding: 10px;
       border-radius: 10px;
     }
   }
   .box {
-    box-shadow: 0px 0px 20px #ddd;
+    background-color: var(--secondBG);
     cursor: pointer;
     padding: 15px;
     border-radius: 10px;

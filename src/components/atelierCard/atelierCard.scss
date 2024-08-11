@@ -1,7 +1,7 @@
 @import "../../assets/variables.scss";
 
 .atelierCard {
-  box-shadow: 0 0 18px #c7c7c7;
+  box-shadow: var(--box-shadow);
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;

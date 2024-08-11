@@ -7,6 +7,7 @@ import { IoLocationOutline } from "react-icons/io5";
 
 import { t } from "i18next";
 
+
 import "./atelierCard.scss";
 
 const AtelierCard = ({ content, price, starsCount, normalContent = true }) => {

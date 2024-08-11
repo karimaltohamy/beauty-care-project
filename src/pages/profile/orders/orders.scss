@@ -1,17 +1,14 @@
 @import "../../../assets/variables.scss";
 
-
-
 body.dark {
-  .view{
-    .table{
+  .view {
+    .table {
       tbody tr:nth-child(even) {
         background-color: #706f6fa2;
       }
     }
   }
 }
-
 
 .profile {
   .view {
@@ -20,27 +17,20 @@ body.dark {
     }
     .table {
       width: 100%;
+      border-radius: 30px;
+      @media screen and (max-width: 1070px) {
+        width: 400px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      width: 100%;
       box-shadow: var(--box-shadow);
       border-radius: 30px;
       @media screen and (max-width: 1070px) {
         width: 400px;
         flex-grow: 1;
-        display:flex;
-        flex-direction: column;
-      }
-
-
-
-.profile {
-  .view {
-    .table {
-      width: 100%;
-      box-shadow: 0 0.4rem 0.8rem #0005;
-      border-radius: 30px;
-      @media screen and (max-width: 1070px) {
-        width: 400px;
-        flex-grow: 1;
-        display:flex;
+        display: flex;
         flex-direction: column;
       }
       @media screen and (max-width: 768px) {
@@ -65,6 +55,7 @@ body.dark {
           padding: 8px 15px;
           margin-left: 8px;
           border-radius: 10px;
+          color: white;
           .new {
             display: flex;
             align-items: center;
@@ -81,10 +72,10 @@ body.dark {
           justify-content: center;
           align-items: center;
           transition: 0.2s;
+          box-shadow: var(--box-shadow);
           &:hover {
-            width: 45%;
+            width: 60%;
             background-color: #fff8;
-            box-shadow: 0 0.1rem 0.4rem #0002;
           }
           img {
             width: 1.2rem;
@@ -96,6 +87,9 @@ body.dark {
             background-color: transparent;
             border: none;
             outline: none;
+            &::placeholder {
+              color: var(--font-color);
+            }
           }
         }
       }
@@ -122,7 +116,7 @@ body.dark {
               display: flex;
               justify-content: center;
               align-items: center;
-              p{
+              p {
                 min-width: 45%;
               }
             }
@@ -217,4 +211,3 @@ body.dark {
     }
   }
 }
-    }}}

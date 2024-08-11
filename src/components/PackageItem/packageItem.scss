@@ -4,7 +4,7 @@
   background-color: white;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: -2px 4px 15px rgb(211 211 211 / 49%);
+  box-shadow: var(--box-shadow);
 
   .head {
     display: flex;

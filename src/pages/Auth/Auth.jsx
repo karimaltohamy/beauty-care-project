@@ -42,13 +42,16 @@ function Auth() {
               <div className="flexgo">
                 <button className="go">
                   <img src={google} alt="" />
+                  <i className="fa-brands fa-google"></i>
                   <p> {t("Google")}</p>
                 </button>
                 <button className="go">
                   <img src={facebook} alt="" />
+                  <i className="fa-brands fa-facebook"></i>
                   <p>{t("Facebook")}</p>
                 </button>
               </div>
+              <h5>sign in with another account</h5>
             </div>
           </div>
           <div className="ball one"></div>
