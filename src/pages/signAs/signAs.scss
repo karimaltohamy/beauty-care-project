@@ -85,12 +85,13 @@ body.ar {
         .btns{
           p{
             text-align: center;
-            font-size: 18px;
+            font-size: 16px;
             text-transform: capitalize;
             span{
-              font-size: 20px;
+              font-size: 18px;
               color: $main-Color-back;
               font-weight: bold;
+              cursor: pointer;
             }
           }
         }

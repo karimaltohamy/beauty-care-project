@@ -13,9 +13,12 @@
   }
   .box {
     padding: 15px;
-    background-color: white;
+    background-color: var(--secondBG);
+    * {
+      color:  var(--font-color);
+    }
+    box-shadow: var(--box-shadow);
     border-radius: 10px;
-    box-shadow: var(--box-shadow) ;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -81,7 +84,10 @@
     border-top-right-radius: 50px;
     border-bottom-left-radius: 50px;
     box-shadow:  var(--box-shadow);
-    border: 1px solid var(--border);
+    background-color: var(--secondBG);
+    * {
+      color:  var(--font-color);
+    }
     cursor: pointer;
 
     .img {

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { IoClose } from "react-icons/io5";
 import "./menu.scss";
 import img from "../../assets/images/ai-generated-8556454_1920.jpg";
+import menuImg  from "../../assets/images/MenuImg.png"
 import { NavLink } from "react-router-dom";
 import { t } from "i18next";
 
@@ -20,9 +21,7 @@ const Menu = ({ open, setOpen }) => {
         <img src={img} alt="" />
         <i class="fa-regular fa-pen-to-square icon"></i>
       </div>
-
       <h1 style={{ textAlign: "center", marginTop: "5px" }}>Mohamed Gamal</h1>
-
       <div className="data">
         <NavLink className="inside shdaow" to={"/profile/accounts"}>
           <i className="fa-solid fa-sitemap"></i>

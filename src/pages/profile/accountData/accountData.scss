@@ -25,7 +25,6 @@ body.ar {
     box-shadow: var(--box-shadow);
     border-radius: 20px;
     padding: 20px;
-
     .form {
       i {
         width: 30px;
@@ -80,6 +79,7 @@ body.ar {
               font-weight: 400;
               border-top-right-radius: 5px;
               border-bottom-right-radius: 5px;
+              background-color: var(--secondBG);
               padding: 0 15px;
               height: 42px;
             }
@@ -87,9 +87,9 @@ body.ar {
 
           .input-field {
             input {
-              color: black;
+              color: var(--font-color);
               &::placeholder {
-                color: black;
+                color: var(--font-color);
               }
             }
           }
@@ -103,13 +103,10 @@ body.ar {
             }
             select {
               flex-grow: 1;
-              color: black;
               outline:  none;
+              background-color: var(--secondBG);
               border-top-right-radius: 5px ;
               border-bottom-right-radius: 5px ; 
-              option {
-                color: black;
-              }
             }
           }
         }

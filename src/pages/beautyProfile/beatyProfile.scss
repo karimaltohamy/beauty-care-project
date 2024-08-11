@@ -1,17 +1,5 @@
 @import "../../assets/variables.scss";
 
-body.dark {
-  .model_poup{
-   .head{
-    * {
-      color: black !important;
-    }
-   }
-   textarea{
-    color: black !important;
-   }
-  }
-}
 
 body.ar {
   i {
@@ -178,6 +166,7 @@ body.ar {
       width: 25%;
       margin: 30px 0px;
       padding: 10px 20px;
+      background-color: var(--secondBG);
       box-shadow: var(--box-shadow);
       flex-grow: 1;
       height: fit-content;
@@ -368,6 +357,7 @@ body.ar {
 .beauty_profile {
   .model_poup.active {
     .content {
+      background-color: var(--mainBG);
       padding-bottom: 0;
     }
     form {
@@ -378,6 +368,7 @@ body.ar {
       textarea{
         outline: none;
         padding: 10px;
+        background-color: var(--secondBG);
       }
     }
   }

@@ -32,7 +32,7 @@ body.ar {
       outline: none;
       border-radius: 10px;
       box-shadow: var(--box-shadow);
-      color: black;
+      background-color: var(--secondBG);
     }
   }
   .input_file {
@@ -47,12 +47,10 @@ body.ar {
       input {
         height: 42px;
         flex-grow: 1;
-        background-color: white;
-        color: black;
+        background-color: var(--secondBG);
         padding: 5px;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px; 
-        // border: 1px solid #ddd;
       }
     }
   }

@@ -194,9 +194,14 @@ body.ar {
 @media screen and (max-width: 768px) {
   .auth {
     display: block;
-    background-image: url("../../assets/images/AuthPhone.PNG");
+    background-image: url("src/assets/images/..........8.png");
     background-size: cover;
     background-repeat: no-repeat;
+    &.login {
+      .content {
+        margin: 100px auto 0 auto !important;
+      }
+    }
     .box {
       display: block;
       padding: 0%;
@@ -206,8 +211,8 @@ body.ar {
       background-color: transparent;
       .content {
         position: static;
-        width: 70% !important;
-        margin: 165px auto 0 auto;
+        width: 85% !important;
+        margin: 130px auto 0 auto;
         padding: 0%;
         height: fit-content !important;
         display: block;
@@ -217,6 +222,10 @@ body.ar {
         transform: translateY(0);
         background-color: transparent;
         color: black;
+        h1{
+          font-size: 33px;
+          margin-bottom: 40px;
+        }
         .inputs {
           gap: 20px;
           .inside {
@@ -234,9 +243,8 @@ body.ar {
           }
         }
         button {
-          background-color: $main-Color-back;
           &.signUp {
-            border: 1px solid $main-Color-back;
+            background: linear-gradient(210deg , $main-Color-back 50% , #3a11d0 65% );
           }
         }
         .actions {
@@ -246,7 +254,9 @@ body.ar {
             }
           }
           button {
-            color: white;
+            border: 1px solid $main-Color-back;
+            color: $main-Color-back;
+            font-size: 20px;
           }
           .newUser {
             margin-top: 10px;
@@ -258,9 +268,7 @@ body.ar {
         }
         .another{
           margin: 0;
-           & > p {
-            display: none;
-           }
+          margin-top: 10px;
            img {
             display: none;
            }
@@ -271,7 +279,7 @@ body.ar {
            h5 {
             display: block;
             font-weight: bold;
-            margin-top: 10px;
+            margin-top: 5px;
             color: #a3a3a3;
            }
            .flexgo {
@@ -284,6 +292,7 @@ body.ar {
            button {
             flex-grow: 0 !important;
             width: 30px !important ;
+            background-color: $main-Color-back;
             height: 30px;
              p {
               display: none;
@@ -347,7 +356,6 @@ body.ar {
       margin: 0px 5px;
     }
     button {
-      width: 200px !important;
       margin: 0 auto;
       background-color: transparent;
     }

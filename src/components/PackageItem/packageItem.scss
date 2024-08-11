@@ -1,10 +1,13 @@
 @import "../../assets/variables.scss";
 
 .package_item {
-  background-color: white;
+  background-color: var(--secondBG);
+  * {
+    color:  var(--font-color);
+  }
+  box-shadow: var(--box-shadow);
   border-radius: 10px;
   padding: 20px;
-  box-shadow: var(--box-shadow);
 
   .head {
     display: flex;

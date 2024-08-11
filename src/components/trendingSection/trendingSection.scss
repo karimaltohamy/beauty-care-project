@@ -20,9 +20,12 @@
     }
     .box {
       padding: 15px;
-      background-color: white;
-      border-radius: 10px;
+      background-color: var(--secondBG);
+      * {
+        color:  var(--font-color);
+      }
       box-shadow: var(--box-shadow);
+      border-radius: 10px;
 
       @media (max-width: 768px) {
         padding: 10px;

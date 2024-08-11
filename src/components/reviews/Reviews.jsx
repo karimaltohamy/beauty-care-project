@@ -114,9 +114,9 @@ function Reviews({ popupComm, setPopComm }) {
             }}
             navigation={true}
             grabCursor={true}
-            // autoplay={{
-            //   delay: 2000,
-            // }}
+            autoplay={{
+              delay: 2000,
+            }}
             breakpoints={{
               140: {
                 slidesPerView: 1,

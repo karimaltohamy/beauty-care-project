@@ -28,10 +28,10 @@ body {
   min-height: 100vh;
   transition: $transtions;
   &.dark {
-    --mainBG: #16101e;
-    --secondBG : #1f1926 ;
+    --mainBG: #09161d;
+    --secondBG : #071d29 ;
     --font-color: white;
-    --box-shadow: 0px 0px 10px #907c6c;
+    --box-shadow: 0px 0px 10px rgb(0, 0, 0);
   }
   background-color: var(--mainBG) !important;
   &.ar {

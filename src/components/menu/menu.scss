@@ -3,6 +3,7 @@
 
 body.ar{
   .menu{
+    transform-origin: bottom right;
     .orders:hover{
       .topic{
         i:last-child{
@@ -27,6 +28,9 @@ body.ar{
   transform: scale(0);
   transform-origin: bottom left;
   transition: all 0.4s ease-in-out;
+  .head  , .logOut{
+    background-color: var(--secondBG);
+  }
   .data,
   .head {
     padding: 10px 20px;
@@ -66,6 +70,14 @@ body.ar{
       align-items: center;
       gap: 15px;
       padding: 5px 0px;
+      &.active {
+        transition: $transtions;
+        transform: translateX(0px);
+        background-color: var(--secondBG);
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+      }
     }
     .orders {
       display: flex;
@@ -101,7 +113,7 @@ body.ar{
         overflow: hidden;
         max-height:1px;
         transform: scale(0);
-        transform-origin: bottom left;
+        transform-origin:  center;
         flex-direction: column;
       }
     }
@@ -118,8 +130,5 @@ body.ar{
     align-items: center;
     font-size: 20px;
     border-top: 2px solid #f3e6e6;
-    h1 , i {
-      color: white;
-    }
   }
 }

@@ -44,7 +44,7 @@ function My_Branding() {
                   <i class="fa-solid fa-photo-film"></i>
                 </div>
               </div>
-              <div className="work">
+              <div className="workk">
                 <label htmlFor="">{t("Working Days")}</label>
                 <div className="inputs">
                   <div className="flex">

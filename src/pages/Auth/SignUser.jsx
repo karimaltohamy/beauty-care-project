@@ -102,7 +102,7 @@ const SignUpAsHostinger = () => {
               <button>
                 <span className="btnText">{t("Submit")}</span>
               </button>
-              <p>{t("have account")} ? <span onClick={()=> navigate("/login")}>{t("Login")}</span></p>
+              <p>{t("have account")} ? <span onClick={()=> navigate("/login")} >{t("Login")}</span></p>
             </div>
             <div className="another">
               <p>

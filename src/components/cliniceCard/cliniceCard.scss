@@ -11,7 +11,11 @@
     height: 100%;
     position: relative;
     z-index: 20;
-    background-color: white;
+    background-color: var(--secondBG);
+    * {
+      color:  var(--font-color);
+    }
+    box-shadow: var(--box-shadow);
     text-align: start !important;
     display: flex;
     flex-direction: column;

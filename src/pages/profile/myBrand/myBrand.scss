@@ -23,7 +23,7 @@ body.ar {
 }
 
 .mybrand {
-  box-shadow: 0px 0px 10px #907c6c;
+  box-shadow: var(--box-shadow);
   padding: 10px;
   width: 100%;
   border-radius: 20px;
@@ -87,17 +87,18 @@ body.ar {
               outline: none;
               font-size: 14px;
               font-weight: 400;
+              color: var(--font-color);
               border-top-right-radius: 5px;
               border-bottom-right-radius: 5px;
               padding: 0 15px;
+              background-color: var(--secondBG);
               height: 42px;
               &[type="file"] {
                 padding-top: 8px;
-                background-color: white;
               }
             }
           }
-          .work {
+          .workk {
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -107,6 +108,7 @@ body.ar {
               input,
               select {
                 width: calc(100% - 20px);
+                background-color: var(--secondBG);
               }
               .flex {
                 flex-grow: 1;
@@ -139,18 +141,6 @@ body.ar {
               min-width: 100px;
               gap: 3px;
               font-size: 16px;
-            }
-          }
-          .input-field,
-          .work {
-            input,
-            select {
-              color: black;
-            }
-            input {
-              &::placeholder {
-                color: black;
-              }
             }
           }
         }
@@ -189,7 +179,7 @@ body.ar {
               gap: 30px !important;
             }
             .input-field,
-            .work {
+            .workk {
               width: calc((100% - 20px) / 1) !important;
             }
           }
