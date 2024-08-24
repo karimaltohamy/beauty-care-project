@@ -6,15 +6,20 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import salon from "../../assets/images/images.png";
 import Popup from "../popup/Popup";
 
-function Reviews({ popupComm, setPopComm }) {
+function Reviews({ popupComm, setPopComm, tab, activate = false }) {
   return (
     <div className="reviewDiv">
-      <div className="container">
-        <h1
-          style={{ fontWeight: "700", fontSize: "30px", marginBottom: "20px" }}
-        >
-          {t("Reviews")}
-        </h1>
+      <div
+        className="container"
+        style={{ display: tab !== "reviews" && activate ? "none" : "" }}
+      >
+        {!activate && (
+          <h1
+            style={{ fontSize: "30px", fontWeight: 700, marginBottom: "10px" }}
+          >
+            {t("Reviews")}
+          </h1>
+        )}
         <div className="heading">
           <div className="box">
             <div className="rate">
@@ -95,17 +100,22 @@ function Reviews({ popupComm, setPopComm }) {
           </Popup>
         </div>
       </div>
-      <div className="comments">
+      <div
+        className="comments"
+        style={{ display: tab !== "comments" && activate ? "none" : "" }}
+      >
         <div className="container">
-          <h1
-            style={{
-              fontWeight: "700",
-              fontSize: "30px",
-              marginBottom: "20px",
-            }}
-          >
-            {t("Comments")}
-          </h1>
+          {!activate && (
+            <h1
+              style={{
+                fontSize: "30px",
+                fontWeight: 700,
+                marginBottom: "10px",
+              }}
+            >
+              {t("Comments")}
+            </h1>
+          )}
           <Swiper
             watchSlidesProgress={true}
             slidesPerView={3}

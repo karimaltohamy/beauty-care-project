@@ -20,4 +20,4 @@ const Banner = ({ title, needTitle = true, needBack = false , classHidden = fals
   );
 };
 
-export default Banner;
+export default Banner; 

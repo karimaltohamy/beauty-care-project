@@ -7,18 +7,21 @@ import "./ourWork.scss";
 import salon from "../../assets/images/woman-3288365_1920.jpg";
 import { Autoplay } from "swiper/modules";
 
-function OurWork({arr = [...Array(6)]}) {
+function OurWork({ arr = [...Array(6)], tab, activate = false }) {
   const options = {
     scale: 1,
   };
   return (
-    <div className="work">
+    <div
+      className="work"
+      style={{ display: tab !== "work" && activate ? "none" : "" }}
+    >
       <div className="all">
-        <h1
-          style={{ fontWeight: "700", fontSize: "30px", marginBottom: "20px" }}
-        >
+      {!activate && (
+        <h1 style={{ fontSize: "30px", fontWeight: 700, marginBottom: "10px" }}>
           {t("Our Work")}
         </h1>
+      )}
         <Swiper
           watchSlidesProgress={true}
           slidesPerView={3}

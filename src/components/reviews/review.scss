@@ -19,6 +19,7 @@
       align-items: center;
       width: 75%;
       border: 2px solid #ddd;
+      justify-content: space-between;
       @media (max-width: 600px) {
         flex-direction: column;
         align-items: center;
@@ -62,12 +63,9 @@
             min-width: 70px;
             color: $font-ddd;
           }
-          span {
-            color: $font-ddd;
-          }
           span:first-of-type {
             flex-grow: 1;
-            background-color: #ddd;
+            background-color:white;
             border-radius: 20px;
             height: 10px;
             position: relative;

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -9,7 +8,7 @@ import "swiper/css/navigation";
 import "./swiperSliderImages.scss";
 
 // import required modules
-import { Keyboard, Pagination, Navigation  ,Autoplay} from "swiper/modules";
+import { Keyboard, Pagination, Navigation, Autoplay } from "swiper/modules";
 import productImg from "../../assets/images/product-1.jpg";
 
 const SwiperSliderImages = () => {
@@ -26,13 +25,14 @@ const SwiperSliderImages = () => {
           clickable: true,
         }}
         navigation={{
-          clickable : true
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         }}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
-        modules={[Keyboard, Pagination, Navigation  , Autoplay]}
+        modules={[Keyboard, Pagination, Navigation, Autoplay]}
       >
         <SwiperSlide>
           <img src={productImg} alt="product_img" />
@@ -44,6 +44,8 @@ const SwiperSliderImages = () => {
           <img src={productImg} alt="product_img" />
         </SwiperSlide>
       </Swiper>
+      <div className="swiper-button-next custom-nav"></div>
+      <div className="swiper-button-prev custom-nav"></div>
     </div>
   );
 };

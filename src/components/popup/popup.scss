@@ -41,11 +41,6 @@
     justify-content: start;
     flex-direction: row-reverse;
     align-items: center;
-    i {
-      height: fit-content;
-      background-color: transparent;
-      color: $main-Color-back;
-    }
   }
 
   &.active {
