@@ -81,19 +81,23 @@ function SideBar() {
         <div className="orders shdaow">
           <div className="topic">
           <i className="fa-solid fa-truck-fast"></i>
-            <h3>{t("packages")}</h3>
+            <h3>{t("Brand Settings")}</h3>
             <i
               class={`fa-solid fa-arrow-${lang == "ar" ? "left" : "right"}`}
             ></i>
           </div>
           <div className="small">
-            <NavLink className="inside" to={"/profile/ordersFulldddd"}>
+            <NavLink className="inside" to={"/profile/AllServices"}>
               <i className="fa-brands fa-servicestack"></i>
-              <p>{t("Add Service")}</p>
+              <p>{t("All Service")}</p>
             </NavLink>
-            <NavLink className="inside" to={"/profile/ordersCompletedddd"}>
+            <NavLink className="inside" to={"/profile/AllPackages"}>
               <i className="fa-solid fa-cube"></i>
-              <p>{t("Add Package")}</p>
+              <p>{t("All Package")}</p>
+            </NavLink>
+            <NavLink className="inside" to={"/profile/Business_gallery"}>
+            <i className="fa-solid fa-business-time"></i>
+              <p>{t("Business Gallery")}</p>
             </NavLink>
           </div>
         </div>

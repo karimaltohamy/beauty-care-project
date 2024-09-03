@@ -13,6 +13,7 @@ import { t } from "i18next";
 import { FaCartPlus } from "react-icons/fa6";
 import CliniceCard from "../../components/cliniceCard/CliniceCard.component";
 import PackageItem from "../../components/PackageItem/PackageItem";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -42,7 +43,7 @@ const Home = () => {
           {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => {
             return (
               <SwiperSlide>
-                <div className="box">
+                <Link className="box" to={"/beauty"}>
                   <div className="image">
                     <img src={boxImg} alt="box_img" loading="lazy" />
                   </div>
@@ -59,7 +60,7 @@ const Home = () => {
                       </button>
                     </div>
                   </div>
-                </div>
+                </Link>
               </SwiperSlide>
             );
           })}
@@ -115,7 +116,7 @@ const Home = () => {
           {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => {
             return (
               <SwiperSlide>
-                <div className="box  md:block">
+                <Link to={"/shein"} className="box  md:block">
                   <div className="img">
                     <img src={imgai} alt="" />
                     <div className="price">
@@ -145,7 +146,7 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </SwiperSlide>
             );
           })}

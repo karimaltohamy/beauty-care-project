@@ -3,10 +3,11 @@ import imgBox from "../../assets/images/bouquet-4736413_1920.jpg";
 import { t } from "i18next";
 import "./packageItem.scss";
 import { FaRegCheckSquare } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const PackageItem = () => {
   return (
-    <div className="package_item">
+    <div to={"/packages"} className="package_item">
       <div className="head">
         <div className="image">
           <img src={imgBox} alt="img_box" />

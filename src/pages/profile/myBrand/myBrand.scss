@@ -8,8 +8,8 @@ body.ar {
         select {
           border-top-left-radius: 5px;
           border-bottom-left-radius: 5px;
-          border-top-right-radius: 0px  ;
-          border-bottom-right-radius: 0px ;
+          border-top-right-radius: 0px;
+          border-bottom-right-radius: 0px;
         }
       }
     }
@@ -143,6 +143,29 @@ body.ar {
               font-size: 16px;
             }
           }
+          .fill {
+            width: 100% !important;
+          }
+        }
+        .payment {
+          margin: 10px 0px;
+          .mega {
+            display: flex;
+            gap: 30px;
+          }
+          p {
+            min-width: 30px;
+          }
+        }
+        .crazy {
+          span {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 1px solid $main-Color-back;
+            padding-bottom: 15px;
+            width: 100%;
+          }
         }
       }
     }
@@ -165,25 +188,35 @@ body.ar {
   margin-top: 20px;
 }
 
-
-@media screen and (max-width: 800px) {
-    .mybrand {
-        box-shadow: 0px 0px 0px;
-        display: block;
-        padding: 0;
-        .form {
-          transform: translateX(0) !important;
-          padding: 0 !important;
-          .details {
-            .fields {
-              gap: 30px !important;
-            }
-            .input-field,
-            .workk {
-              width: calc((100% - 20px) / 1) !important;
-            }
-          }
+@media screen and (max-width: 850px) {
+  .mybrand {
+    box-shadow: 0px 0px 0px;
+    display: block;
+    padding: 0;
+    .form {
+      transform: translateX(0) !important;
+      padding: 0 !important;
+      .details {
+        .fields {
+          gap: 30px !important;
+        }
+        .input-field,
+        .workk {
+          width: calc((100% - 20px) / 1) !important;
         }
       }
     }
-  
+  }
+}
+
+.leaflet-control-container {
+  .leaflet-top.leaflet-left {
+    a {
+      background-color: var(--secondBG) !important;
+    }
+  }
+
+  .leaflet-bottom.leaflet-right {
+    display: none !important;
+  }
+}

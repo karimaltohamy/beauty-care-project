@@ -1,11 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import {
+  AllPackages,
+  AllServices,
   Application,
   Atelier,
   Auth,
   Beauty,
   BeautyProfile,
+  Business_gallery,
   Clinics,
   Home,
   Login,
@@ -25,7 +28,6 @@ import SignUpAsHostinger from "../pages/signAs/SignUpAsHostinger.jsx";
 import AccountData from "../pages/profile/accountData/AccountData.jsx";
 import Orders from "../pages/profile/orders/Orders.jsx";
 import My_Branding from "../pages/profile/myBrand/My_Branding.jsx";
-
 
 export const router = createBrowserRouter([
   {
@@ -104,10 +106,7 @@ export const router = createBrowserRouter([
             path: "newTicket",
             element: (
               <Suspense fallback={<Loading />}>
-
-
-                <NewTicket/>
-
+                <NewTicket />
               </Suspense>
             ),
           },
@@ -119,6 +118,31 @@ export const router = createBrowserRouter([
               </Suspense>
             ),
           },
+          {
+            path: "AllServices",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <AllServices />
+              </Suspense>
+            ),
+          },
+          {
+            path: "AllPackages",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <AllPackages />
+              </Suspense>
+            ),
+          },
+          {
+            path: "Business_gallery",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <Business_gallery />
+              </Suspense>
+            ),
+          },
+
         ],
       },
       {

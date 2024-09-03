@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { t } from "i18next";
 import "./myBrand.scss";
+import LocationPicker from "../../../components/LocationPicker/LocationPicker";
 
 function My_Branding() {
+  const [location, setLocation] = useState(null);
+
+  // Default location set to Egypt
+  const defaultLocation = { lat: 29.9792, lng: 31.1342 };
+
+  const handleLocationSelect = (location) => {
+    setLocation(location);
+  };
+
+  const [payment, setPayment] = useState();
+
   return (
     <div className="mybrand center">
       <form>
@@ -18,27 +30,56 @@ function My_Branding() {
                 </div>
               </div>
               <div className="input-field">
+                <label>{t("address")}</label>
+                <div className="flex">
+                  <input type="text" placeholder="Enter Adress" />
+                  <i className="fa-regular fa-address-card"></i>
+                </div>
+              </div>
+              <div className="input-field">
+                <label>{t("Work Type")}</label>
+                <div className="flex">
+                  <select>
+                    <option disabled selected>
+                      {t("Work Type")}
+                    </option>
+                    <option>{t("Beauty Center")}</option>
+                    <option>{t("Atelie")}</option>
+                    <option>{t("Clinics")}</option>
+                  </select>
+                  <i class="fa-solid fa-hurricane"></i>
+                </div>
+              </div>
+              <div className="input-field">
                 <label>{t("Service Type")}</label>
                 <div className="flex">
                   <select>
                     <option disabled selected>
                       {t("Service Type")}
                     </option>
-                    <option>{t("Go to customers")}</option>
-                    <option>{t("Recive customers")}</option>
+                    <option>{t("In Headquarters")}</option>
+                    <option>{t("Out Headquarters")}</option>
+                    <option>{t("In / Out Headquarters")}</option>
                   </select>
                   <i class="fa-solid fa-hurricane"></i>
                 </div>
               </div>
               <div className="input-field">
-                <label>{t("Location")}</label>
+                <label>{t("Place_Photos")}</label>
                 <div className="flex">
-                  <input type="text" placeholder="Enter locaton" />
-                  <i class="fa-solid fa-location-dot"></i>
+                  <input type="file" />
+                  <i class="fa-solid fa-photo-film"></i>
                 </div>
               </div>
               <div className="input-field">
-                <label>{t("Place_Photos")}</label>
+                <label>{t("Commercial register photo")}</label>
+                <div className="flex">
+                  <input type="file" />
+                  <i class="fa-solid fa-photo-film"></i>
+                </div>
+              </div>
+              <div className="input-field">
+                <label>{t("Tax card image")}</label>
                 <div className="flex">
                   <input type="file" />
                   <i class="fa-solid fa-photo-film"></i>
@@ -58,15 +99,31 @@ function My_Branding() {
                 </div>
               </div>
               <div className="input-field">
-                <label>{t("address")}</label>
+                <label>{t("Phone number")}</label>
                 <div className="flex">
-                  <input type="text" placeholder="Enter Adress" />
-                  <i className="fa-regular fa-address-card"></i>
+                  <input type="text" placeholder="Phone" />
+                  <i class="fa-solid fa-photo-film"></i>
+                </div>
+              </div>
+              <div className="input-field">
+                <label>{t("Another number")}</label>
+                <div className="flex">
+                  <input type="text" placeholder="Another" />
+                  <i class="fa-solid fa-photo-film"></i>
                 </div>
               </div>
 
+              <div className="input-field fill">
+                <label>{t("Location")}</label>
+                <div className="flex">
+                  <LocationPicker
+                    onLocationSelect={handleLocationSelect}
+                    defaultLocation={defaultLocation}
+                  />
+                </div>
+              </div>
               <div className="holi">
-                <label htmlFor="">{t("Holidays")}</label>
+                <label htmlFor="">{t("Work Days")}</label>
                 <div className="days">
                   <span>
                     <input type="checkbox" /> {t("Saturday")}
@@ -92,6 +149,72 @@ function My_Branding() {
                 </div>
               </div>
             </div>
+            <div className="payment">
+              <label>{t("Did You Want To Activate Online Payment ?")}</label>
+              <div className="mega">
+                <div className="flex">
+                  <p>{t("Yes")}</p>{" "}
+                  <input
+                    type="radio"
+                    onChange={(e) => {
+                      e.stopPropagation();
+                      setPayment(e.target.value);
+                    }}
+                    name="option"
+                    value={true}
+                  />
+                </div>
+                <div className="flex">
+                  <p>{t("No")}</p>{" "}
+                  <input
+                    type="radio"
+                    name="option"
+                    value={undefined}
+                    onChange={(e) => {
+                      e.stopPropagation();
+                      setPayment(e.target.value);
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+            {payment && (
+              <div className="crazy">
+                <span>
+                  {t("Payment Details")}
+                </span>
+                <div className="fields">
+                  <div className="input-field">
+                    <label>{t("Bank name")}</label>
+                    <div className="flex">
+                      <input type="text" placeholder="Phone" />
+                      <i class="fa-solid fa-photo-film"></i>
+                    </div>
+                  </div>
+                  <div className="input-field">
+                    <label>{t("Bank account number")}</label>
+                    <div className="flex">
+                      <input type="text" placeholder="Phone" />
+                      <i class="fa-solid fa-photo-film"></i>
+                    </div>
+                  </div>
+                  <div className="input-field">
+                    <label>{t("PIN")}</label>
+                    <div className="flex">
+                      <input type="text" placeholder="Phone" />
+                      <i class="fa-solid fa-photo-film"></i>
+                    </div>
+                  </div>
+                  <div className="input-field">
+                    <label>{t("Phone number registered with the bank")}</label>
+                    <div className="flex">
+                      <input type="text" placeholder="Phone" />
+                      <i class="fa-solid fa-photo-film"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
             <div className="btns">
               <button
                 onClick={(e) => {

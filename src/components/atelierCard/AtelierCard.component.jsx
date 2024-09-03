@@ -9,11 +9,12 @@ import { t } from "i18next";
 
 
 import "./atelierCard.scss";
+import { Link } from "react-router-dom";
 
 const AtelierCard = ({ content, price, starsCount, normalContent = true }) => {
   const { lang } = localStorage;
   return (
-    <div className="atelierCard flex items-center flex-col-reverse  md:flex-row">
+    <Link to={"/atelier"} className="atelierCard flex items-center flex-col-reverse  md:flex-row">
       <div className={`text bg-white p-3 ${lang == "ar" ? "ar" : "en"} `}>
         <h3 className="font-bold text-[22px]">
           {content || "Deep Cleansing Oil"}
@@ -69,7 +70,7 @@ const AtelierCard = ({ content, price, starsCount, normalContent = true }) => {
           <IoStar />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

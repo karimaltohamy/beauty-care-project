@@ -11,7 +11,7 @@ function MyTickets() {
       <section class="table__header">
         <h1>{t("MyTickets")}</h1>
         <div class="btn">
-          <Link to={"/profile/newTicket"} className="new"  >
+          <Link to={"/profile/newTicket"} className="new">
             {t("NewTicket")}
             <i className="fa-solid fa-plus"></i>
           </Link>

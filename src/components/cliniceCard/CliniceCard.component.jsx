@@ -6,11 +6,12 @@ import imgProduct from "../../assets/images/clinice-img.avif";
 import { IoStar } from "react-icons/io5";
 import { t } from "i18next";
 import "./cliniceCard.scss";
+import { Link } from "react-router-dom";
 
 const CliniceCard = () => {
   const { lang } = localStorage;
   return (
-    <div className="cliniceCard flex items-center flex-col-reverse">
+    <Link to={"/clinics"} className="cliniceCard flex items-center flex-col-reverse">
       <div
         className={`text bg-white p-3 w-full ${lang == "ar" ? "ar" : "en"} `}
       >
@@ -52,7 +53,7 @@ const CliniceCard = () => {
           <IoStar />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
