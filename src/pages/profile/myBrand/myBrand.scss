@@ -27,24 +27,24 @@ body.ar {
   padding: 10px;
   width: 100%;
   border-radius: 20px;
-  i {
-    width: 30px;
-    height: 42px;
-    font-size: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    background-color: $main-Color-back;
-    color: white;
-    font-weight: bold;
-  }
 
   form {
     position: relative;
     flex-basis: 60%;
     height: fit-content;
+    i {
+      width: 30px;
+      height: 42px;
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      background-color: $main-Color-back;
+      color: white;
+      font-weight: bold;
+    }
     .form {
       padding: 15px;
       padding-bottom: 0%;
@@ -105,6 +105,9 @@ body.ar {
             .inputs {
               display: flex;
               gap: 10px;
+              button {
+                margin: 0;
+              }
               input,
               select {
                 width: calc(100% - 20px);
@@ -130,31 +133,34 @@ body.ar {
               height: 42px;
             }
           }
-          .holi {
-            label {
-              font-weight: bold;
-              margin-bottom: 5px;
-            }
-            span {
-              display: inline-flex;
-              align-items: center;
-              min-width: 100px;
-              gap: 3px;
-              font-size: 16px;
-            }
+        }
+        .holi {
+          margin-top: 15px;
+          border-bottom: 1px solid $main-Color-back;
+          padding-bottom: 10px;
+          label {
+            font-weight: bold;
+            margin-bottom: 5px;
           }
-          .fill {
-            width: 100% !important;
+          span {
+            display: inline-flex;
+            align-items: center;
+            min-width: 100px;
+            gap: 3px;
+            font-size: 16px;
           }
         }
         .payment {
-          margin: 10px 0px;
+          margin: 10px auto;
+          width: fit-content;
+          font-size: 18px;
           .mega {
             display: flex;
+            justify-content: center;
             gap: 30px;
           }
-          p {
-            min-width: 30px;
+          .flex {
+            gap: 10px;
           }
         }
         .crazy {
@@ -218,5 +224,28 @@ body.ar {
 
   .leaflet-bottom.leaflet-right {
     display: none !important;
+  }
+}
+
+.model_poup {
+  h1{
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    color: rgb(158, 25, 25) !important;
+    font-size: 18px;
+  }
+  .btns {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    button {
+      background-color: $main-Color-back;
+      padding: 10px;
+      width: 50%;
+      border-radius: 20px;
+      font-weight: bold;
+    }
   }
 }

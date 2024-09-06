@@ -1,17 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { t } from "i18next";
 import "./myBrand.scss";
 import LocationPicker from "../../../components/LocationPicker/LocationPicker";
+import Popup from "../../../components/popup/Popup";
 
 function My_Branding() {
-  const [location, setLocation] = useState(null);
+  // const [location, setLocation] = useState(null);
 
-  // Default location set to Egypt
-  const defaultLocation = { lat: 29.9792, lng: 31.1342 };
+  // // Default location set to Egypt
+  // const defaultLocation = { lat: 29.9792, lng: 31.1342 };
 
-  const handleLocationSelect = (location) => {
-    setLocation(location);
+  // const handleLocationSelect = (location) => {
+  //   setLocation(location);
+  // };
+
+  const [location, setLocation] = useState({ lat: "00.0000", lng: "00.0000" });
+  const [error, setError] = useState(null);
+  const [popUp, setPopUp] = useState(false);
+
+  const handleGetLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+        },
+        (error) => {
+          console.log(error);
+          setError(error.message);
+        }
+      );
+    } else {
+      setError("Geolocation is not supported by this browser.");
+    }
+    setPopUp(false)
   };
+
+  useEffect(() => {
+    handleGetLocation();
+  }, []);
 
   const [payment, setPayment] = useState();
 
@@ -112,8 +141,30 @@ function My_Branding() {
                   <i class="fa-solid fa-photo-film"></i>
                 </div>
               </div>
+              <div className="workk">
+                <label htmlFor="">{t("Current Location")}</label>
+                <div className="inputs">
+                  <div className="flex">
+                    <input
+                      type="text"
+                      value={`${location.lat}N-${location.lng}W`}
+                    />
+                    <i class="fa-solid fa-arrows-up-down"></i>
+                  </div>
+                  <div className="flex">
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setPopUp(true);
+                      }}
+                    >
+                      {t("Update")}
+                    </button>
+                  </div>
+                </div>
+              </div>
 
-              <div className="input-field fill">
+              {/* <div className="input-field fill">
                 <label>{t("Location")}</label>
                 <div className="flex">
                   <LocationPicker
@@ -121,32 +172,32 @@ function My_Branding() {
                     defaultLocation={defaultLocation}
                   />
                 </div>
-              </div>
-              <div className="holi">
-                <label htmlFor="">{t("Work Days")}</label>
-                <div className="days">
-                  <span>
-                    <input type="checkbox" /> {t("Saturday")}
-                  </span>
-                  <span>
-                    <input type="checkbox" /> {t("Sunday")}
-                  </span>
-                  <span>
-                    <input type="checkbox" /> {t("Monday")}
-                  </span>
-                  <span>
-                    <input type="checkbox" /> {t("Tuesday")}
-                  </span>
-                  <span>
-                    <input type="checkbox" /> {t("Wednesday")}
-                  </span>
-                  <span>
-                    <input type="checkbox" /> {t("Thursday")}
-                  </span>
-                  <span>
-                    <input type="checkbox" /> {t("Friday")}
-                  </span>
-                </div>
+              </div> */}
+            </div>
+            <div className="holi">
+              <label htmlFor="">{t("Work Days")}</label>
+              <div className="days">
+                <span>
+                  <input type="checkbox" /> {t("Saturday")}
+                </span>
+                <span>
+                  <input type="checkbox" /> {t("Sunday")}
+                </span>
+                <span>
+                  <input type="checkbox" /> {t("Monday")}
+                </span>
+                <span>
+                  <input type="checkbox" /> {t("Tuesday")}
+                </span>
+                <span>
+                  <input type="checkbox" /> {t("Wednesday")}
+                </span>
+                <span>
+                  <input type="checkbox" /> {t("Thursday")}
+                </span>
+                <span>
+                  <input type="checkbox" /> {t("Friday")}
+                </span>
               </div>
             </div>
             <div className="payment">
@@ -180,9 +231,7 @@ function My_Branding() {
             </div>
             {payment && (
               <div className="crazy">
-                <span>
-                  {t("Payment Details")}
-                </span>
+                <span>{t("Payment Details")}</span>
                 <div className="fields">
                   <div className="input-field">
                     <label>{t("Bank name")}</label>
@@ -228,6 +277,18 @@ function My_Branding() {
           </div>
         </div>
       </form>
+      <Popup
+        openPopup={popUp}
+        setOpenPopup={setPopUp}
+        needFrom={false}
+        title={t("Update Location")}
+      >
+        <h1>{t("you must be in your company location")}</h1>
+        <div className="btns">
+          <button onClick={()=> handleGetLocation()}>{t("Confirm")}</button>
+          <button onClick={()=> setPopUp(false)}>{t("Not Now")}</button>
+        </div>
+      </Popup>
     </div>
   );
 }

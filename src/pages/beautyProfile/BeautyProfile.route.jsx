@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./beatyProfile.scss";
 import { t } from "i18next";
 import { IoLocationOutline } from "react-icons/io5";
@@ -12,14 +12,19 @@ import OurWork from "../../components/ourWork/OurWork";
 import Reviews from "../../components/reviews/Reviews";
 import Popup from "../../components/popup/Popup";
 import { useNavigate } from "react-router-dom";
+import { FaRegStar } from "react-icons/fa";
 
 const BeautyProfile = () => {
   const [choosenSer, setChoosenSer] = useState([]);
   const [currentTab, setCurrentTab] = useState("service");
   const [total, setTotal] = useState(0);
+  const [globalSrc, setGlobalSrc] = useState();
+  const [popUpImg, setPopUpImg] = useState(false);
   const [popupSer, setPopSer] = useState(false);
   const [popupComm, setPopComm] = useState(false);
   const [popupRepo, setpopRepo] = useState(false);
+  const [popUpRate, setPopRate] = useState(false);
+  const [starNumbers, setStarNumbers] = useState(0);
   const navigate = useNavigate();
   // const
   const arrServices = [
@@ -109,8 +114,6 @@ const BeautyProfile = () => {
     },
   ];
 
-
-
   const customSelect = (obj) => {
     const { service } = obj;
     const isExist = choosenSer.find((choose) => choose.service == service);
@@ -119,11 +122,20 @@ const BeautyProfile = () => {
       setTotal(total + parseInt(obj.price.split("$")[1]));
     }
   };
+
   const deleteChoose = (obj) => {
     const { service } = obj;
     const newArr = choosenSer.filter((choose) => choose.service !== service);
     setTotal(total - parseInt(obj.price.split("$")[1]));
     setChoosenSer(newArr);
+  };
+
+  const handleRate = (e) => {
+    setStarNumbers(e.target.dataset.value);
+    e?.target?.parentElement?.childNodes?.forEach((ele) => {
+      ele.classList.remove("active");
+    });
+    e.target.classList.add("active");
   };
 
   return (
@@ -144,10 +156,7 @@ const BeautyProfile = () => {
             <div className="con">
               <div className="w-full text flex items-center justify-between">
                 <div>
-                  <h1>
-                    Pouch Pocket Hoodie{" "}
-                    <br className="divide" style={{ display: "none" }} /> Orange
-                  </h1>
+                  <h1>Pouch Pocket Hoodie Orange</h1>
                   <a href="" className="location">
                     <IoLocationOutline size={24} />
                     <span>Cairo</span>
@@ -184,22 +193,23 @@ const BeautyProfile = () => {
                     <div>
                       <h4>{t("service_type")}</h4>
                       <span>delivery</span>
+
+                      <span>From the store</span>
                     </div>
                   </div>
                   <div className="item">
                     <LiaPlaceOfWorshipSolid size={35} />
                     <div>
                       <h4>{t("service_type")}</h4>
-                      <span>From the store</span>
                     </div>
                   </div>
                 </div>
-                <button className="book" onClick={() => setPopSer(true)}>
-                  {t("book_now")}
-                </button>
                 <div className="btns">
-                  <button className="comm" onClick={() => setPopComm(true)}>
-                    {t("Write A Comment")}
+                  <button className="book" onClick={() => setPopSer(true)}>
+                    {t("book_now")}
+                  </button>
+                  <button className="star" onClick={() => setPopRate(true)}>
+                    {t("Rate")}
                   </button>
                   <button className="repo" onClick={() => setpopRepo(true)}>
                     {t("Report a Problem")}
@@ -311,101 +321,6 @@ const BeautyProfile = () => {
                 </div>
               </div>
             </form>
-            <Popup
-              title={t("book_now")}
-              needFrom={false}
-              openPopup={popupSer}
-              setOpenPopup={setPopSer}
-            >
-              <form>
-                <div className={`details`}>
-                  <div className="fields">
-                    <div className="input-field">
-                      <label>{t("Book Time")}</label>
-                      <div className="flex">
-                        <input type="datetime-local" />
-                        <i className="fa-solid fa-clock"></i>
-                      </div>
-                    </div>
-                    <div className="input-field">
-                      <label>{t("Service")}</label>
-                      <div className="flex">
-                        <select
-                          onChange={(e) =>
-                            customSelect(JSON.parse(e.target.value))
-                          }
-                        >
-                          <option disabled selected>
-                            Select Service
-                          </option>
-                          {arrServices.map((ser, i) => {
-                            return (
-                              <option key={i} value={JSON.stringify(ser)}>
-                                {ser.service} ({ser.price})
-                              </option>
-                            );
-                          })}
-                        </select>
-                        <i className="fa-brands fa-servicestack"></i>
-                      </div>
-                    </div>
-                    {choosenSer.length > 0 && (
-                      <div className="select">
-                        {choosenSer.map((ele, i) => {
-                          return (
-                            <div className="row" key={i}>
-                              <p>{`${ele.service} ${ele.price}`}</p>
-                              <i
-                                className="fa-solid fa-trash"
-                                onClick={() => deleteChoose(ele)}
-                              ></i>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    )}
-                    <div className="input-field">
-                      <label>{t("Book Type")}</label>
-                      <div className="flex">
-                        <select
-                          onChange={(e) =>
-                            customSelect(JSON.parse(e.target.value))
-                          }
-                        >
-                          <option disabled selected>
-                            Select Book Type
-                          </option>
-                          <option>{t("Go to the place")}</option>
-                          <option>{t("In home")}</option>
-                        </select>
-                        <i className="fa-solid fa-venus-mars"></i>
-                      </div>
-                    </div>
-                    <div className="taxes">
-                      <label htmlFor="">{t("Taxes")}</label>
-                      <div className="flex">
-                        <p>10%</p>
-                        <p>
-                          <i class="fa-regular fa-calendar-plus"></i>
-                        </p>
-                      </div>
-                    </div>
-                    <div className="taxes">
-                      <label htmlFor="">{t("Total")}</label>
-                      <div className="flex">
-                        <p>{total}</p>
-                        <p>
-                          <i className="fa-solid fa-money-bill"></i>
-                        </p>
-                      </div>
-                    </div>
-                    <div className="book">
-                      <button>{t("book_now")}</button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </Popup>
           </div>
         </div>
         <div className="tab_control">
@@ -443,18 +358,28 @@ const BeautyProfile = () => {
               {t("Comments")}
             </p>
           </div>
-          <OusrServices arr={arrServices} tab={currentTab} activate={true}   />
-          <OurWork tab={currentTab} activate={true} />
-          <Reviews
-            setPopComm={setPopComm}
-            popupComm={popupComm}
+          <OusrServices
+            arr={arrServices}
             tab={currentTab}
             activate={true}
+            mobile={true}
           />
+          <OurWork
+            tab={currentTab}
+            activate={true}
+            mobile={true}
+            setGlobalSrc={setGlobalSrc}
+            setPopUpImg={setPopUpImg}
+          />
+          <Reviews tab={currentTab} activate={true} />
         </div>
         <div className="web">
-        <OusrServices arr={arrServices} tab={currentTab}  />
-          <OurWork tab={currentTab} />
+          <OusrServices arr={arrServices} tab={currentTab} />
+          <OurWork
+            tab={currentTab}
+            setGlobalSrc={setGlobalSrc}
+            setPopUpImg={setPopUpImg}
+          />
           <Reviews
             setPopComm={setPopComm}
             popupComm={popupComm}
@@ -470,7 +395,7 @@ const BeautyProfile = () => {
       >
         <div className="flex">
           <label>{t("Your Comment")}</label>
-          <i color="red" className="fa-solid fa-comments"></i>
+          <i style={{ color: "red" }} className="fa-solid fa-comments"></i>
         </div>
         <textarea
           name=""
@@ -482,6 +407,153 @@ const BeautyProfile = () => {
             borderRadius: "10px",
           }}
         ></textarea>
+      </Popup>
+      <Popup
+        openPopup={popUpImg}
+        setOpenPopup={setPopUpImg}
+        title={t("Show Img")}
+        needFrom={false}
+      >
+        <img src={globalSrc} alt="" />
+      </Popup>
+      <Popup
+        title={t("book_now")}
+        needFrom={false}
+        openPopup={popupSer}
+        setOpenPopup={setPopSer}
+      >
+        <form>
+          <div className={`details`}>
+            <div className="fields">
+              <div className="input-field">
+                <label>{t("Book Time")}</label>
+                <div className="flex">
+                  <input type="datetime-local" />
+                  <i className="fa-solid fa-clock"></i>
+                </div>
+              </div>
+              <div className="input-field">
+                <label>{t("Service")}</label>
+                <div className="flex">
+                  <select
+                    onChange={(e) => customSelect(JSON.parse(e.target.value))}
+                  >
+                    <option disabled selected>
+                      Select Service
+                    </option>
+                    {arrServices.map((ser, i) => {
+                      return (
+                        <option key={i} value={JSON.stringify(ser)}>
+                          {ser.service} ({ser.price})
+                        </option>
+                      );
+                    })}
+                  </select>
+                  <i className="fa-brands fa-servicestack"></i>
+                </div>
+              </div>
+              {choosenSer.length > 0 && (
+                <div className="select">
+                  {choosenSer.map((ele, i) => {
+                    return (
+                      <div className="row" key={i}>
+                        <p>{`${ele.service} ${ele.price}`}</p>
+                        <i
+                          className="fa-solid fa-trash"
+                          onClick={() => deleteChoose(ele)}
+                        ></i>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+              <div className="input-field">
+                <label>{t("Book Type")}</label>
+                <div className="flex">
+                  <select
+                    onChange={(e) => customSelect(JSON.parse(e.target.value))}
+                  >
+                    <option disabled selected>
+                      Select Book Type
+                    </option>
+                    <option>{t("Go to the place")}</option>
+                    <option>{t("In home")}</option>
+                  </select>
+                  <i className="fa-solid fa-venus-mars"></i>
+                </div>
+              </div>
+              <div className="taxes">
+                <label htmlFor="">{t("Taxes")}</label>
+                <div className="flex">
+                  <p>10%</p>
+                  <p>
+                    <i class="fa-regular fa-calendar-plus"></i>
+                  </p>
+                </div>
+              </div>
+              <div className="taxes">
+                <label htmlFor="">{t("Total")}</label>
+                <div className="flex">
+                  <p>{total}</p>
+                  <p>
+                    <i className="fa-solid fa-money-bill"></i>
+                  </p>
+                </div>
+              </div>
+              <div className="book">
+                <button>{t("book_now")}</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </Popup>
+      <Popup
+        openPopup={popUpRate}
+        setOpenPopup={setPopRate}
+        title={t("Rate")}
+        needFrom={false}
+      >
+        <div className="padding">
+          <div className="flex" data-value={1} onClick={(e) => handleRate(e)}>
+            <i className="fa-solid fa-star"></i>
+          </div>
+          <div className="flex" data-value={2} onClick={(e) => handleRate(e)}>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+          </div>
+          <div className="flex" data-value={3} onClick={(e) => handleRate(e)}>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+          </div>
+          <div className="flex" data-value={4} onClick={(e) => handleRate(e)}>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+          </div>
+          <div className="flex" data-value={5} onClick={(e) => handleRate(e)}>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+          </div>
+        </div>
+        <form className="lastPop">
+          <div className={`details`}>
+            <div className="fields">
+              <div className="input-field">
+                <div className="flex">
+                  <label>{t("Your Comment")}</label>
+                  <i className="fa-solid fa-comments"></i>
+                </div>
+                <textarea className="feed" name="" id=""></textarea>
+              </div>
+            </div>
+          </div>
+          <button>{t("Submit")}</button>
+        </form>
       </Popup>
     </div>
   );

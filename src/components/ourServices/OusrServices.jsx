@@ -6,7 +6,7 @@ import { t } from "i18next";
 import salon from "../../assets/images/salon-2561845_1280.jpg";
 import { Autoplay } from "swiper/modules";
 
-function OusrServices({ arr, tab, activate = false }) {
+function OusrServices({ arr, tab, activate = false, mobile = false }) {
   return (
     <div
       className="services container"
@@ -17,46 +17,64 @@ function OusrServices({ arr, tab, activate = false }) {
           {t("Services")}
         </h1>
       )}
-
-      <Swiper
-        watchSlidesProgress={true}
-        slidesPerView={3}
-        grabCursor={true}
-        autoplay={{
-          delay: 2000,
-        }}
-        breakpoints={{
-          140: {
-            slidesPerView: 1.2,
-          },
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 15,
-          },
-          900: {
-            slidesPerView: 3,
-            spaceBetween: 20,
-          },
-        }}
-        loop={true}
-        spaceBetween={20}
-        modules={[Autoplay]}
-      >
-        {arr &&
-          arr.map((ele, i) => {
-            return (
-              <SwiperSlide>
-                <div className="img">
-                  <img src={salon} alt="" />
+      {!mobile ? (
+        <Swiper
+          watchSlidesProgress={true}
+          slidesPerView={3}
+          grabCursor={true}
+          autoplay={{
+            delay: 2000,
+          }}
+          breakpoints={{
+            140: {
+              slidesPerView: 1,
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 15,
+            },
+            900: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+          }}
+          loop={true}
+          spaceBetween={20}
+          modules={[Autoplay]}
+        >
+          {arr &&
+            arr.map((ele, i) => {
+              return (
+                <SwiperSlide>
+                  <div className="img">
+                    <img src={salon} alt="" />
+                  </div>
+                  <div className="con">
+                    <h1>{ele.service}</h1>
+                    <p>{ele.desc}</p>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+        </Swiper>
+      ) : (
+        <div className="grid">
+          {arr &&
+            arr.map((ele, i) => {
+              return (
+                <div className="box">
+                  <div className="img">
+                    <img src={salon} alt="" />
+                  </div>
+                  <div className="con">
+                    <h1>{ele.service}</h1>
+                    <p>{ele.desc}</p>
+                  </div>
                 </div>
-                <div className="con">
-                <h1>{ele.service}</h1>
-                <p>{ele.desc}</p>
-                </div>
-              </SwiperSlide>
-            );
-          })}
-      </Swiper>
+              );
+            })}
+        </div>
+      )}
     </div>
   );
 }

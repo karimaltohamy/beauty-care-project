@@ -49,6 +49,12 @@
     visibility: visible;
   }
 
+  img{
+    width: 95%;
+    margin: 10px auto;
+    border-radius: 10px;
+    height: 350px;
+  }
   .content {
     max-width: 500px;
     width: 500px;
@@ -56,7 +62,6 @@
     padding-bottom: 20px;
     background-color:white;
     border-radius: 5px;
-
     // Style Jemy
     &.max_height {
       max-height: 80vh;

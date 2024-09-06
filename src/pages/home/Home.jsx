@@ -27,15 +27,23 @@ const Home = () => {
           link={"/beauty"}
           breakpoints={{
             250: {
-              slidesPerView: 1.2,
-              spaceBetween: 20,
+              slidesPerView: 1.35,
+              spaceBetween: 25,
             },
             640: {
+              slidesPerView: 1.6,
+              spaceBetween: 25,
+            },
+            768: {
               slidesPerView: 2,
               spaceBetween: 25,
             },
-            1000: {
+            1100: {
               slidesPerView: 3,
+              spaceBetween: 25,
+            },
+            1300: {
+              slidesPerView: 4,
               spaceBetween: 25,
             },
           }}
@@ -72,15 +80,23 @@ const Home = () => {
           link={"/atelier"}
           breakpoints={{
             250: {
-              slidesPerView: 1.2,
-              spaceBetween: 20,
+              slidesPerView: 1.35,
+              spaceBetween: 25,
             },
             640: {
+              slidesPerView: 1.6,
+              spaceBetween: 25,
+            },
+            768: {
               slidesPerView: 2,
               spaceBetween: 25,
             },
-            1000: {
+            1100: {
               slidesPerView: 3,
+              spaceBetween: 25,
+            },
+            1300: {
+              slidesPerView: 4,
               spaceBetween: 25,
             },
           }}
@@ -100,15 +116,23 @@ const Home = () => {
           link={"/shein"}
           breakpoints={{
             250: {
-              slidesPerView: 1.2,
-              spaceBetween: 20,
+              slidesPerView: 1.35,
+              spaceBetween: 25,
             },
             640: {
+              slidesPerView: 1.6,
+              spaceBetween: 25,
+            },
+            768: {
               slidesPerView: 2,
               spaceBetween: 25,
             },
-            1000: {
+            1100: {
               slidesPerView: 3,
+              spaceBetween: 25,
+            },
+            1300: {
+              slidesPerView: 4,
               spaceBetween: 25,
             },
           }}
@@ -159,18 +183,22 @@ const Home = () => {
           link={"/clinics"}
           breakpoints={{
             250: {
-              slidesPerView: 1.2,
-              spaceBetween: 20,
+              slidesPerView: 1.35,
+              spaceBetween: 25,
             },
             640: {
+              slidesPerView: 1.6,
+              spaceBetween: 25,
+            },
+            768: {
               slidesPerView: 2,
               spaceBetween: 25,
             },
-            900: {
+            1100: {
               slidesPerView: 3,
               spaceBetween: 25,
             },
-            1200: {
+            1300: {
               slidesPerView: 4,
               spaceBetween: 25,
             },
@@ -191,18 +219,22 @@ const Home = () => {
           link={"/packages"}
           breakpoints={{
             250: {
-              slidesPerView: 1.2,
-              spaceBetween: 20,
+              slidesPerView: 1.35,
+              spaceBetween: 25,
             },
             640: {
+              slidesPerView: 1.6,
+              spaceBetween: 25,
+            },
+            768: {
               slidesPerView: 2,
               spaceBetween: 25,
             },
-            900: {
+            1100: {
               slidesPerView: 3,
               spaceBetween: 25,
             },
-            1200: {
+            1300: {
               slidesPerView: 4,
               spaceBetween: 25,
             },

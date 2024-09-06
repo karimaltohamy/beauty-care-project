@@ -3,8 +3,7 @@ import { t } from "i18next";
 import "./review.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import salon from "../../assets/images/images.png";
-import Popup from "../popup/Popup";
+import salon from "../../assets/images/images.png"
 
 function Reviews({ popupComm, setPopComm, tab, activate = false }) {
   return (
@@ -75,29 +74,6 @@ function Reviews({ popupComm, setPopComm, tab, activate = false }) {
               </div>
             </div>
           </form>
-          <Popup
-            openPopup={popupComm}
-            setOpenPopup={setPopComm}
-            needFrom={false}
-            title={t("Write A Comment")}
-          >
-            <form>
-              <div className={`details`}>
-                <div className="fields">
-                  <div className="input-field">
-                    <div className="flex">
-                      <label>{t("Your Comment")}</label>
-                      <i className="fa-solid fa-comments"></i>
-                    </div>
-                    <textarea className="feed" name="" id=""></textarea>
-                  </div>
-                  <div className="book">
-                    <button>{t("Submit")}</button>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </Popup>
         </div>
       </div>
       <div

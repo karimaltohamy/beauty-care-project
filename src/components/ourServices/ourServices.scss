@@ -14,9 +14,9 @@
     background-color: var(--secondBG);
     font-weight: bold;
     display: flex;
-    gap: 10px;
+    gap: 20px;
     .img {
-      flex-basis: 30%;
+      flex-basis: 40%;
       min-height: 100%;
       img{
         width: 100%;
@@ -26,8 +26,28 @@
       }
     }
     .con{
-      flex-basis: 70%;
+      flex-basis: 66%;
       p{
+        margin-top: 10px;
+        font-size: 13px;
+        font-weight: 500;
+      }
+    }
+  }
+  .grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(150px , 1fr));
+    gap: 10px;
+    .box{
+      background-color: var(--secondBG);
+      padding: 10px;
+      border-radius: 10px;
+      img{
+        width: 100%;
+        border-radius: 10px;
+      }
+      .con{
         margin-top: 10px;
       }
     }

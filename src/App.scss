@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  word-break: break-all;
+  // word-break: break-all;
 }
 
 html {
@@ -15,7 +15,7 @@ html {
 
 :root {
   --mainBG: white;
-  --border: #f0eded;
+  --border: #ddd;
   --colorBgAndTextMain: $main-Color-back;
   --font-color: black;
   --secondBG: #f1f1f1;
@@ -26,6 +26,7 @@ body {
   font-family: "Cairo", sans-serif !important;
   overflow-x: hidden;
   min-height: 100vh;
+  max-height: fit-content;
   transition: $transtions;
   &.dark {
     --mainBG: #09161d;
@@ -75,6 +76,5 @@ button {
 .model_poup {
   .content {
     background-color: var(--mainBG) !important;
-    padding: 0 !important;
   }
 }

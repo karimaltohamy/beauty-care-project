@@ -39,6 +39,7 @@
   "animal_type": "نوع الحيوان ",
   "hosting_duration": "مددة الاستضافة ",
   "price": "السعر",
+  "Rate" : "تقيمم" , 
   "hosting": "الاستضافات",
   "hosts": "المستضيفين",
   "clinics": "العيادات",
@@ -216,7 +217,8 @@
   "completed": "مكتمل",
   "pending": "قيد الانتظار",
   "support": "الدعم",
-  "My Branding": "البراند الخاص بي",
+  "My Branding":"بيانات البراند",
+  "Current Location" : "موقعك الحالي" ,
   "settings": "الاعدادات",
   "Profile Settings": "إعدادات الملف الشخصي",
   "Update": "تعديل",
@@ -226,6 +228,9 @@
   "write_the_location": "اكتب الموقع",
   "trending_now": "المشهور الآن",
   "beauty_section": "قسم التجميل",
+  "you must be in your company location" : "يجب ان تكون داخل عملك",
+  "Confirm" : "تعديل" ,
+  "Not Now" : "ليس الان" ,
   "atelier_section": "قسم الأتيليه",
   "shein_section": "قسم شين",
   "booking_now": "الحجز الآن",
@@ -243,6 +248,7 @@
   "New Ticket" : "مذكرة جديدة",
   "New Service" : "خدمة جديدة",
   "New Work" : "عمل جديدة",
+
   "service name" : "اسم الخدمة" ,
   "package name" : "اسم الباقة" ,
   "package Type" : "نوع الباقة" ,
@@ -283,5 +289,7 @@
   "Sign With Facebook" : "التسجيل باستخدام فيسبوك"  ,
   "Login With Others" : "الدخول بحسابات اخري" ,
   "Login With Google" : "تسجيل الدخول باستخدام جوجل" ,
-  "Login With Facebook" : "تسجبل الدخول باستخدام فيسبوك" 
+  "Login With Facebook" : "تسجبل الدخول باستخدام فيسبوك" ,
+  "Yes" : "نعم" ,
+  "No" : "لا"
 }

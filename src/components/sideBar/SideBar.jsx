@@ -4,10 +4,9 @@ import img from "../../assets/images/ai-generated-8556454_1920.jpg";
 import { NavLink } from "react-router-dom";
 import "./side.scss";
 
-
 import { useTranslation } from "react-i18next";
 
-function SideBar() {
+function SideBar(){
   const { t } = useTranslation();
   const sideRef = useRef();
   const { lang } = localStorage;
@@ -53,6 +52,33 @@ function SideBar() {
         </div>
         <div className="orders shdaow">
           <div className="topic">
+            <i className="fa-solid fa-truck-fast"></i>
+            <h3>{t("Brand Settings")}</h3>
+            <i
+              class={`fa-solid fa-arrow-${lang == "ar" ? "left" : "right"}`}
+            ></i>
+          </div>
+          <div className="small">
+            <NavLink className="inside " to={"/profile/my_Branding"}>
+              <i className="fa-solid fa-crown"></i>
+              <p className={"nor"}>{t("My Branding")}</p>
+            </NavLink>
+            <NavLink className="inside" to={"/profile/AllServices"}>
+              <i className="fa-brands fa-servicestack"></i>
+              <p>{t("All Service")}</p>
+            </NavLink>
+            <NavLink className="inside" to={"/profile/AllPackages"}>
+              <i className="fa-solid fa-cube"></i>
+              <p>{t("All Package")}</p>
+            </NavLink>
+            <NavLink className="inside" to={"/profile/Business_gallery"}>
+              <i className="fa-solid fa-business-time"></i>
+              <p>{t("Business Gallery")}</p>
+            </NavLink>
+          </div>
+        </div>
+        <div className="orders shdaow">
+          <div className="topic">
             <i class="fa-solid fa-headset"></i>
             <h3>{t("support")}</h3>
             <i
@@ -74,33 +100,6 @@ function SideBar() {
           <i className="fa-solid fa-heart"></i>
           <p className={"nor"}>{t("favorites")}</p>
         </NavLink>
-        <NavLink className="inside shdaow" to={"/profile/my_Branding"}>
-          <i className="fa-solid fa-crown"></i>
-          <p className={"nor"}>{t("My Branding")}</p>
-        </NavLink>
-        <div className="orders shdaow">
-          <div className="topic">
-          <i className="fa-solid fa-truck-fast"></i>
-            <h3>{t("Brand Settings")}</h3>
-            <i
-              class={`fa-solid fa-arrow-${lang == "ar" ? "left" : "right"}`}
-            ></i>
-          </div>
-          <div className="small">
-            <NavLink className="inside" to={"/profile/AllServices"}>
-              <i className="fa-brands fa-servicestack"></i>
-              <p>{t("All Service")}</p>
-            </NavLink>
-            <NavLink className="inside" to={"/profile/AllPackages"}>
-              <i className="fa-solid fa-cube"></i>
-              <p>{t("All Package")}</p>
-            </NavLink>
-            <NavLink className="inside" to={"/profile/Business_gallery"}>
-            <i className="fa-solid fa-business-time"></i>
-              <p>{t("Business Gallery")}</p>
-            </NavLink>
-          </div>
-        </div>
       </div>
     </div>
   );

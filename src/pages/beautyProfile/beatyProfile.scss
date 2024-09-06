@@ -11,11 +11,7 @@ body.ar {
   .beauty_profile {
     .info {
       flex-direction: row;
-      a {
-      
-      }
       button {
-       
         i {
           transform: rotate(180deg);
         }
@@ -27,10 +23,10 @@ body.ar {
 .beauty_profile {
   position: relative;
 
-  .web{
+  .web {
     display: none;
-    margin-bottom: 30px;
-    @media screen and (min-width : 768px) {
+    @media screen and (min-width: 768px) {
+      margin-bottom: 30px;
       display: block;
     }
   }
@@ -42,9 +38,13 @@ body.ar {
   * {
     color: var(--font-color);
   }
-  .comments,
-  .work {
-    background-color: var(--secondBG);
+  .comments {
+    @media screen and (min-width : 768px) {
+      background-color: var(--secondBG);
+    }
+    @media screen and (max-width : 768px) {
+      padding: 0 !important;
+    }
   }
   .info {
     padding: 10px 0px;
@@ -80,6 +80,9 @@ body.ar {
         h1 {
           font-size: 32px;
           font-weight: 700;
+          @media screen and (max-width: 768px) {
+            font-size: 24px !important;
+          }
         }
 
         .location {
@@ -118,12 +121,13 @@ body.ar {
         padding: 20px 0px;
         border-bottom: 1px solid rgb(208, 208, 208);
         display: flex;
-        justify-content: space-between;
+
         gap: 20px;
         flex-wrap: wrap;
         .items {
           display: flex;
           align-items: center;
+          width: 100%;
           gap: 25px;
           flex-wrap: wrap;
           .item {
@@ -152,27 +156,29 @@ body.ar {
         .btns {
           display: flex;
           gap: 10px;
+          width: 100%;
           color: white;
+          flex-wrap: wrap;
           @media screen and (max-width: 1100px) {
             justify-content: space-between;
-            flex-grow: 1;
             button {
               min-width: 150px;
-              width: 50%;
               padding: 8px 0px;
             }
           }
-
           button {
             border-radius: 10px;
+            width: 40%;
+            flex-grow: 1;
+            padding: 10px 0px;
             background-color: $main-Color-back;
-            &.comm {
-              @media screen and (min-width: 1100px) {
-                display: none;
-              }
+            &.star{
+              background-color: rgb(251, 106, 34);
+            }
+            &.book{
+              width: 100%;
             }
             &.repo {
-              padding: 0px 10px;
               font-weight: bold;
               background-color: rgb(206, 44, 44);
             }
@@ -180,77 +186,8 @@ body.ar {
         }
       }
     }
-    form {
-      width: 25%;
+    & > form {
       margin: 30px 0px;
-      padding: 10px 20px;
-      background-color: var(--mainBG);
-      box-shadow: var(--box-shadow);
-      flex-grow: 1;
-      height: fit-content;
-      border-radius: 10px;
-      label {
-        font-size: 13px;
-        font-weight: bold;
-      }
-      .fields {
-        .input-field {
-          display: flex;
-          margin-bottom: 5px;
-          flex-direction: column;
-          .flex {
-            flex-grow: 1;
-            flex-direction: row-reverse;
-          }
-          i {
-            width: 30px;
-            height: 42px;
-            font-size: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-            background-color: $main-Color-back;
-
-            font-weight: bold;
-          }
-          input,
-          select {
-            outline: none;
-            width: calc(100% - 30px);
-            background-color: var(--secondBG);
-            font-size: 14px;
-            font-weight: 400;
-            padding: 0 15px;
-            height: 42px;
-          }
-        }
-        .select {
-          margin: 20px 0px;
-          .row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-            padding: 8px 0px;
-            border-bottom: 1px solid #ddd;
-            i {
-              color: $main-Color-back;
-              cursor: pointer;
-            }
-          }
-        }
-        .taxes {
-          border-bottom: 1px solid #ddd;
-          padding-bottom: 8px;
-          .flex {
-            justify-content: space-between;
-            color: $main-Color-back;
-            font-weight: bold;
-          }
-        }
-      }
     }
   }
   .overview {
@@ -276,7 +213,7 @@ body.ar {
     }
   }
   .tab_control {
-    @media screen and (min-width : 768px) {
+    @media screen and (min-width: 768px) {
       display: none;
     }
     .tabs {
@@ -284,19 +221,19 @@ body.ar {
       border-bottom: 1px solid #ddd;
       display: flex;
       justify-content: space-between;
-      p{
+      p {
         padding: 15px 0px;
         min-width: 80px;
         text-align: center;
         font-weight: bold;
         position: relative;
         &.active {
-          &::after{
+          &::after {
             transform: translateX(0);
           }
         }
         overflow: hidden;
-        &::after{
+        &::after {
           transition: $transtions;
           position: absolute;
           content: "";
@@ -310,7 +247,7 @@ body.ar {
       }
     }
   }
-  .boxSlider{
+  .boxSlider {
     margin-top: 20px;
   }
 }
@@ -351,6 +288,8 @@ body.ar {
     }
   }
 }
+
+
 @media screen and (max-width: 768px) {
   .beauty_profile {
     .allConBeauty {
@@ -436,9 +375,6 @@ body.ar {
 
 .beauty_profile {
   .model_poup.active {
-    .content {
-      padding-bottom: 0;
-    }
     .input-field {
       .flex {
         gap: 0;
@@ -453,11 +389,30 @@ body.ar {
       box-shadow: 0px 0px !important;
       margin: 0;
       padding: 10px 20px !important;
-      background-color: white;
       textarea {
         outline: none;
         padding: 10px;
         background-color: var(--secondBG);
+      }
+    }
+    .padding {
+      padding: 20px 20px;
+      padding-bottom: 0px;
+      .flex {
+        width: 100%;
+        border: 1px solid var(--border);
+        padding: 10px 0px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        &.active {
+          background-color: $main-Color-back;
+          border: none;
+        }
+        i {
+          color: orange;
+        }
       }
     }
   }
@@ -474,3 +429,124 @@ body.ar {
     }
   }
 }
+
+.beauty_profile {
+  form {
+    width: 25%;
+    padding: 10px 20px;
+    background-color: var(--mainBG);
+    box-shadow: var(--box-shadow);
+    flex-grow: 1;
+    height: fit-content;
+    border-radius: 10px;
+    label {
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .fields {
+      .input-field {
+        display: flex;
+        margin-bottom: 5px;
+        flex-direction: column;
+        .flex {
+          flex-grow: 1;
+          flex-direction: row-reverse;
+        }
+        i {
+          width: 30px;
+          height: 42px;
+          font-size: 12px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          background-color: $main-Color-back;
+
+          font-weight: bold;
+        }
+        input,
+        select {
+          outline: none;
+          width: calc(100% - 30px);
+          background-color: var(--secondBG);
+          font-size: 14px;
+          font-weight: 400;
+          padding: 0 15px;
+          height: 42px;
+        }
+      }
+      .select {
+        margin: 20px 0px;
+        .row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          padding: 8px 0px;
+          border-bottom: 1px solid #ddd;
+          i {
+            color: $main-Color-back;
+            cursor: pointer;
+          }
+        }
+      }
+      .taxes {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 8px;
+        .flex {
+          justify-content: space-between;
+          color: $main-Color-back;
+          font-weight: bold;
+        }
+      }
+    }
+    &.lastPop {
+      border-radius: 20px;
+      padding: 15px;
+      box-shadow: var(--box-shadow);
+      flex-grow: 1;
+      .fields {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .feed {
+        resize: vertical;
+        border: 1px solid #ddd;
+        background-color: var(--secondBG);
+        width: 100%;
+        min-height: 200px;
+        padding: 10px;
+        outline: none;
+        border-radius: 10px;
+      }
+      .flex {
+        margin-bottom: 10px;
+        border: none;
+        width: 100%;
+        gap: 10px;
+        justify-content: start;
+        flex-direction: row-reverse;
+        align-items: center;
+        i {
+          height: fit-content;
+          background-color: transparent;
+          color: $main-Color-back;
+        }
+        label {
+          font-size: 16px;
+        }
+      }
+      button {
+        width: 100%;
+        margin: 10px auto;
+        padding: 20px 0px;
+        border-radius: 10px;
+        background-color: $main-Color-back;
+      }
+    }
+  }
+}
+
+

@@ -1,9 +1,9 @@
-
 import React, { useState } from "react";
 import { t } from "i18next";
 import { Link } from "react-router-dom";
 import Popup from "../../../components/popup/Popup";
-import cat from  "../../../assets/images/ai-generated-8556454_1920.jpg"
+import cat from "../../../assets/images/ai-generated-8556454_1920.jpg";
+import "./brand_settings.scss";
 
 function Business_gallery() {
   const [popUp, setOpenPopUp] = useState(false);
@@ -35,7 +35,7 @@ function Business_gallery() {
               <td>1</td>
               <td> Zinzu Chan Lee</td>
               <td> 17 Dec, 2022 </td>
-              <td style={{display : "flex" , justifyContent : "center"}}>
+              <td style={{ display: "flex", justifyContent: "center" }}>
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
@@ -61,7 +61,7 @@ function Business_gallery() {
               <td>Jeet Saru </td>
 
               <td> 27 Aug, 2023 </td>
-              <td style={{display : "flex" , justifyContent : "center"}}>
+              <td style={{ display: "flex", justifyContent: "center" }}>
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
@@ -87,15 +87,15 @@ function Business_gallery() {
               <td>Sonal Gharti </td>
 
               <td> 14 Mar, 2023 </td>
-            
-              <td style={{display : "flex" , justifyContent : "center"}}>
+
+              <td style={{ display: "flex", justifyContent: "center" }}>
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
               </td>
-              
+
               <td>
                 {" "}
                 <strong
@@ -115,7 +115,7 @@ function Business_gallery() {
               <td>Alson GC </td>
 
               <td> 25 May, 2023 </td>
-              <td style={{display : "flex" , justifyContent : "center"}}>
+              <td style={{ display: "flex", justifyContent: "center" }}>
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
@@ -140,7 +140,7 @@ function Business_gallery() {
               <td> 5</td>
               <td>Sarita Limbu </td>
               <td> 23 Apr, 2023 </td>
-              <td style={{display : "flex" , justifyContent : "center"}}>
+              <td style={{ display: "flex", justifyContent: "center" }}>
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
@@ -165,7 +165,7 @@ function Business_gallery() {
               <td> 6</td>
               <td>Alex Gonley </td>
               <td> 23 Apr, 2023 </td>
-              <td style={{display : "flex" , justifyContent : "center"}}>
+              <td style={{ display: "flex", justifyContent: "center" }}>
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
@@ -190,7 +190,7 @@ function Business_gallery() {
               <td> 7</td>
               <td>Jeet Saru </td>
               <td> 20 May, 2023 </td>
-              <td style={{display : "flex" , justifyContent : "center"}}>
+              <td style={{ display: "flex", justifyContent: "center" }}>
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
@@ -215,7 +215,7 @@ function Business_gallery() {
               <td> 8</td>
               <td>Aayat Ali Khan </td>
               <td> 30 Feb, 2023 </td>
-              <td style={{display : "flex" , justifyContent : "center"}}>
+              <td style={{ display: "flex", justifyContent: "center" }}>
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
@@ -240,7 +240,7 @@ function Business_gallery() {
               <td> 9</td>
               <td>Alson GC </td>
               <td> 22 Dec, 2023 </td>
-              <td style={{display : "flex" , justifyContent : "center"}}>
+              <td style={{ display: "flex", justifyContent: "center" }}>
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
                 <img src={cat} alt="" srcset="" />
@@ -272,69 +272,23 @@ function Business_gallery() {
       >
         <div className="mega">
           <div className="input-field">
-            <label>{t("Service Type")}</label>
+            <label>{t("work name")}</label>
             <div className="flex">
-              <select onChange={(e) => setType(e.target.value)}>
-                <option value={undefined} >
-                  {t("Service Type")}
-                </option>
-                <option value={"0"}>{t("In Headquarters")}</option>
-                <option value={"1"}>{t("Out Headquarters")}</option>
-                <option value={"2"}>{t("In / Out Headquarters")}</option>
-              </select>
+              <input type="text" placeholder={t("work name")} />
               <i class="fa-solid fa-hurricane"></i>
             </div>
           </div>
-          {(type == "0" || type == "1") && (
-            <div className="input-field">
-              <label>{t("service name")}</label>
-              <div className="flex">
-                <input type="text" placeholder={t("service name")} />
-                <i class="fa-solid fa-hurricane"></i>
-              </div>
+          <div className="input-field">
+            <label>{t("work name")}</label>
+            <div className="flex">
+              <input type="file"/>
+              <i class="fa-solid fa-hurricane"></i>
             </div>
-          )}
-          {(type == "0" || type == "1") && (
-            <div className="input-field">
-              <label>{t("service price")}</label>
-              <div className="flex">
-                <input type="text" placeholder={t("service price")} />
-                <i class="fa-solid fa-hurricane"></i>
-              </div>
-            </div>
-          )}
-          {type == "2" && (
-            <div className="input-field">
-              <label>{t("service name")}</label>
-              <div className="flex">
-                <input type="text" placeholder={t("service name")} />
-                <i class="fa-solid fa-hurricane"></i>
-              </div>
-            </div>
-          )}
-          {type == "2" && (
-            <div className="input-field">
-              <label>{t("price In")}</label>
-              <div className="flex">
-                <input type="text" placeholder={t("price In")} />
-                <i class="fa-solid fa-hurricane"></i>
-              </div>
-            </div>
-          )}
-          {type == "2" && (
-            <div className="input-field">
-              <label>{t("price Out")}</label>
-              <div className="flex">
-                <input type="text" placeholder={t("price Out")} />
-                <i class="fa-solid fa-hurricane"></i>
-              </div>
-            </div>
-          )}
-
+          </div>
         </div>
       </Popup>
     </main>
   );
 }
 
-export default Business_gallery
+export default Business_gallery;

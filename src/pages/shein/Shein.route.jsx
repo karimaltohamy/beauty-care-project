@@ -5,6 +5,7 @@ import imgai from "../../assets/images/ai-generated-8556454_1920.jpg";
 import { FaCartPlus } from "react-icons/fa";
 import "./shein.scss";
 import { Link } from "react-router-dom";
+import SearchSection from "../../components/searchSection/SearchSection";
 
 const Shein = () => {
   const [data, setData] = useState([1, 2, 3, 4, 5, 6]);
@@ -15,7 +16,7 @@ const Shein = () => {
         <div className="container">
           <div className="flex gap-5 flex-col md:flex-row">
             <div className="filter w-full">
-              <div className="flex jemy items-center justify-center md:justify-between  md:flex-row mb-7">
+              {/* <div className="flex jemy items-center justify-center md:justify-between  md:flex-row mb-7">
                 <h3 className="text-[19px] text-gray-500 font-semibold">
                   11 {t("results")}
                 </h3>
@@ -32,7 +33,14 @@ const Shein = () => {
                     <option value="">Rating (High to low)</option>
                   </select>
                 </div>
-              </div>
+              </div> */}
+              <SearchSection
+
+                needCategories={false}
+                fullWidth={true}
+                needContainer={false}
+                changeLocation={true}
+              />
 
               <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 control">
                 {data.length > 0 &&
@@ -53,7 +61,7 @@ const Shein = () => {
                             <i class="fa-solid fa-heart heart"></i>
                             <div className="flex items-center justify-between">
                               <p>
-                                4.3 <i class="fa-solid fa-star"></i> {" "}
+                                4.3 <i class="fa-solid fa-star"></i>{" "}
                               </p>
                             </div>
                           </div>
@@ -61,10 +69,10 @@ const Shein = () => {
                         <div className="con">
                           <h1>Deep Cleansing Oil</h1>
                           <div className="inside">
-                          <div className="price">
-                            {/* <p>$300</p> */}
-                            <h2>$150</h2>
-                          </div>
+                            <div className="price">
+                              {/* <p>$300</p> */}
+                              <h2>$150</h2>
+                            </div>
                             <div className="add">
                               <button>
                                 <FaCartPlus size={20} />

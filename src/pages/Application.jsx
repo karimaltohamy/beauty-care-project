@@ -11,12 +11,20 @@ const Application = () => {
   const { pathname } = location;
   const { id } = useParams();
   const { theme } = localStorage;
+
+  const paddingWhenNeed = () => {
+    if (pathname == `/beauty/${id}` || pathname == `/shein/${id}`) {
+      document.body.style.padding = "0px";
+    }
+  };
+
   useEffect(() => {
     Aos.init();
   }, []);
-  useEffect(()=>{
+  useEffect(() => {
     document.body.classList.add(theme);
-  },[localStorage.theme])
+    paddingWhenNeed();
+  }, []);
   return (
     <Fragment>
       {((pathname !== `/beauty/${id}` && pathname !== `/shein/${id}`) ||

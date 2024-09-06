@@ -1,14 +1,24 @@
 @import "../../assets/variables.scss";
 
+
+
 .atelierCard {
-  box-shadow: var(--box-shadow);
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
   position: relative;
 
+
   .text {
-    flex: 1;
+    // flex-grow: 1;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 18px;
+    width: 100% ;
+    height: auto;
     position: relative;
     z-index: 20;
     background-color: var(--secondBG);
@@ -19,19 +29,25 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 220px;
+    height: 200px;
 
-    &.en {
-      border-top-right-radius: 18px;
-      border-bottom-right-radius: 18px;
-      margin-right: -12px;
-    }
+    // &.en {
+    //   border-top-right-radius: 18px;
+    //   border-bottom-right-radius: 18px;
+    //   margin-right: -12px;
+    //   @media screen and (max-width : 768px) {
+    //     margin: 0 !important;
+    //   }
+    // }
 
-    &.ar {
-      border-top-left-radius: 18px;
-      border-bottom-left-radius: 18px;
-      margin-left: -12px;
-    }
+    // &.ar {
+    //   border-top-left-radius: 18px;
+    //   border-bottom-left-radius: 18px;
+    //   // margin-left: -12px;
+    //   @media screen and (max-width : 768px) {
+    //     margin: 0 !important;
+    //   }
+    // }
 
     .service_review {
       display: flex;
@@ -57,7 +73,9 @@
   }
 
   .image {
-    width: 200px;
+    // width: 200px;
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px; 
     height: 220px;
     overflow: hidden;
 
@@ -81,6 +99,7 @@
     .image {
       height: 300px;
       width: 100%;
+      border-radius: 18px !important;
     }
 
     .text {

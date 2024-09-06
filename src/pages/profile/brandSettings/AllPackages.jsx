@@ -5,76 +5,21 @@ import Popup from "../../../components/popup/Popup";
 
 import "./brand_settings.scss";
 
-/**
- * 
- * @returns           <div className="input-field">
-            <label>{t("package Type")}</label>
-            <div className="flex">
-              <select onChange={(e) => setType(e.target.value)}>
-                <option value={undefined} >
-                  {t("package Type")}
-                </option>
-                <option value={"0"}>{t("In Headquarters")}</option>
-                <option value={"1"}>{t("Out Headquarters")}</option>
-                <option value={"2"}>{t("In / Out Headquarters")}</option>
-              </select>
-              <i class="fa-solid fa-hurricane"></i>
-            </div>
-          </div>
-          {(type == "0" || type == "1") && (
-            <div className="input-field">
-              <label>{t("package name")}</label>
-              <div className="flex">
-                <input type="text" placeholder={t("package name")} />
-                <i class="fa-solid fa-hurricane"></i>
-              </div>
-            </div>
-          )}
-          {(type == "0" || type == "1") && (
-            <div className="input-field">
-              <label>{t("package price")}</label>
-              <div className="flex">
-                <input type="text" placeholder={t("package price")} />
-                <i class="fa-solid fa-hurricane"></i>
-              </div>
-            </div>
-          )}
-          {type == "2" && (
-            <div className="input-field">
-              <label>{t("package name")}</label>
-              <div className="flex">
-                <input type="text" placeholder={t("package name")} />
-                <i class="fa-solid fa-hurricane"></i>
-              </div>
-            </div>
-          )}
-          {type == "2" && (
-            <div className="input-field">
-              <label>{t("price In")}</label>
-              <div className="flex">
-                <input type="text" placeholder={t("price In")} />
-                <i class="fa-solid fa-hurricane"></i>
-              </div>
-            </div>
-          )}
-          {type == "2" && (
-            <div className="input-field">
-              <label>{t("price Out")}</label>
-              <div className="flex">
-                <input type="text" placeholder={t("price Out")} />
-                <i class="fa-solid fa-hurricane"></i>
-              </div>
-            </div>
-          )}
- */
-
 function AllPackages() {
   const [popUp, setOpenPopUp] = useState(false);
   const [type, setType] = useState("");
   const [num, setNum] = useState(1);
-  const deleteIndex = (index) => {
-    
-  }
+  const [arr, setArr] = useState([{ id: num }]);
+  const handleAdd = (e) => {
+    e.preventDefault();
+    setArr((prev) => [...prev, { id: num + 1 }]);
+    setNum(num + 1);
+  };
+  const deleteIndex = (id) => {
+    const filter = arr.filter((ele) => ele.id !== id);
+    setArr(filter);
+  };
+
   return (
     <main class="table servicesTable" id="customers_table">
       <section class="table__header">
@@ -325,19 +270,19 @@ function AllPackages() {
         <div className="details">
           <span>{t("Package Details")}</span>
           <div className="con">
-            {[...Array(num)].map((ele , i ) => {
+            {arr.map((ele, i) => {
               return (
                 <div className="box">
                   <input type="text" />
-                  <i class="fa-solid fa-xmark" onClick={()=> deleteIndex(i)}></i>
+                  <i
+                    class="fa-solid fa-xmark"
+                    onClick={() => deleteIndex(ele.id)}
+                  ></i>
                 </div>
               );
             })}
           </div>
-          <button onClick={(e)=> {
-            e.preventDefault()
-            setNum(num + 1)
-          }}>{t("Add New")}</button>
+          <button onClick={(e) => handleAdd(e)}>{t("Add New")}</button>
         </div>
       </Popup>
     </main>

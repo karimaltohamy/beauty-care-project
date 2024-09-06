@@ -14,16 +14,22 @@
       .account{
         padding: 0px ;
       }
-      .view{
-        form{
-          padding: 0;
-        }
-      }
     }
     .view{
       display: flex;
       align-items:center;
       padding: 0px 20px;
+    }
+    .mybrand , .account {
+      display: flex;
+      form {
+        flex-grow: 1;
+      }
+    }
+  }
+  .model_poup.active {
+    form {
+      width: 100%;
     }
   }
 }
